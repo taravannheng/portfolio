@@ -38,6 +38,16 @@ nav#main-navigation li:nth-child(2) {
     margin: 0 20px; 
 }
 
+nav#main-navigation li > a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav#main-navigation li > a:hover {
+    color: #F66765;
+    text-decoration: underline;
+}
+
 /*              body section            */
 
 li.programming-language {
