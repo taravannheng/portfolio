@@ -21,7 +21,7 @@
 <body>
     <header>
         <h1 id="main-title">TARAVANN HENG</h1>
-        <nav>
+        <nav id="main-navigation">
             <ul>
                 <li><a href="#about">about</a></li>
                 <li><a href="#project">projects</a></li>
@@ -44,87 +44,71 @@
             </section>
             <section id="about-right">
                 <!-- timeline -->
-                <svg>
-                    <line x1="248.5" y1="50" x2="248.5" y2="250" id="line-1" />
-            
-                    <line x1="248.5" y1="70" x2="288.5" y2="70" id="line-2" />
-                    <circle cx="291.5" cy="70" r="3" />
-                    <text x="228.5" y="75" class="svg-text-anchor-end timeline-year">2021</text>
-                    <text x="310" y="75">Graduating: Master of Information Technology</text>
-            
-                    <line x1="208.5" y1="148.5" x2="248.5" y2="148.5" id="line-3" />
-                    <circle cx="205.5" cy="148.5" r="3" />
-                    <text x="268.5" y="153" class="timeline-year">2018</text>
-                    <text x="186" y="153" id="svg"  class="svg-text-anchor-end">Graduated: Bachelor of Arts</text>
-                    <text x="140" y="175"  class="svg-text-anchor-end">Banking and Finance</text>
-                    
-                    <line x1="248.5" y1="227" x2="288.5" y2="227" id="line-2" />
-                    <circle cx="291.5" cy="227" r="3" />
-                    <text x="228.5" y="232" class="svg-text-anchor-end timeline-year">2017</text>
-                    <text x="310" y="232">Credit Admin and Loan Management Intern</text>
-                </svg>
+                
                 <p>Download my resumé <a href="assets/resume/resume-taravannheng.pdf" id="resume-link" download="resume-taravannheng.pdf">here</a></p>
             </section>
         </section>
         <section id="project">
             <h2  class="section-title">Projects</h2>
-            <!-- project 1 -->
-            <div id="first-project" class="project">
-                <div class="project-image">
-                    <img src="" alt="image of first project" width="400" height="200">
-                </div>
-                <div class="project-technology">
-                    <ul>
-                        <li class="programming-language">html</li>
-                        <li class="programming-language">css</li>
-                        <li class="programming-language">js</li>
-                    </ul>
-                </div>
-                <div class="project-description">
-                    <p>Project 1 description.</p>
-                </div>
-                <div class="project-button">
-                    <button>demo</button>
-                    <button>code</button>    
-                </div>
-            </div>
-            <!-- project 2 -->
-            <div id="second-project" class="project">
-                <div class="project-image">
-                    <img src="" alt="image of second project" width="400" height="200">
-                </div>
-                <div class="project-technology">
-                    <ul>
-                        <li class="programming-language">html</li>
-                        <li class="programming-language">css</li>
-                        <li class="programming-language">js</li>
-                    </ul>
-                </div>
-                <div class="project-description">
-                    <p>Project 2 description.</p>
-                </div>
-                <div class="project-button">
-                    <button>demo</button>
-                    <button>code</button>    
-                </div>
-            </div>
-            <!-- project 3 -->
-            <div id="three-project" class="project">
-                <div class="project-image">
-                    <img src="" alt="image of third project" width="400" height="200">
-                </div>
-                <div class="project-technology">
-                    <ul>
-                        <li class="programming-language">html</li>
-                        <li class="programming-language">css</li>
-                        <li class="programming-language">js</li>
-                    </ul>
-                </div>
-                <div class="project-description">
-                    <p>Project 3 description.</p>
+            <div id="project-container">
+                    <!-- project 1 -->
+                <div id="first-project" class="project-box">
+                    <div class="project-image">
+                        <img src="" alt="image of first project" width="400" height="200">
+                    </div>
+                    <div class="project-technology">
+                        <ul>
+                            <li class="programming-language">html</li>
+                            <li class="programming-language">css</li>
+                            <li class="programming-language">js</li>
+                        </ul>
+                    </div>
+                    <div class="project-description">
+                        <p>Project 1 description.</p>
+                    </div>
                     <div class="project-button">
-                        <button>demo</button>
-                        <button>code</button>    
+                        <a href="#" target="_blank">demo</a>
+                        <a href="#" target="_blank">code</a>    
+                    </div>
+                </div>
+                <!-- project 2 -->
+                <div id="second-project" class="project-box">
+                    <div class="project-image">
+                        <img src="" alt="image of second project" width="400" height="200">
+                    </div>
+                    <div class="project-technology">
+                        <ul>
+                            <li class="programming-language">html</li>
+                            <li class="programming-language">css</li>
+                            <li class="programming-language">js</li>
+                        </ul>
+                    </div>
+                    <div class="project-description">
+                        <p>Project 2 description.</p>
+                    </div>
+                    <div class="project-button">
+                        <a href="#" target="_blank">demo</a>
+                        <a href="#" target="_blank">code</a>    
+                    </div>
+                </div>
+                <!-- project 3 -->
+                <div id="three-project" class="project-box">
+                    <div class="project-image">
+                        <img src="" alt="image of third project" width="400" height="200">
+                    </div>
+                    <div class="project-technology">
+                        <ul>
+                            <li class="programming-language">html</li>
+                            <li class="programming-language">css</li>
+                            <li class="programming-language">js</li>
+                        </ul>
+                    </div>
+                    <div class="project-description">
+                        <p>Project 3 description.</p>
+                    </div>
+                    <div class="project-button">
+                        <a href="#" target="_blank">demo</a>
+                        <a href="#" target="_blank">code</a>    
                     </div>
                 </div>
             </div>
