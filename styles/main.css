@@ -23,9 +23,10 @@ header {
     border-bottom: 1px solid black;
 }
 
-h1#main-title {
+h1#main-title a {
     font-size: 50px;
     color: #F66765;
+    text-decoration: none;
 }
 
 nav#main-navigation li {
@@ -181,10 +182,10 @@ div#icon i.fa-linkedin-in:hover {
     color: #0077B5;
 }
 
-div#icon i.fa-at:hover {
-    color: #E94034;
+div#icon i.fa-paper-plane:hover {
+    color: #9C80FF;
 }
 
 div#icon i.fa-phone-square-alt:hover {
-    color: #F7C700;
+    color: #91514D;
 }
