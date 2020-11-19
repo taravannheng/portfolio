@@ -23,10 +23,9 @@ header {
     border-bottom: 1px solid black;
 }
 
-h1#main-title a {
+h1#main-title {
     font-size: 50px;
     color: #F66765;
-    text-decoration: none;
 }
 
 nav#main-navigation li {
