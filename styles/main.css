@@ -7,11 +7,6 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-}
-
-h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -24,15 +19,25 @@ header {
 }
 
 h1#main-title a {
-    font-size: 50px;
-    color: #F66765;
+    font-weight: 900;
+    font-size: 48px;
+    color: #303030;
     text-decoration: none;
+}
+
+h1#main-title + hr {
+    color: #303030;
+    border: 1px solid black;
+}
+
+header > span {
+    font-weight: 500;
+    font-size: 20px;
+    color: #303030;
 }
 
 nav#main-navigation li {
     display: inline;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
 }
 
 nav#main-navigation li:nth-child(2) {
@@ -40,12 +45,14 @@ nav#main-navigation li:nth-child(2) {
 }
 
 nav#main-navigation li > a {
-    color: #000;
+    font-weight: 400;
+    font-size: 22px;
+    color: #5E5E5E;
     text-decoration: none;
 }
 
 nav#main-navigation li > a:hover {
-    color: #F66765;
+    color: #303030;
     text-decoration: underline;
 }
 
