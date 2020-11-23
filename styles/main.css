@@ -52,7 +52,6 @@ nav#main-navigation li > a:hover {
 /*              body section            */
 
 li.programming-language {
-    
     display: inline-block;
     font-family: 'Fira Mono', monospace;
     font-size: 13px;
@@ -68,10 +67,13 @@ h2.section-title {
     color: #F66765;
 }
 
-section#about > section {
-    display: inline-block;
-    width: 600px;
+section#about div#about-section-container {
+    display: flex;
     border: 1px solid hotpink;
+}
+
+div#about-section-container section {
+    border: 1px solid purple;
 }
 
 /* project */
