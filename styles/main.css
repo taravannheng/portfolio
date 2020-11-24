@@ -8,29 +8,49 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 
 /*              head section            */
 
 header {
-    height: 200px;
-    padding: 20px 20px 0px 20px;
-    border-bottom: 1px solid black;
+    padding: 3% 10% 0 10%;
+}
+
+div#title-container, nav#main-navigation {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div#title-container {
+    width: 40%;
+    margin-right: 34%;
+}
+
+nav#main-navigation {
+    width: 25%;
+    margin-top: 10px;
+    text-align: center;
 }
 
 h1#main-title a {
     font-weight: 900;
-    font-size: 48px;
+    font-size: 3em;
     color: #303030;
     text-decoration: none;
 }
 
 h1#main-title + hr {
+    width: 23.8em;
+    margin-left: 9.5px;
+    margin-top: -2px;
+    margin-bottom: 2px;
     color: #303030;
     border: 1px solid black;
 }
 
-header > span {
+header span {
+    margin-left: 10px;
     font-weight: 500;
     font-size: 20px;
     color: #303030;
@@ -46,41 +66,47 @@ nav#main-navigation li:nth-child(2) {
 
 nav#main-navigation li > a {
     font-weight: 400;
-    font-size: 22px;
+    font-size: 20px;
     color: #5E5E5E;
     text-decoration: none;
 }
 
 nav#main-navigation li > a:hover {
     color: #303030;
-    text-decoration: underline;
 }
 
 /*              body section            */
 
-li.programming-language {
-    display: inline-block;
-    font-family: 'Fira Mono', monospace;
-    font-size: 13px;
+h2.section-title {
+    margin-top: 5%;
+    font-weight: 700;
+    font-size: 36px;
+    color: #303030;
 }
 
 /* about */
 
-h2.section-title {
-    margin: 40px 0px;
-    font-size: 30px;
-    text-align: center;
-    text-decoration: underline;
-    color: #F66765;
+section#about p, section#about span {
+    font-weight: 400;
+    font-size: 22px;
+    color: #545454;
 }
 
-section#about div#about-section-container {
-    display: flex;
-    border: 1px solid hotpink;
+section#about-right ul > li {
+    display: inline;
 }
 
-div#about-section-container section {
-    border: 1px solid purple;
+section#about-right .programming-language-logo {
+    height: 30px;
+}
+
+section#about-right .tool-logo {
+    height: 26px;
+}
+
+section#about-right .second, section#about-right .second {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* project */
@@ -139,12 +165,6 @@ div.project-button a {
     font-size: 12px;
     line-height: 21px;
     color: #000;
-}
-
-div.project-button a:hover {
-    border: none;
-    background-color: #F66765;
-    color: #fff;
 }
 
 /*              footer section            */
