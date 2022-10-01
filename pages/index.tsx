@@ -1,9 +1,9 @@
-import Profile from '../components/profile/profile';
+import HeroSection from '../components/hero/hero';
 
 const HomePage = () => {
   return (
     <div>
-      <Profile />
+      <HeroSection />
     </div>
   );
 };
