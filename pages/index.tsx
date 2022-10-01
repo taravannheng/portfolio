@@ -1,9 +1,11 @@
+import Profile from '../components/profile/profile';
+
 const HomePage = () => {
   return (
     <div>
-      <h1>Taravann</h1>
+      <Profile />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
