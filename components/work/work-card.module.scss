@@ -1,0 +1,81 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/mixins.module.scss";
+
+.work_card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 520px;
+
+  @include viewport(tablet) {
+    width: 400px;
+  }
+
+  @include viewport(mobile) {
+    width: 360px;
+    margin-bottom: 56px;
+  }
+
+  &:first-child {
+    margin-right: 48px;
+  }
+
+  &:last-child {
+    margin-left: 48px;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: clamp(120px, 120px, 120px);
+    height: clamp(120px, 120px, 120px);
+
+    @include viewport(mobile) {
+      width: clamp(40px, 40px, 40px);
+      height: clamp(40px, 40px, 40px);
+    }
+  }
+
+  &__description {
+    margin-left: 152px;
+
+    color: $color-gray-1;
+
+    @include viewport(mobile) {
+      margin-left: 60px;
+    }
+  }
+}
+
+.position {
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &__title, &__date, &__description {
+    margin: 0;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: $color-light;
+  }
+
+  &__date, &__description {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__date {
+    margin-bottom: 16px;
+  }
+}
+
+.date__duration {
+  margin-left: 8px;
+}
