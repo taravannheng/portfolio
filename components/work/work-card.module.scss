@@ -8,10 +8,6 @@
   width: 520px;
   margin-bottom: 64px;
 
-  @include viewport(tablet) {
-    width: 400px;
-  }
-
   @include viewport(mobile) {
     width: 360px;
     margin-bottom: 56px;
