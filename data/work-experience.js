@@ -34,8 +34,7 @@ const workExperience = [
         endDate: 'Jul 2017',
         duration: '4 Months',
         description:
-          `Responsibilities include performed World Check, prepared discharge letter, second or further legal charge, tracked and registered security.
-          `,
+          'Responsibilities include performed World Check, prepared discharge letter, second or further legal charge, tracked and registered security.',
       },
     ],
   },
