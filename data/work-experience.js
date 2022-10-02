@@ -1,9 +1,7 @@
 const workExperience = [
   {
-    logo: {
-      src: '/images/logos/cellcard.png',
-      description: 'lorem ipsum',
-    },
+    company: 'Cellcard',
+    logo: '/images/logos/cellcard.png',
     positions: [
       {
         id: 'p1',
@@ -11,7 +9,8 @@ const workExperience = [
         startDate: 'Jun 2022',
         endDate: 'Oct 2022',
         duration: '5 Months',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
       },
       {
         id: 'p2',
@@ -19,15 +18,14 @@ const workExperience = [
         startDate: 'Nov 2021',
         endDate: 'May 2022',
         duration: '7 Months',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
       },
     ],
   },
   {
-    logo: {
-      src: '/images/logos/maybank.png',
-      description: 'lorem ipsum',
-    },
+    company: 'Maybank',
+    logo: '/images/logos/maybank.png',
     positions: [
       {
         id: 'p3',
@@ -35,7 +33,8 @@ const workExperience = [
         startDate: 'Apr 2017',
         endDate: 'Jul 2017',
         duration: '4 Months',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
       },
     ],
   },
