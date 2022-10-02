@@ -6,6 +6,10 @@
   justify-content: center;
   height: 100vh;
 
+  @include viewport(mobile) {
+    margin-top: -150px;
+  }
+
   &__title {
     text-align: center;
   }
