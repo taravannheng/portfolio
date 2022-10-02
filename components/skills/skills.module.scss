@@ -4,7 +4,13 @@
   height: 100vh;
 
   &__title {
+    font-size: 56px;
+    font-weight: 900;
     text-align: center;
+
+    @include viewport(mobile) {
+      font-size: 36px;
+    }
   }
 
 }
