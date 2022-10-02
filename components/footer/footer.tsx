@@ -18,8 +18,8 @@ const FooterSection = () => {
             <a target="_blank">
               <Image
                 src="/images/social/linkedin.svg"
-                width="36"
-                height="36"
+                width={36}
+                height={36}
                 alt="LinkedIn"
               />
             </a>
@@ -30,8 +30,8 @@ const FooterSection = () => {
             <a target="_blank">
               <Image
                 src="/images/social/github.svg"
-                width="36"
-                height="36"
+                width={36}
+                height={36}
                 alt="GitHub"
               />
             </a>

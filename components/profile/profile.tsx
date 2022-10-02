@@ -7,8 +7,8 @@ const Profile = ({ src }) => {
     <div className={classes.profile}>
       <Image
         src={src}
-        width="300"
-        height="300"
+        width={300}
+        height={300}
         alt="profile picture"
       />
     </div>
