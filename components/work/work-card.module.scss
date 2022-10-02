@@ -28,8 +28,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: clamp(120px, 120px, 120px);
-    height: clamp(120px, 120px, 120px);
+    width: clamp(80px, 80px, 80px);
+    height: clamp(80px, 80px, 80px);
 
     @include viewport(mobile) {
       width: clamp(40px, 40px, 40px);
@@ -38,7 +38,7 @@
   }
 
   &__description {
-    margin-left: 152px;
+    margin-left: 100px;
 
     color: $color-gray-1;
 
