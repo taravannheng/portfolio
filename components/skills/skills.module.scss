@@ -38,6 +38,10 @@
     margin-left: -80px;
     margin-top: 100px;
 
+    @include viewport(tablet) {
+      margin-top: 120px;
+    }
+
     @include viewport(mobile) {
       margin-top: 24px;
       margin-left: 0;
