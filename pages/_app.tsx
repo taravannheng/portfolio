@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID});
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}');
       `
       }
     </Script>
