@@ -1,3 +1,4 @@
+@import "../../styles/colors.module.scss";
 @import "../../styles/mixins.module.scss";
 
 .footer {
@@ -22,6 +23,7 @@
       margin: 0;
 
       text-align: center;
+      color: $color-gray-1;
     }
   }
 }
