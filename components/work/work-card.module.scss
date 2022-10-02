@@ -50,7 +50,7 @@
     margin-bottom: 40px;
   }
 
-  &__title, &__date, &__description {
+  &__title, &__date, &__responsibilities {
     margin: 0;
   }
 
@@ -63,7 +63,7 @@
     color: $color-light;
   }
 
-  &__date, &__description {
+  &__date, &__responsibilities {
     font-weight: 400;
   }
 
@@ -72,7 +72,7 @@
     font-size: 16px;
   }
 
-  &__description {
+  &__responsibilities {
     font-size: 14px;
     line-height: 20px;
   }
@@ -80,4 +80,24 @@
 
 .date__duration {
   margin-left: 8px;
+}
+
+.responsibilities {
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    list-style-position: inside;
+    list-style-type: none;
+    list-style-image: url("../../public/images/others/list-style-image.svg");
+
+    & li {
+      margin-bottom: 4px;
+    }
+
+    & span {
+      position: relative;
+      left: 8px;
+    }
+  }
 }

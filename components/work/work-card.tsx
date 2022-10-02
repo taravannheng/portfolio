@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { v4 as uuidv4 } from 'uuid';
 
 import classes from './work-card.module.scss';
 
@@ -12,7 +13,7 @@ const WorkCard = ({ company, logo, positions }) => {
       </div>
       <div className={classes.work_card__description}>
         {positions.map((position) => {
-          const { id, title, startDate, endDate, duration, description } =
+          const { id, title, startDate, endDate, duration, responsibilities } =
             position;
 
           return (
@@ -22,7 +23,14 @@ const WorkCard = ({ company, logo, positions }) => {
                 {startDate} - {endDate}{' '}
                 <span className={classes.date__duration}>{duration}</span>
               </p>
-              <p className={classes.position__description}>{description}</p>
+              <div className={classes.position__responsibilities}>
+                <p className={classes.responsibilities__text}>Responsibilities include:</p>
+                <ul className={classes.responsibilities__list}>
+                  {responsibilities.map((responsibility) => {
+                    return <li key={uuidv4()}><span>{responsibility}</span></li>;
+                  })}
+              </ul>
+              </div>
             </div>
           );
         })}

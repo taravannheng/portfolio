@@ -9,8 +9,11 @@ const workExperience = [
         startDate: 'Jun 2022',
         endDate: 'Oct 2022',
         duration: '5 Months',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        responsibilities: [
+          'Fixed minor bugs',
+          'Built app for QA testing',
+          'Enhanced UI',
+        ],
       },
       {
         id: 'p2',
@@ -18,8 +21,11 @@ const workExperience = [
         startDate: 'Nov 2021',
         endDate: 'May 2022',
         duration: '7 Months',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        responsibilities: [
+          'Created lo-fi and hi-fi wireframes',
+          'Created hi-fi prototypes',
+          'Created design systems for consistency',
+        ],
       },
     ],
   },
@@ -33,8 +39,12 @@ const workExperience = [
         startDate: 'Apr 2017',
         endDate: 'Jul 2017',
         duration: '4 Months',
-        description:
-          'Responsibilities include performed World Check, prepared discharge letter, second or further legal charge, tracked and registered security.',
+        responsibilities: [
+          'Performed World Check',
+          'Prepared discharge letter',
+          'Prepared second or further legal charge',
+          'Registered and tracked security',
+        ],
       },
     ],
   },
