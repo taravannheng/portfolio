@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  margin-bottom: 240px;
 
   @include viewport(mobile) {
     margin-top: -100px;

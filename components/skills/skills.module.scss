@@ -1,7 +1,7 @@
 @import "../../styles/mixins.module.scss";
 
 .skills {
-  height: 100vh;
+  margin-bottom: 240px;
 
   &__title {
     font-size: 56px;
@@ -59,6 +59,10 @@
       margin-bottom: 48px;
 
       text-align: center;
+
+      @include viewport(mobile) {
+        margin-bottom: 36px;
+      }
     }
 
     ul {
@@ -66,14 +70,16 @@
       grid-template-columns: repeat(8, 36px);
       justify-content: space-between;
       row-gap: 24px;
-      width: clamp(560px, 560px, 560px);
+      width: 560px;
       padding: 0;
       margin-top: 20px;
 
       list-style: none;
 
       @include viewport(mobile) {
-        width: 440px;
+        width: 100vw;
+        padding: 0 36px;
+        margin-bottom: 50px;
       }
 
       li {
