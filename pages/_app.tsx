@@ -20,8 +20,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <link rel="shortcut icon" sizes="16x16" href="/images/favicons/favicon-16.png" type="image/png"/>
     </Head>
     {/* <!-- Google tag (gtag.js) --> */}
-    <Script strategy='lazyOnload' async src={`"https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}"`}></Script>
-    <Script strategy='lazyOnload' id='google_analytics'>
+    <Script async src={`"https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}"`}></Script>
+    <Script id='google_analytics'>
       {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
