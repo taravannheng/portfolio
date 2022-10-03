@@ -25,8 +25,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link
           rel="icon"
           type="image/png"
-          sizes="192x192"
-          href="/images/favicons/favicon-192.png"
+          sizes="180x180"
+          href="/images/favicons/favicon-180.png"
         />
         <link
           rel="apple-touch-icon-precomposed"
