@@ -25,6 +25,7 @@ const workExperience = [
           'Created lo-fi and hi-fi wireframes',
           'Created hi-fi prototypes',
           'Created design systems for consistency',
+          'Created userflows',
         ],
       },
     ],
