@@ -25,7 +25,7 @@ const WorkCard = ({ company, logo, positions }) => {
               </p>
               <div className={classes.position__responsibilities}>
                 <p className={classes.responsibilities__text}>Responsibilities include:</p>
-                <ul className={classes.responsibilities__list}>
+                <ul className={classes.responsibilities__list} style={{ listStyleImage: `url("/images/others/list-style-${company}.svg")` }}>
                   {responsibilities.map((responsibility) => {
                     return <li key={uuidv4()}><span>{responsibility}</span></li>;
                   })}

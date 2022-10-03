@@ -1,6 +1,6 @@
 const workExperience = [
   {
-    company: 'Cellcard',
+    company: 'cellcard',
     logo: '/images/logos/cellcard.png',
     positions: [
       {
@@ -30,7 +30,7 @@ const workExperience = [
     ],
   },
   {
-    company: 'Maybank',
+    company: 'maybank',
     logo: '/images/logos/maybank.png',
     positions: [
       {
