@@ -2,13 +2,17 @@
 @import "../../styles/mixins.module.scss";
 
 .profile {
+  position: relative;
   width: 300px;
   height: 300px;
 
-  border: 10px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+  box-sizing: border-box;
 
+  border: 10px solid transparent;
+  border-radius: 50%;
   overflow: hidden;
+
+  background: linear-gradient(to right, #ff0000, #ffa500) border-box;
 
   @include viewport(mobile) {
     width: 150px;
