@@ -9,6 +9,10 @@
   padding-top: 120px;
   margin-bottom: 240px;
 
+  @include viewport(mobile) {
+    margin-bottom: 160px;
+  }
+
   &__title {
     margin: 32px 0 0 0;
 
@@ -49,6 +53,7 @@
 
     @include viewport(mobile) {
       width: 45ch;
+      margin-bottom: 20px;
     }
   }
 
