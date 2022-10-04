@@ -38,6 +38,7 @@
 
   &__bio {
     width: 75ch;
+    margin-bottom: 80px;
 
     font-weight: 400;
     font-size: 14px;
@@ -48,6 +49,16 @@
 
     @include viewport(mobile) {
       width: 45ch;
+    }
+  }
+
+  &__illustration {
+    width: 25vw;
+    height: 25vw;
+
+    @include viewport(mobile) {
+      width: 240px;
+      height: 240px;
     }
   }
 }
