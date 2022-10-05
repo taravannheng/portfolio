@@ -18,7 +18,7 @@ const ContactSection = () => {
           >
             <input type="text" name="name" placeholder="Name" required />
             <input type="email" name="email" placeholder="Email" required />
-            <textarea placeholder="Enter your message here..."></textarea>
+            <textarea name="message" placeholder="Enter your message here..." required></textarea>
             <input type="hidden" name="_autoresponse" value="Thanks for your email! Well Received!"></input>
             <div className={classes.form__submit_button_container}>
               <button type="submit">SEND</button>
