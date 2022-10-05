@@ -12,7 +12,7 @@ const ContactSection = () => {
         </div>
         <div className={classes.content__form_container}>
           <form
-            action="https://formsubmit.co/heng.p.taravann@gmail.com"
+            action={`https://formsubmit.co/${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
             method="POST"
             className={classes.form}
           >
