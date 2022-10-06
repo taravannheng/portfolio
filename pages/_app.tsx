@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Taravann | Portfolio</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="all" />
         <meta name="author" content="Taravann Heng" />
         <meta
           name="description"
