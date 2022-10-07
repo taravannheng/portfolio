@@ -1,11 +1,13 @@
+@import "../../styles/typography.module.scss";
 @import "../../styles/mixins.module.scss";
 
 .skills {
   margin-bottom: 240px;
 
   &__title {
-    font-size: 56px;
-    font-weight: 900;
+    @include text(h2);
+
+
     text-align: center;
     margin-bottom: 140px;
 
@@ -14,7 +16,7 @@
     }
 
     @include viewport(mobile) {
-      font-size: 36px;
+      @include text(h5);
       margin-bottom: 0;
     }
   }
@@ -60,8 +62,8 @@
     }
 
     p {
-      font-weight: 400;
-      font-size: 14px;
+      @include text(body2);
+
       margin-bottom: 48px;
 
       text-align: center;

@@ -1,4 +1,5 @@
 @import "../../styles/colors.module.scss";
+@import "../../styles/typography.module.scss";
 @import "../../styles/mixins.module.scss";
 
 .contact {
@@ -8,12 +9,11 @@
   }
 
   &__title {
-    font-size: 56px;
-    font-weight: 900;
+    @include text(h2);
     text-align: center;
 
     @include viewport(mobile) {
-      font-size: 36px;
+      @include text(h4);
       margin-bottom: 60px;
     }
   }
@@ -94,8 +94,7 @@
       border: 0;
       background-color: $color-gray-3;
 
-      font-weight: 500;
-      letter-spacing: 1px;
+      @include text(button);
       color: $color-light;
 
       cursor: pointer;

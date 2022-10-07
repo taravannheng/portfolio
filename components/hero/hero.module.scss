@@ -1,4 +1,5 @@
 @import "../../styles/colors.module.scss";
+@import "../../styles/typography.module.scss";
 @import "../../styles/mixins.module.scss";
 
 .hero {
@@ -16,22 +17,19 @@
   &__title {
     margin: 32px 0 0 0;
 
-    font-weight: 900;
-    font-size: 96px;
-    letter-spacing: 5px;
+    @include text(h1);
+
     text-transform: uppercase;
 
     @include viewport(mobile) {
-      font-size: 48px;
+      @include text(h3);
     }
   }
 
   &__subtitle {
     margin: 8px 0 24px 0;
 
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 0.5px;
+    @include text(h5);
 
     @include viewport(mobile) {
       .subtitle__optional {
@@ -44,11 +42,9 @@
     width: 75ch;
     margin-bottom: 80px;
 
-    font-weight: 400;
-    font-size: 14px;
+    @include text(body2);
+
     text-align: justify;
-    letter-spacing: 0.5px;
-    line-height: 24px;
     color: $color-gray-1;
 
     @include viewport(mobile) {
