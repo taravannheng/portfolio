@@ -10,6 +10,7 @@ const Profile = ({ src }) => {
         width={300}
         height={300}
         alt="profile picture"
+        priority
       />
     </div>
   );
