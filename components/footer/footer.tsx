@@ -38,11 +38,14 @@ const FooterSection = () => {
           </Link>
         </div>
       </div>
-      <div className={classes.footer__copyright}>
-        <p className={classes.copyright__credit}>
+      <div className={classes.footer__text}>
+        <p className={classes.text__info}>
           Designed and Built by Taravann Heng
         </p>
-        <p className={classes.copyright__text}>
+        <p className={classes.text__credit}>
+          <Link href="/credits">Credits</Link>
+        </p>
+        <p className={classes.text__copyright}>
           All Rights Reserved · {getYear()}
         </p>
       </div>

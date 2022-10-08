@@ -8,13 +8,16 @@
   align-items: center;
   padding-bottom: 24px;
 
+  border: 1px solid #fff;
+
   &__social {
     display: flex;
     flex-direction: row;
     margin-bottom: 36px;
   }
 
-  &__copyright {
+  &__text {
+
     p {
       margin: 0;
 
@@ -39,9 +42,13 @@
   }
 }
 
-.copyright {
-  &__credit, &__text {
+.text {
+  &__info, &__credit, &__copyright {
     @include text(body2);
     padding: 4px;
-  }  
+  }
+
+  &__credit {
+    cursor: pointer;
+  }
 }
