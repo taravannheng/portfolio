@@ -12,10 +12,10 @@ const WorkSection = () => {
       <div className={classes.content}>
         <div className={classes.content__list}>
           <div className={classes.list__left_section}>
-            <WorkCard company={workExperience[0].company} logo={workExperience[0].logo} positions={workExperience[0].positions} />
+            <WorkCard url={workExperience[0].url} company={workExperience[0].company} logo={workExperience[0].logo} positions={workExperience[0].positions} />
           </div>
           <div className={classes.list__right_section}>
-            <WorkCard company={workExperience[1].company}  logo={workExperience[1].logo} positions={workExperience[1].positions} />
+            <WorkCard url={workExperience[1].url} company={workExperience[1].company}  logo={workExperience[1].logo} positions={workExperience[1].positions} />
           </div>
         </div>
         <div className={classes.content__illustration}>

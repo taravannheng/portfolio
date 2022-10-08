@@ -1,14 +1,19 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 
 import classes from './work-card.module.scss';
 
-const WorkCard = ({ company, logo, positions }) => {
+const WorkCard = ({ company, logo, positions, url }) => {
   return (
     <div className={classes.work_card}>
       <div className={classes.work_card__logo}>
         <div>
-          <Image src={logo} width={400} height={400} alt={company} />
+          <Link href={url}>
+            <a target="_blank">
+              <Image src={logo} width={400} height={400} alt={company} />
+            </a>
+          </Link>
         </div>
       </div>
       <div className={classes.work_card__description}>
@@ -24,12 +29,23 @@ const WorkCard = ({ company, logo, positions }) => {
                 <span className={classes.date__duration}>{duration}</span>
               </p>
               <div className={classes.position__responsibilities}>
-                <p className={classes.responsibilities__text}>Responsibilities include:</p>
-                <ul className={classes.responsibilities__list} style={{ listStyleImage: `url("/images/others/list-style-${company}.svg")` }}>
+                <p className={classes.responsibilities__text}>
+                  Responsibilities include:
+                </p>
+                <ul
+                  className={classes.responsibilities__list}
+                  style={{
+                    listStyleImage: `url("/images/others/list-style-${company}.svg")`,
+                  }}
+                >
                   {responsibilities.map((responsibility) => {
-                    return <li key={uuidv4()}><span>{responsibility}</span></li>;
+                    return (
+                      <li key={uuidv4()}>
+                        <span>{responsibility}</span>
+                      </li>
+                    );
                   })}
-              </ul>
+                </ul>
               </div>
             </div>
           );

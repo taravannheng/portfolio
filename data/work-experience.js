@@ -2,6 +2,7 @@ const workExperience = [
   {
     company: 'cellcard',
     logo: '/images/logos/cellcard.png',
+    url: 'https://www.cellcard.com.kh/en/',
     positions: [
       {
         id: 'p1',
@@ -33,6 +34,7 @@ const workExperience = [
   {
     company: 'maybank',
     logo: '/images/logos/maybank.png',
+    url: 'https://www.maybank2u.com.kh/en/personal/index.page',
     positions: [
       {
         id: 'p3',
