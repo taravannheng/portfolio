@@ -73,6 +73,8 @@
     border: 0;
     outline: 0;
     background-color: $color-gray-3;
+
+    @include text(body1);
     color: $color-light;
   }
 
@@ -83,6 +85,8 @@
     outline: 0;
     resize: none;
     background-color: $color-gray-3;
+
+    @include text(body1);
     color: $color-light;
   }
 
