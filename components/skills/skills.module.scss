@@ -16,7 +16,7 @@
     }
 
     @include viewport(mobile) {
-      @include text(h5);
+      @include text(h4);
       margin-bottom: 0;
     }
   }
