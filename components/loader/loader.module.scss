@@ -13,6 +13,7 @@
   z-index: 100;
   background-color: $color-dark;
   animation: fadeOut 2.3s ease 6s forwards;
+  overflow: hidden;
 
   &__text {
     display: grid;
