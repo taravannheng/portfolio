@@ -1,5 +1,9 @@
 @import './colors.module.scss';
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 html,
 body {
   padding: 0;
