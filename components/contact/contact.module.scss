@@ -36,7 +36,9 @@
     height: 50vw;
     margin-top: -120px;
 
-    animation: shake 0.5s infinite;
+    &:hover {
+      animation: shake 0.5s infinite;
+    }
 
     @include viewport(tablet) {
       margin: 0;

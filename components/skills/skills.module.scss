@@ -38,7 +38,12 @@
     height: 50vw;
     margin-top: -120px;
 
-    animation: rocking 2.5s ease-in-out infinite alternate;
+    animation: rocking 2s ease-in-out infinite alternate;
+    animation-play-state: paused;
+
+    &:hover {
+      animation-play-state: running;
+    }
 
     @include viewport(tablet) {
       margin: 0;
