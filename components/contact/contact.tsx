@@ -4,7 +4,7 @@ import classes from './contact.module.scss';
 
 const ContactSection = () => {
   return (
-    <div className={classes.contact}>
+    <div className={classes.contact} id="contact">
       <h2 className={classes.contact__title}>Contact</h2>
       <div className={`${classes.contact__content} ${classes.content}` }>
         <div className={classes.content__illustration}>
