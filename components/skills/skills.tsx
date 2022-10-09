@@ -4,7 +4,7 @@ import classes from './skills.module.scss';
 
 const SkillsSection = () => {
   return (
-    <div className={classes.skills} id="skills">
+    <section className={classes.skills} id="skills">
       <h2 className={classes.skills__title}>Skills</h2>
       <div className={classes.content}>
         <div className={classes.content__illustration}>
@@ -34,7 +34,7 @@ const SkillsSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -7,7 +7,7 @@ import workExperience from '../../data/work-experience';
 
 const WorkSection = () => {
   return (
-    <div className={classes.work} id="works">
+    <section className={classes.work} id="works">
       <h2 className={classes.work__title}>Work Experience</h2>
       <div className={classes.content}>
         <div className={classes.content__list}>
@@ -22,7 +22,7 @@ const WorkSection = () => {
           <Image layout='responsive' src='/images/illustrations/illustration-work.png' width={800} height={800} alt="illustration of work" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

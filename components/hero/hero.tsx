@@ -5,7 +5,7 @@ import Profile from '../profile/profile'
 
 const HeroSection = () => {
   return (
-    <div className={classes.hero}>
+    <section className={classes.hero}>
       <Profile src="/images/profile/profile.jpg" />
       <h1 className={classes.hero__title}>Taravann</h1>
       <h2 className={classes.hero__subtitle}><span className={classes.subtitle__optional}>A</span> Frontend Developer<span className={classes.subtitle__optional}> · Previously A UX Designer</span></h2>
@@ -13,7 +13,7 @@ const HeroSection = () => {
       <div className={classes.hero__illustration}>
         <Image src='/images/illustrations/illustration-hero.png' width={800} height={800} alt="illustration" priority />
       </div>
-    </div>
+    </section>
   )
 }
 

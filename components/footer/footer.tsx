@@ -9,7 +9,7 @@ const getYear = () => {
 
 const FooterSection = () => {
   return (
-    <div className={classes.footer}>
+    <footer className={classes.footer}>
       <div className={classes.footer__social}>
         <div className={classes.social__icon}>
           <Link
@@ -46,7 +46,7 @@ const FooterSection = () => {
           All Rights Reserved · {getYear()}
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 
