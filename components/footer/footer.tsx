@@ -42,9 +42,6 @@ const FooterSection = () => {
         <p className={classes.text__info}>
           Designed and Built by Taravann Heng
         </p>
-        <p className={classes.text__credit}>
-          <Link href="/credits">Credits</Link>
-        </p>
         <p className={classes.text__copyright}>
           All Rights Reserved · {getYear()}
         </p>
