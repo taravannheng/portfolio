@@ -21,6 +21,7 @@ const FooterSection = () => {
                 width={36}
                 height={36}
                 alt="LinkedIn"
+                loading='eager'
               />
             </a>
           </Link>
@@ -33,6 +34,7 @@ const FooterSection = () => {
                 width={36}
                 height={36}
                 alt="GitHub"
+                loading='eager'
               />
             </a>
           </Link>

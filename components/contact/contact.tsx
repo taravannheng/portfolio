@@ -8,7 +8,7 @@ const ContactSection = () => {
       <h2 className={classes.contact__title}>Contact</h2>
       <div className={`${classes.contact__content} ${classes.content}` }>
         <div className={classes.content__illustration}>
-          <Image layout='responsive' src='/images/illustrations/illustration-contact.png' width={800} height={800} alt="illustration of contact" />
+          <Image loading='eager' layout='responsive' src='/images/illustrations/illustration-contact.png' width={800} height={800} alt="illustration of contact" />
         </div>
         <div className={classes.content__form_container}>
           <form

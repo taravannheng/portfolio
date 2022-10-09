@@ -19,7 +19,7 @@ const WorkSection = () => {
           </div>
         </div>
         <div className={classes.content__illustration}>
-          <Image layout='responsive' src='/images/illustrations/illustration-work.png' width={800} height={800} alt="illustration of work" />
+          <Image loading='eager' layout='responsive' src='/images/illustrations/illustration-work.png' width={800} height={800} alt="illustration of work" />
         </div>
       </div>
     </section>

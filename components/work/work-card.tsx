@@ -11,7 +11,7 @@ const WorkCard = ({ company, logo, positions, url }) => {
         <div>
           <Link href={url}>
             <a target="_blank">
-              <Image src={logo} width={400} height={400} alt={company} />
+              <Image priority src={logo} width={400} height={400} alt={company} />
             </a>
           </Link>
         </div>
