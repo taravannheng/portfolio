@@ -13,7 +13,8 @@
   z-index: 1000;
   padding-top: 24px;
   padding-bottom: 24px;
-  background-color: $color-gray-3;
+  border-bottom: 1px solid $color-gray-2;
+  background-color: rgba(38, 38, 38, 0.99);
 
   @include viewport(mobile) {
     padding-top: 24px;
