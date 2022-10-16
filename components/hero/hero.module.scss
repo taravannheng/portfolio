@@ -51,7 +51,17 @@
 
     @include viewport(mobile) {
       width: 45ch;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__download_cv_button {
+    @include button;
+    padding: 12px 28px;
+    border: 2px solid $color-light;
+
+    @include viewport(mobile) {
+      margin-bottom: 40px;
     }
   }
 
