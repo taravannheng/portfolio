@@ -6,7 +6,6 @@ import WorkSection from '../components/work/work';
 import ContactSection from '../components/contact/contact';
 import FooterSection from '../components/footer/footer';
 import Loader from '../components/loader/loader';
-import Header from '../components/header/header';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -23,7 +22,6 @@ const HomePage = () => {
 
       {!loading && (
         <div>
-          <Header hideElement="home" />
           <HeroSection />
           <SkillsSection />
           <WorkSection />
