@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 import classes from './hero.module.scss';
 import Profile from '../profile/profile';
-import Fab from '../fab/fab';
 
 const HeroSection = () => {
   return (
