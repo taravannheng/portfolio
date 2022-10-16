@@ -30,27 +30,7 @@ const workExperience = [
         ],
       },
     ],
-  },
-  {
-    company: 'maybank',
-    logo: '/images/logos/maybank.png',
-    url: 'https://www.maybank2u.com.kh/en/personal/index.page',
-    positions: [
-      {
-        id: 'p3',
-        title: 'Credit Admin and Loan Management Intern',
-        startDate: 'Apr 2017',
-        endDate: 'Jul 2017',
-        duration: '4 Months',
-        responsibilities: [
-          'Performed World Check',
-          'Prepared discharge letter',
-          'Prepared second or further legal charge',
-          'Registered and tracked security',
-        ],
-      },
-    ],
-  },
+  }
 ];
 
 export default workExperience;
