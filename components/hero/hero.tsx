@@ -12,12 +12,11 @@ const HeroSection = () => {
         <span className={classes.subtitle__optional}>A</span> Frontend Developer
         <span className={classes.subtitle__optional}>
           {' '}
-          · Previously A UX Designer
+          · UX Designer
         </span>
       </h2>
       <p className={classes.hero__bio}>
-        Hello, there! I&apos;m Taravann Heng. A developer/designer based in
-        Cambodia. I have some experiences doing both UX design and frontend
+        Hello, there! I&apos;m Taravann Heng, a developer/designer. I have some experiences doing both UX design and frontend
         development works for mobile apps and websites. Currently, I&apos;m
         focusing on frontend web development.
       </p>
