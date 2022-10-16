@@ -92,6 +92,14 @@
       margin-bottom: 4px;
       text-indent: -11px;
 
+      @include viewport(tablet) {
+        text-indent: -13px;
+      }
+
+      @include viewport(mobile) {
+        text-indent: -13px;
+      }
+
       &:not(:last-child) {
         margin-bottom: 12px;
       }
