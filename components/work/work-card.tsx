@@ -29,9 +29,6 @@ const WorkCard = ({ company, logo, positions, url }) => {
                 <span className={classes.date__duration}>{duration}</span>
               </p>
               <div className={classes.position__responsibilities}>
-                {/* <p className={classes.responsibilities__text}>
-                  Responsibilities include:
-                </p> */}
                 <ul
                   className={classes.responsibilities__list}
                   style={{
