@@ -11,9 +11,9 @@ const workExperience = [
         endDate: 'Oct 2022',
         duration: '5 Months',
         responsibilities: [
-          'Fixed minor bugs',
-          'Built app for QA testing',
-          'Enhanced UI',
+          'Utilized Bitrise (CI/CD tool) to build apps for quality assurance testing',
+          'Maintained the application by fixing minor bugs as reported by quality assurance',
+          'Developed a dynamic app bar component with background image fetched from CMS using Restful API for celebrating different events such as anniversary or festivals',
         ],
       },
       {
@@ -23,10 +23,10 @@ const workExperience = [
         endDate: 'May 2022',
         duration: '7 Months',
         responsibilities: [
-          'Created lo-fi and hi-fi wireframes',
-          'Created hi-fi prototypes',
-          'Created design systems for consistency',
-          'Created userflows',
+          'Conducted research which influenced the decision to transition to new design tool which led to cost cut by approximately 80% while ensuring existing use cases are maintained',
+          'Created design systems for two projects which resulted in reusability of components, better consistency and smoother handover to new designer',
+          'Restructured design files to clearly indicate the design progress of each feature for business analyst, developers and product owners',
+          'Designed both low and high fidelity wireframes and prototypes that fulfilled business requirements as set by product owners',
         ],
       },
     ],
