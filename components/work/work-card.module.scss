@@ -93,11 +93,11 @@
       text-indent: -11px;
 
       @include viewport(tablet) {
-        text-indent: -13px;
+        text-indent: -14px;
       }
 
       @include viewport(mobile) {
-        text-indent: -13px;
+        text-indent: -14px;
       }
 
       &:not(:last-child) {
