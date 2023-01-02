@@ -1,3 +1,4 @@
+@import "../../styles/colors.module.scss";
 @import "../../styles/typography.module.scss";
 @import "../../styles/mixins.module.scss";
 
@@ -12,7 +13,7 @@
     margin-bottom: 140px;
 
     @include viewport(tablet) {
-      margin-bottom: 0;
+      margin-bottom: 40px;
     }
 
     @include viewport(mobile) {
@@ -36,7 +37,7 @@
   &__illustration {
     width: 50vw;
     height: 50vw;
-    margin-top: -120px;
+    margin-top: -80px;
 
     @include viewport(tablet) {
       margin: 0;
@@ -50,34 +51,32 @@
 
   &__technology {
     margin-left: -80px;
-    margin-top: 100px;
+    // margin-top: 100px;
 
     @include viewport(tablet) {
-      margin-top: 120px;
+      // margin-top: 120px;
     }
 
     @include viewport(mobile) {
-      margin-top: 24px;
+      // margin-top: 24px;
       margin-left: 0;
     }
 
     p {
       @include text(body2);
 
-      margin-bottom: 48px;
+      margin-bottom: 24px;
 
       text-align: center;
 
       @include viewport(mobile) {
-        margin-bottom: 36px;
+        margin-bottom: 16px;
       }
     }
 
     ul {
-      display: grid;
-      grid-template-columns: repeat(8, 36px);
-      justify-content: space-between;
-      row-gap: 24px;
+      display: flex;
+      flex-direction: column;
       width: 560px;
       padding: 0;
       margin-top: 20px;
@@ -91,12 +90,32 @@
       }
 
       li {
-        width: 36px;
-        height: 36px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 16px;
+        background: $color-gray-3;
+        border-radius: 4px;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+
+        .techLogo {
+          width: 36px;
+          height: 36px;
+        }
+
+        span {
+          margin-left: 32px;
+        }
+
 
         @include viewport(mobile) {
-          width: 24px;
-          height: 24px;
+          .techLogo {
+            width: 24px;
+            height: 24px;
+          }
         }
       }
     }
