@@ -20,7 +20,7 @@ const HeroSection = () => {
         development works for mobile apps and websites. Currently, I&apos;m
         focusing on frontend web development.
       </p>
-      <a href="/cv/taravann-heng-cv.pdf" download="taravann-heng-cv" className={classes.hero__download_cv_button}>Download CV</a>
+      <a href="/cv/taravannheng-cv.pdf" download="taravann-heng-cv" className={classes.hero__download_cv_button}>Download CV</a>
       <div className={classes.hero__illustration}>
         <Image
           src="/images/illustrations/illustration-hero.png"
