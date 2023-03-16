@@ -24,7 +24,6 @@ const HomePage = () => {
         <div>
           <HeroSection />
           <SkillsSection />
-          <WorkSection />
           <ContactSection />
           <FooterSection />
         </div>
