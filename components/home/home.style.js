@@ -8,6 +8,11 @@ export const TabsSC = styled(Tabs)`
   padding-top: 80px !important;
   padding-bottom: 40px !important;
   background-color: transparent !important;
+
+  @media only screen and (max-width: 600px) {
+    padding-top: 40px !important;
+    padding-bottom: 0px !important;
+  }
 `;
 
 export const TabSC = styled(Tab)`
