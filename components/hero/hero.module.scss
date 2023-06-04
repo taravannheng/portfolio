@@ -10,8 +10,6 @@
   padding-top: 120px;
   margin-bottom: 240px;
 
-  animation: fadeIn 3s ease;
-
   @include viewport(mobile) {
     margin-bottom: 160px;
   }
@@ -76,12 +74,3 @@
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}

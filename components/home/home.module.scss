@@ -1,0 +1,17 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/typography.module.scss";
+@import "../../styles/mixins.module.scss";
+
+.homepage {
+  animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

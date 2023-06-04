@@ -1,11 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import HeaderSection from '../components/header/header';
-import HeroSection from '../components/hero/hero';
-import SkillsSection from '../components/skills/skills';
-import ContactSection from '../components/contact/contact';
-import FooterSection from '../components/footer/footer';
-import Loader from '../components/loader/loader';
+import Loader from "../components/loader/loader";
+import Home from "../components/home/home";
+
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -19,15 +16,8 @@ const HomePage = () => {
   return (
     <>
       {loading && <Loader />}
-
       {!loading && (
-        <div>
-          <HeaderSection />
-          <HeroSection />
-          <SkillsSection />
-          <ContactSection />
-          <FooterSection />
-        </div>
+        <Home />
       )}
     </>
   );
