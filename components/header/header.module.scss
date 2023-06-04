@@ -1,0 +1,17 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/typography.module.scss";
+@import "../../styles/mixins.module.scss";
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: $color-darker;
+}
+
+.logo {
+  width: clamp(40px, 40px, 40px);
+  height: clamp(40px, 40px, 40px);
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import HeaderSection from '../components/header/header';
 import HeroSection from '../components/hero/hero';
 import SkillsSection from '../components/skills/skills';
 import ContactSection from '../components/contact/contact';
@@ -21,6 +22,7 @@ const HomePage = () => {
 
       {!loading && (
         <div>
+          <HeaderSection />
           <HeroSection />
           <SkillsSection />
           <ContactSection />
