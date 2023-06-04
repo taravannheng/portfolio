@@ -13,19 +13,18 @@
   border-radius: 16px;
 
   @include viewport(mobile) {
-    margin-bottom: 160px;
+    padding: 24px 24px 80px 24px;
+  }
+
+  @include viewport(tablet) {
+    padding: 24px 24px 80px 24px;
   }
 
   &__title {
     margin: 24px 0 8px 0;
-
     @include text(h1);
 
     text-transform: uppercase;
-
-    @include viewport(mobile) {
-      @include text(h3);
-    }
   }
 
   &__subtitle {
