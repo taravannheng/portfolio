@@ -20,7 +20,7 @@
       margin: 0;
 
       text-align: center;
-      color: $color-gray-1;
+      color: $color-light;
     }
   }
 }
@@ -42,7 +42,8 @@
 
 .text {
   &__info, &__credit, &__copyright {
-    @include text(body2);
+    font-size: 12px;
+    font-weight: 400;
     padding: 4px;
   }
 
