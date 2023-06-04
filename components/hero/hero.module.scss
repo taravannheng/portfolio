@@ -7,15 +7,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 120px;
+  padding: 40px 40px 160px 40px;
   margin-bottom: 240px;
+  background-color: $color-darker;
+  border-radius: 16px;
 
   @include viewport(mobile) {
     margin-bottom: 160px;
   }
 
   &__title {
-    margin: 32px 0 0 0;
+    margin: 24px 0 8px 0;
 
     @include text(h1);
 
@@ -27,9 +29,9 @@
   }
 
   &__subtitle {
-    margin: 8px 0 24px 0;
-
-    @include text(h5);
+    color: $color-light;
+    @include text(h3);
+    margin: 0 0 8px 0;
 
     @include viewport(mobile) {
       .subtitle__optional {
@@ -40,12 +42,12 @@
 
   &__bio {
     width: 75ch;
-    margin-bottom: 80px;
+    margin-bottom: 56px;
 
     @include text(body2);
 
     text-align: center;
-    color: $color-gray-1;
+    color: $color-light;
 
     @include viewport(mobile) {
       width: 45ch;
@@ -53,24 +55,23 @@
     }
   }
 
-  &__download_cv_button {
-    @include button;
-    padding: 12px 28px;
-    border: 2px solid $color-light;
-
-    @include viewport(mobile) {
-      margin-bottom: 40px;
-    }
+  &__technology {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 56px;
   }
 
-  &__illustration {
-    width: 25vw;
-    height: 25vw;
+  &__download_cv_button {
+    @include button;
+  }
+}
 
-    @include viewport(mobile) {
-      width: 240px;
-      height: 240px;
-    }
+.technology {
+  &__text {
+    color: $color-light;
+    margin-bottom: 24px;
   }
 }
 
