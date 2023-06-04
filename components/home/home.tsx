@@ -24,6 +24,7 @@ function TabPanel(props: TabPanelProps) {
 
   return (
     <div
+      className={classes.tabpanel}
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -65,7 +66,7 @@ const Home = () => {
       {loading && <Loader />}
 
       {!loading && (
-        <div className={classes.homepage}>
+        <div className={classes.home}>
           <HeaderSection />
           {/* ================================================================================= */}
           <Box sx={{ width: "100%" }}>
