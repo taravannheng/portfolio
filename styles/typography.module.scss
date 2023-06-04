@@ -1,48 +1,46 @@
 @mixin text($scale) {
   @if $scale == h1 {
     font-family: 'Inter', sans-serif !important;
-    font-size: 96px;
-    font-weight: 900;
-    letter-spacing: 5px;
+    font-size: 34px;
+    font-weight: 700;
   }
   @else if $scale == h2 {
     font-family: 'Inter', sans-serif !important;
-    font-size: 56px;
-    font-weight: 900;
+    font-size: 22px;
+    font-weight: 700;
   }
   @else if $scale == h3 {
     font-family: 'Inter', sans-serif !important;
-    font-size: 48px;
-    font-weight: 900;
-    letter-spacing: 5px;
+    font-size: 16px;
+    font-weight: 600;
   }
   @else if $scale == h4 {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 36px;
-    font-weight: 900;
+    // font-family: 'Inter', sans-serif !important;
+    // font-size: 36px;
+    // font-weight: 900;
   }
   @else if $scale == h5 {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    // font-family: 'Inter', sans-serif !important;
+    // font-size: 16px;
+    // font-weight: 500;
+    // letter-spacing: 0.5px;
   }
   @else if $scale == body1 {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 16px;
-    font-weight: 400;
+    // font-family: 'Inter', sans-serif !important;
+    // font-size: 16px;
+    // font-weight: 400;
   }
   @else if $scale == body2 {
     font-family: 'Inter', sans-serif !important;
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.5px;
-    line-height: 24px;
+    // letter-spacing: 0.5px;
+    line-height: 150%;
   }
   @else if $scale == button {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    // font-family: 'Inter', sans-serif !important;
+    // font-size: 14px;
+    // font-weight: 500;
+    // letter-spacing: 1px;
   }
 }
