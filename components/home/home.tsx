@@ -10,8 +10,8 @@ import SkillsSection from "../skills/skills";
 import ContactSection from "../contact/contact";
 import FooterSection from "../footer/footer";
 import Loader from "../loader/loader";
-import classes from './home.module.scss'
-import { TabSC, TabsSC } from './home.style';
+import classes from "./home.module.scss";
+import { TabSC, TabsSC } from "./home.style";
 import Image from "next/image";
 
 interface TabPanelProps {
@@ -69,7 +69,6 @@ const Home = () => {
       {!loading && (
         <div className={classes.home}>
           <HeaderSection />
-          {/* ================================================================================= */}
           <Box sx={{ width: "100%" }}>
             <Box>
               <TabsSC
@@ -78,11 +77,11 @@ const Home = () => {
                 onChange={handleChange}
                 aria-label="basic tabs example"
                 sx={{
-                  '& .MuiTabs-indicator': {
-                    display: 'none !important', // Hide the default active indicator
+                  "& .MuiTabs-indicator": {
+                    display: "none !important",
                   },
-                  '& .Mui-selected': {
-                    backgroundColor: '#3075FF !important', // Customize the background color of the active tab
+                  "& .Mui-selected": {
+                    backgroundColor: "#3075FF !important",
                   },
                 }}
               >
@@ -98,10 +97,9 @@ const Home = () => {
               {/* <SkillsSection /> */}
             </TabPanel>
             <TabPanel value={value} index={2}>
-              {/* <ContactSection /> */}
+              <ContactSection />
             </TabPanel>
           </Box>
-          {/* ================================================================================= */}
           <FooterSection />
         </div>
       )}
