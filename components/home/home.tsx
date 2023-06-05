@@ -95,10 +95,10 @@ const Home = () => {
               <HeroSection />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <SkillsSection />
+              {/* <SkillsSection /> */}
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <ContactSection />
+              {/* <ContactSection /> */}
             </TabPanel>
           </Box>
           {/* ================================================================================= */}
