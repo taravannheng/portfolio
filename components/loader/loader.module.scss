@@ -10,6 +10,7 @@
   align-items: center;
   min-width: 100vw;
   min-height: 100vh;
+  max-height: 100vh;
   z-index: 100;
   background-color: $color-dark;
   animation: fadeOut 2.3s ease 6s forwards;
