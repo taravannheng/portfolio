@@ -12,6 +12,7 @@ import FooterSection from "../footer/footer";
 import Loader from "../loader/loader";
 import classes from './home.module.scss'
 import { TabSC, TabsSC } from './home.style';
+import Image from "next/image";
 
 interface TabPanelProps {
   children?: React.ReactNode;

@@ -4,23 +4,55 @@
 
 .hero {
   display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 160px;
+    margin-bottom: 120px;
+
+    @include viewport(mobile) {
+      padding-bottom: 80px;
+      margin-bottom: 120px;
+    }
+
+    @include viewport(tablet) {
+      padding-bottom: 80px;
+    }
+
+  &__body {
+    display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 40px 40px 160px 40px;
-  margin-bottom: 240px;
-  background-color: $color-darker;
   border-radius: 16px;
+    background-color: $color-darker;
 
-  @include viewport(mobile) {
-    max-width: 366px;
-    overflow: hidden;
-    padding: 40px 24px 80px 24px;
-    margin-bottom: 120px;
+    @include viewport(mobile) {
+      max-width: 366px;
+      overflow: hidden;
+      padding: 40px 24px 80px 24px;
+    }
+  
+    @include viewport(tablet) {
+      padding: 40px 24px 80px 24px;
+    }
   }
 
-  @include viewport(tablet) {
-    padding: 40px 24px 80px 24px;
+  &__illustration {
+    padding-top: 80px;
+    width: 25vw;
+    height: 25vw;
+
+    @include viewport(mobile) {
+      width: 50vw;
+      height: 50vw;
+      padding-top: 40px;
+    }
+
+    @include viewport(tablet) {
+      padding-top: 40px;
+    }
   }
 
   &__title {
