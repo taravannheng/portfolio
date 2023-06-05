@@ -1,5 +1,6 @@
 @import "../../styles/typography.module.scss";
 @import "../../styles/colors.module.scss";
+@import "../../styles/mixins.module.scss";
 
 .loader {
   position: absolute;
@@ -31,6 +32,7 @@
       margin: 0;
       padding: 0;
       border: 0;
+      @include text(h3);
 
       color: $color-light;
     }
