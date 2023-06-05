@@ -49,60 +49,49 @@ function a11yProps(index: number) {
 }
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
   const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 6000);
-  }, []);
-
   return (
     <>
-      {loading && <Loader />}
-
-      {!loading && (
-        <div className={classes.home}>
-          <HeaderSection />
-          <Box sx={{ width: "100%" }}>
-            <Box>
-              <TabsSC
-                centered
-                value={value}
-                onChange={handleChange}
-                aria-label="basic tabs example"
-                sx={{
-                  "& .MuiTabs-indicator": {
-                    display: "none !important",
-                  },
-                  "& .Mui-selected": {
-                    backgroundColor: "#3075FF !important",
-                  },
-                }}
-              >
-                <TabSC label="Profile" {...a11yProps(0)} disableRipple />
-                <TabSC label="Projects" {...a11yProps(1)} disableRipple />
-                <TabSC label="Contact" {...a11yProps(2)} disableRipple />
-              </TabsSC>
-            </Box>
-            <TabPanel value={value} index={0}>
-              <HeroSection />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              {/* <SkillsSection /> */}
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              <ContactSection />
-            </TabPanel>
+      <div className={classes.home}>
+        <HeaderSection />
+        <Box sx={{ width: "100%" }}>
+          <Box>
+            <TabsSC
+              centered
+              value={value}
+              onChange={handleChange}
+              aria-label="basic tabs example"
+              sx={{
+                "& .MuiTabs-indicator": {
+                  display: "none !important",
+                },
+                "& .Mui-selected": {
+                  backgroundColor: "#3075FF !important",
+                },
+              }}
+            >
+              <TabSC label="Profile" {...a11yProps(0)} disableRipple />
+              <TabSC label="Projects" {...a11yProps(1)} disableRipple />
+              <TabSC label="Contact" {...a11yProps(2)} disableRipple />
+            </TabsSC>
           </Box>
-          <FooterSection />
-        </div>
-      )}
+          <TabPanel value={value} index={0}>
+            <HeroSection />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            {/* <SkillsSection /> */}
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <ContactSection />
+          </TabPanel>
+        </Box>
+        <FooterSection />
+      </div>
     </>
   );
 };
