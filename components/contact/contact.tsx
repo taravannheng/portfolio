@@ -30,6 +30,57 @@ const ContactSection = () => {
             </div>
           </form>
         </div>
+        <hr className={classes.contact__divider} />
+        <div className={classes.contact__social_container}>
+          <a
+            href="https://github.com/taravannheng"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div className={classes.contact__social_logo}>
+              <Image
+                loading="lazy"
+                src="/images/social/github.svg"
+                width={24}
+                height={24}
+                alt="github logo"
+              />
+            </div>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/taravann-heng"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div className={classes.contact__social_logo}>
+              <Image
+                loading="lazy"
+                src="/images/social/linkedin.svg"
+                width={24}
+                height={24}
+                alt="github logo"
+              />
+            </div>
+            LinkedIn
+          </a>
+          <a
+            href="https://dribbble.com/taravann"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div className={classes.contact__social_logo}>
+              <Image
+                loading="lazy"
+                src="/images/social/dribbble.png"
+                width={24}
+                height={24}
+                alt="dribbble logo"
+              />
+            </div>
+            Dribbble
+          </a>
+        </div>
       </div>
       <div className={classes.contact__illustration}>
         <Image
