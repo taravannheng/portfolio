@@ -1,0 +1,223 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/typography.module.scss";
+@import "../../styles/mixins.module.scss";
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  max-width: 1200px;
+  min-height: 100%;
+  max-height: 480px;
+  overflow: hidden;
+  // border: 1px solid red;
+
+  &__media {
+    flex: 1;
+    min-height: 480px;
+    height: 480px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 50%;
+    flex: 1;
+    padding: 40px;
+    background-color: $color-darker;
+    // border: 1px solid red;
+  }
+}
+
+.media {
+  &__item {
+    min-height: 480px;
+    height: 480px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    // border: 1px solid red;
+  }
+}
+
+.content {
+  &__body {
+    display: flex;
+    flex-direction: row;
+    min-height: calc(100% - 66px);
+    max-height: calc(100% - 66px);
+    // border: 1px solid red;
+    overflow: hidden;
+  }
+
+  &__control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // border: 1px solid red;
+  }
+}
+
+.body {
+  &__item {
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    // border: 1px solid red;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.control {
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 360px;
+    max-width: 360px;
+    // border: 1px solid red;
+  }
+
+  &__button {
+    width: 80px;
+    height: 40px;
+    border-radius: 1000px;
+    background-color: $color-dark;
+    border: 0;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-accent;
+    }
+  }
+
+  &__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 1000px;
+    background-color: $color-dark;
+  }
+
+  &__active_indicator {
+    background-color: $color-accent;
+  }
+}
+
+.summary_item {
+  &__title {
+    text-align: center;
+    margin: 0 0 24px 0;
+    padding: 0;
+    @include text(h1);
+    color: $color-lightest;
+  }  
+
+  &__description {
+    height: clamp(260px, 260px, 260px);
+    margin: 0;
+    padding: 0;
+    @include text(body2);
+    color: $color-light;
+    overflow: scroll;
+  }
+}
+
+.functionality_item {
+  &__title {
+    text-align: center;
+    margin: 0 0 24px 0;
+    padding: 0;
+    @include text(h2);
+    color: $color-lightest;
+  }
+}
+
+.technology_item {
+  &__title {
+    text-align: center;
+    margin: 0 0 24px 0;
+    padding: 0;
+    @include text(h2);
+    color: $color-lightest;
+  }
+}
+
+.social_item {
+  &__title {
+    text-align: center;
+    margin: 0 0 24px 0;
+    padding: 0;
+    @include text(h2);
+    color: $color-lightest;
+  }
+}
+
+.stack_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 16px;
+  // border: 1px solid red;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: $color_dark;
+    @include text(body2);
+    color: $color-lightest;
+
+    &_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      // border: 1px solid red;
+
+      & > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      & > svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.social_grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 360px;
+    max-width: 400px;
+    @include button;
+
+    &_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+

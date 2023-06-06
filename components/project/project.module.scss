@@ -1,0 +1,38 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/typography.module.scss";
+@import "../../styles/mixins.module.scss";
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  padding-bottom: 160px;
+  margin-bottom: 120px;
+  // border: 1px solid red;
+
+  @include viewport(mobile) {
+    padding-bottom: 80px;
+    margin-bottom: 120px;
+  }
+
+  @include viewport(tablet) {
+    padding-bottom: 80px;
+  }
+
+  &__illustration {
+    padding-top: 80px;
+    width: 25vw;
+    height: 25vw;
+
+    @include viewport(mobile) {
+      width: 50vw;
+      height: 50vw;
+      padding-top: 40px;
+    }
+
+    @include viewport(tablet) {
+      padding-top: 40px;
+    }
+  }
+}

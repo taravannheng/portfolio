@@ -12,7 +12,7 @@ import FooterSection from "../footer/footer";
 import Loader from "../loader/loader";
 import classes from "./home.module.scss";
 import { TabSC, TabsSC } from "./home.style";
-import Image from "next/image";
+import ProjectSection from "../project/project";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -33,9 +33,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
+          <Box>{children}</Box>
       )}
     </div>
   );
@@ -84,7 +82,7 @@ const Home = () => {
             <HeroSection />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            {/* <SkillsSection /> */}
+            <ProjectSection />
           </TabPanel>
           <TabPanel value={value} index={2}>
             <ContactSection />
