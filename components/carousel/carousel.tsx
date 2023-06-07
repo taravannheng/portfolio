@@ -427,15 +427,16 @@ const Carousel: FC<CarouselInterface> = ({
     if (activeIndex > 0) {
       setActiveIndex((prevIndex) => prevIndex - 1);
     }
+
+    //reset
+    setIsProjectSelected(false);
+    setHoveredProjectIndex(null);
   };
 
   const nextHandler = () => {
     if (activeIndex < data.length) {
       setActiveIndex((prevIndex) => prevIndex + 1);
     }
-
-    console.log(hoveredProjectIndex)
-    console.log(isProjectSelected)
 
     if (isProjectSelected && hoveredProjectIndex !== null) {
       setActiveIndex(0);
