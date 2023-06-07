@@ -15,7 +15,7 @@ const ProjectSection = () => {
     <section className={classes.project}>
       <div className={classes.project__body}>
         {isSmallScreen && <Carousel data={projectData[activeProjectIndex].slides} projects={projectData} activeProjectIndex={activeProjectIndex} setActiveProjectIndex={setActiveProjectIndex}  />}
-        {/* {!isSmallScreen && <LargeCarousel data={projectData[0].slides} projects={projectData} activeProjectIndex={activeProjectIndex} */}
+        {!isSmallScreen && <LargeCarousel data={projectData[0].slides} projects={projectData} />}
       </div>
       <div className={classes.project__illustration}>
         <Image
