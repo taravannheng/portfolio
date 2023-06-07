@@ -57,6 +57,28 @@
   }
 }
 
+.featured_chip {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 1000px;
+  background-color: $color-accent;
+  @include text(small);
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 1000px;
+    margin-right: 8px;
+    background-color: $color-lightest;
+  }
+}
+
 .body {
   @include viewport(mobile) {
     overflow: hidden;
@@ -75,7 +97,7 @@
   }
 
   &__title_summary {
-    @include text(h1);
+    @include text(h2);
   }
 
   &__description_summary {
@@ -119,5 +141,79 @@
 
   &__active_indicator {
     background-color: $color-accent;
+  }
+}
+
+.stack_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-gap: 16px;
+  max-height: 154px;
+  padding-bottom: 24px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  // border: 1px solid red;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: $color_dark;
+    @include text(body2);
+    color: $color-lightest;
+
+    &_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      // border: 1px solid red;
+
+      & > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      & > svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.social_grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 154px;
+  padding-bottom: 24px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(100%, 100%, 100%);
+    @include button;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 16px;
   }
 }
