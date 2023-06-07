@@ -16,6 +16,7 @@
 
   &__body {
     max-width: 100%;
+    min-height: 444px;
     max-height: 444px;
     overflow: hidden;
     // border: 1px solid red;
@@ -215,6 +216,6 @@
   }
 
   &__item:not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 }
