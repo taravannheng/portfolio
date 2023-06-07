@@ -99,6 +99,11 @@
     margin: 0 0 16px 0;
     text-align: center;
     color: $color-lightest;
+
+    @media only screen and (min-width: 600px) {
+      padding-left: 56px;
+      padding-right: 56px;
+    }
   }
 
   &__title_summary {
@@ -112,6 +117,11 @@
     color: $color-light;
     overflow: scroll;
     // border: 1px solid red;
+
+    @media only screen and (min-width: 600px) {
+      padding-left: 56px;
+      padding-right: 56px;
+    }
   }
 
   &__title_functionality {
@@ -159,6 +169,11 @@
   overflow-x: hidden;
   overflow-y: scroll;
   // border: 1px solid red;
+
+  @media only screen and (min-width: 600px) {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
 
   &__item {
     display: flex;
@@ -208,6 +223,11 @@
   padding-bottom: 24px;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  @media only screen and (min-width: 600px) {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
 
   &__item {
     display: flex;
