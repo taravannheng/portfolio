@@ -43,4 +43,9 @@
     // font-weight: 500;
     // letter-spacing: 1px;
   }
+  @else if $scale == small {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px;
+    font-weight: 400;
+  }
 }
