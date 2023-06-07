@@ -12,6 +12,8 @@ interface LargeCarouselInterface {
   backHandler?: () => void;
   nextHandler?: () => void;
   itemIndex?: number;
+  selectProjectHandler?: (index) => void;
+  projects?: any[];
 }
 
 const CarouselControl: FC<LargeCarouselInterface> = ({

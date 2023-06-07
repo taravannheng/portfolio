@@ -131,6 +131,69 @@
   }
 }
 
+.all_projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    padding-top: 24px;
+    padding-bottom: 16px;
+    @include text(h3);
+    text-align: center;
+    // background-color: red;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    min-height: 278px;
+    max-height: 278px;
+    justify-content: center;
+    align-items: center;
+    width: clamp(100%, 100%, 100%);
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    // border: 1px solid green;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &_item {
+      overflow: hidden;
+      // border: 1px solid red;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__select_text {
+    text-align: center;
+    color: $color-lightest;
+    @include text(body2);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &__play_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    color: $color-lightest;
+    @include text(body2);
+    transition: opacity 0.3s ease-in-out;
+    // border: 1px solid red;
+
+    &_content {
+      min-width: 285px;
+    // border: 1px solid red;
+    }
+  }
+}
+
 .control {
 
   &__button {

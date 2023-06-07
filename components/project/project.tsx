@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Image from "next/image";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -7,17 +8,14 @@ import projectData from "../../data/project";
 import LargeCarousel from '../large-carousel/largeCarousel';
 
 const ProjectSection = () => {
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const isSmallScreen = useMediaQuery('(max-width:840px)');
-
-  if (isSmallScreen) {
-    console.log('yes');
-  }
 
   return (
     <section className={classes.project}>
       <div className={classes.project__body}>
-        {isSmallScreen && <Carousel data={projectData.marketsquare} />}
-        {!isSmallScreen && <LargeCarousel data={projectData.marketsquare} />}
+        {isSmallScreen && <Carousel data={projectData[activeProjectIndex].slides} projects={projectData} activeProjectIndex={activeProjectIndex} setActiveProjectIndex={setActiveProjectIndex}  />}
+        {/* {!isSmallScreen && <LargeCarousel data={projectData[0].slides} projects={projectData} activeProjectIndex={activeProjectIndex} */}
       </div>
       <div className={classes.project__illustration}>
         <Image
