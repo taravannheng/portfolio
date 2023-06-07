@@ -151,7 +151,7 @@
 
 .stack_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 16px;
   max-height: 154px;
   padding-bottom: 24px;
@@ -188,6 +188,13 @@
         width: 20px;
         height: 20px;
       }
+    }
+
+    &_text {
+      white-space: nowrap;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      // border: 1px solid red;
     }
   }
 }

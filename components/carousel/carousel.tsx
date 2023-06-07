@@ -141,7 +141,9 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
                 <span className={classes.stack_grid__item_icon}>
                   {item.icon}
                 </span>
-                {item.text}
+                <span className={classes.stack_grid__item_text}>
+                  {item.text}
+                </span>
               </div>
             );
           })}
@@ -207,7 +209,9 @@ const TechnologySlide: FC<CarouselInterface> = ({
                     alt="aws"
                   />
                 </span>
-                {item.text}
+                <span className={classes.stack_grid__item_text}>
+                  {item.text}
+                </span>
               </div>
             );
           })}
@@ -276,7 +280,9 @@ const SocialSlide: FC<CarouselInterface> = ({
                     alt="aws"
                   />
                 </span>
-                {item.text}
+                <span className={classes.social_grid__item_text}>
+                  {item.text}
+                </span>
               </a>
             );
           })}
