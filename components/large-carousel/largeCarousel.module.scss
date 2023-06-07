@@ -192,7 +192,15 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-gap: 16px;
+  padding-bottom: 36px;
   // border: 1px solid red;
+  max-height: 275px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  @media only screen and (max-width: 915px) {
+    max-height: 368px;
+  }
 
   &__item {
     display: flex;
