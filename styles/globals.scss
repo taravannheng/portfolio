@@ -33,3 +33,14 @@ a {
     background: $color-darkest;
   }
 }
+
+// =========================================
+
+/* Hide the scrollbar track */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
