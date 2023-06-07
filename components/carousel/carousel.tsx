@@ -84,7 +84,15 @@ const SummarySlide: FC<CarouselInterface> = ({
             {data[itemIndex].title}
           </h1>
           <p className={classes.body__description_summary}>
-            {data[itemIndex].description}
+            {data[itemIndex].description.split("\n").map((item, index) => {
+            return (
+              <>
+                <span>{item}</span>
+                <br />
+                <br />
+              </>
+            );
+          })}
           </p>
         </div>
       </div>
