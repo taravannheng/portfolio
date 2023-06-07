@@ -16,8 +16,8 @@ const ProjectSection = () => {
   return (
     <section className={classes.project}>
       <div className={classes.project__body}>
-        {isSmallScreen && <Carousel data={projectData.featured} />}
-        {!isSmallScreen && <LargeCarousel data={projectData.featured} />}
+        {isSmallScreen && <Carousel data={projectData.marketsquare} />}
+        {!isSmallScreen && <LargeCarousel data={projectData.marketsquare} />}
       </div>
       <div className={classes.project__illustration}>
         <Image

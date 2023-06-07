@@ -63,9 +63,13 @@ const SummarySlide: FC<LargeCarouselInterface> = ({
         <h1 className={classes.summary_item__title}>{data[itemIndex].title}</h1>
         <p className={classes.summary_item__description}>
           {data[itemIndex].description.split("\n").map((item, index) => {
-            return <>
-              <span>{item}</span><br /><br />
-            </>
+            return (
+              <>
+                <span>{item}</span>
+                <br />
+                <br />
+              </>
+            );
           })}
         </p>
       </div>
@@ -225,6 +229,12 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
     <>
       <div className={classes.carousel}>
         <div className={classes.carousel__media}>
+          {data[0].isFeatured && (
+            <div className={classes.featured_chip}>
+              <div className={classes.featured_chip__dot}></div>
+              <span className={classes.featured_chip__text}>Featured</span>
+            </div>
+          )}
           {/* load all images here */}
           {data.map((item, index) => {
             return (

@@ -13,6 +13,7 @@
   // border: 1px solid red;
 
   &__media {
+    position: relative;
     min-width: 50%;
     flex: 1;
     min-height: 480px;
@@ -39,6 +40,27 @@
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     // border: 1px solid red;
+  }
+}
+
+.featured_chip {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 1000px;
+  background-color: $color-accent;
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 1000px;
+    margin-right: 8px;
+    background-color: $color-lightest;
   }
 }
 
