@@ -49,12 +49,15 @@
 .content {
   &__media {
     width: 100%;
-    height: 226px;
+    height: clamp(222px, 222px, 222px);
     overflow: hidden;
+    // border: 1px solid red;
   }
 
   &__body {
+    height: clamp(222px, 222px, 222px);
     padding: 24px 24px 0 24px;
+    // border: 1px solid red;
   }
 }
 
