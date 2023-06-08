@@ -1,79 +1,52 @@
 import {
-  ShoppingBagOutlined,
-  ImageSearchOutlined,
-  ShoppingCartOutlined,
-  PaymentOutlined,
-  ArrowCircleRightOutlined,
-  FormatListBulletedOutlined,
+  SearchOutlined,
+  GridViewOutlined,
+  AccountCircleOutlined
 } from "@mui/icons-material";
 
 const github = {
   id: 'github',
-  imgUrl: "/images/projects/project-github.jpg",
+  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github.png?alt=media&token=634df15f-a7b5-4f13-92d3-4e1d693c5da2&_gl=1*1ce5cea*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMjQyNi4wLjAuMA..",
   slides: [
     {
       type: "summary",
-      imgUrl: "/images/projects/project-github.jpg",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-1.png?alt=media&token=edc3b551-3861-4f06-9ea4-322baa5a2dad&_gl=1*w78rqm*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMzAwNC4wLjAuMA..",
       title: "GitHub Profiles",
       description:
-        `GitHub Profiles is an innovative ecommerce platform designed to provide users with a seamless shopping experience. With a wide range of product catalogs, shoppers can easily browse through an extensive collection of items, ranging from fashion and electronics to home decor and more. Each product listing provides comprehensive details, enabling customers to make informed decisions. From product descriptions and specifications to customer reviews, Marketsquare ensures that users have all the information they need to confidently choose the perfect product. \nWhen it's time to make a purchase, the checkout process is smooth and secure. Marketsquare integrates with Stripe, a leading online payment gateway, allowing customers to securely complete transactions using their preferred payment methods. With advanced encryption and fraud prevention measures, users can trust that their payment information is safe and protected. \nTo enhance the shopping experience, Marketsquare incorporates a user-friendly cart system. Customers can easily add items to their cart, review their selections, and make adjustments as needed. The cart provides a convenient overview of the chosen products, quantities, and prices. \nBefore finalizing a purchase, users can view an order summary that includes a breakdown of the total cost, including taxes and shipping fees. This ensures transparency and eliminates any surprises during the checkout process. \nMarketsquare strives to create a user-centric platform that prioritizes simplicity, security, and convenience. Whether you're a frequent online shopper or looking to explore new products, Marketsquare offers a comprehensive solution for all your ecommerce needs.`,
+        `GitHub Profiles is a personal project that allows users to search for GitHub profiles, explore available users, and view profile summaries. It provides a seamless interface to search and discover GitHub users, enabling users to gather essential information and get a quick overview of a user's profile details.`,
       isFeatured: false
     },
     {
       type: "functionality",
-      imgUrl: "/images/projects/project-2.png",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-2.png?alt=media&token=f34f6d11-651a-4265-a999-18e80a019b6c&_gl=1*1t5y07h*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMzAyNi4wLjAuMA..",
       title: "Functionalities",
       items: [
         {
-          icon: <ShoppingBagOutlined />,
-          text: "Product Catalog",
+          icon: <SearchOutlined />,
+          text: "Search for users",
         },
         {
-          icon: <ImageSearchOutlined />,
-          text: "Product Details",
+          icon: <GridViewOutlined />,
+          text: "View available users",
         },
         {
-          icon: <ShoppingCartOutlined />,
-          text: "Shopping Cart",
-        },
-        {
-          icon: <ArrowCircleRightOutlined />,
-          text: "Checkout",
-        },
-        {
-          icon: <PaymentOutlined />,
-          text: "Stripe Payment",
-        },
-        {
-          icon: <FormatListBulletedOutlined />,
-          text: "Order Summary",
+          icon: <AccountCircleOutlined />,
+          text: "Account Overview",
         },
       ],
     },
     {
       type: "technology",
-      imgUrl: "/images/projects/project-3.png",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-3.png?alt=media&token=8299c985-8832-4251-bcb7-fcead56a8a22&_gl=1*1r431cu*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMjQ3Ny4wLjAuMA..",
       title: "Frontend Technologies",
       items: [
         {
-          icon: "/images/languages/react.svg",
-          text: "ReactJS",
+          icon: "/images/languages/vuejs.svg",
+          text: "Vue.js",
         },
         {
           icon: "/images/languages/typescript.svg",
           text: "TypeScript",
-        },
-        {
-          icon: "/images/languages/redux.svg",
-          text: "Redux",
-        },
-        {
-          icon: "/images/languages/tailwind.svg",
-          text: "TailwindCSS",
-        },
-        {
-          icon: "/images/languages/materialui.svg",
-          text: "MaterialUI",
         },
         {
           icon: "/images/languages/sass.svg",
@@ -82,43 +55,24 @@ const github = {
       ],
     },
     {
-      type: "technology",
-      imgUrl: "/images/projects/project-4.png",
-      title: "Backend Technologies",
-      items: [
-        {
-          icon: "/images/languages/nextjs.svg",
-          text: "NextJS",
-        },
-        {
-          icon: "/images/languages/python.svg",
-          text: "Python",
-        },
-        {
-          icon: "/images/languages/aws.svg",
-          text: "AWS",
-        },
-      ],
-    },
-    {
       type: "socials",
-      imgUrl: "/images/projects/project-5.png",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-4.png?alt=media&token=f4a7c3f0-d120-4181-9a56-f2314852cc99&_gl=1*zywwft*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMzA0OS4wLjAuMA..",
       title: "Check It Out 👇",
       items: [
         {
           icon: "/images/social/new-window.svg",
           text: "Demo",
-          href: "https://www.google.com"
+          href: "https://github-profiles-roan.vercel.app"
         },
         {
           icon: "/images/social/github.svg",
           text: "GitHub",
-          href: "https://www.google.com"
+          href: "https://github.com/taravannheng/github-profiles"
         },
         {
           icon: "/images/social/dribbble.svg",
           text: "Dribbble",
-          href: "https://www.google.com"
+          href: "https://dribbble.com/shots/21440950-github-profiles"
         },
       ],
     },
