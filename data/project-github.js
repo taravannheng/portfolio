@@ -6,7 +6,7 @@ import {
 
 const github = {
   id: 'github',
-  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github.png?alt=media&token=634df15f-a7b5-4f13-92d3-4e1d693c5da2&_gl=1*1ce5cea*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMjQyNi4wLjAuMA..",
+  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github.png?alt=media&token=266c57e7-15c0-40f2-bb3b-b305e637d417&_gl=1*144307e*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIzOTAyMi41LjEuMTY4NjIzOTA5Ni4wLjAuMA..",
   slides: [
     {
       type: "summary",
