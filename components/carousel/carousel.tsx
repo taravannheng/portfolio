@@ -86,7 +86,7 @@ const SummarySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={classes.content__media}>
+        <div className={`${classes.content__media} ${classes.shimmer}` }>
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -140,7 +140,7 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={classes.content__media}>
+        <div className={`${classes.content__media} ${classes.shimmer}` }>
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -202,7 +202,7 @@ const TechnologySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={classes.content__media}>
+        <div className={`${classes.content__media} ${classes.shimmer}` }>
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -270,7 +270,7 @@ const SocialSlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={classes.content__media}>
+        <div className={`${classes.content__media} ${classes.shimmer}` }>
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
