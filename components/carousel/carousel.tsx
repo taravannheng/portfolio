@@ -339,8 +339,10 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
   isProjectSelected,
 }) => {
   const projectClickHandler = (index) => {
-    setIsProjectSelected(true);
-    setHoveredProjectIndex(index);
+    if (index !== null) {
+      setIsProjectSelected(true);
+      setHoveredProjectIndex(index);
+    }
   };
 
   const projectMouseEnterHandler = (index) => {
@@ -348,14 +350,10 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
     setHoveredProjectIndex(index);
   };
 
-  // const projectMouseLeaveHandler = (index) => {
-  //   setIsProjectSelected(false);
-  //   setHoveredProjectIndex(null);
-  // };
-
   return (
     <>
       <div
+        onClick={() => projectClickHandler(null)}
         style={{ transform: `translateY(-${activeIndex * 100}%)` }}
         className={`${classes.body__content} ${classes.all_projects}`}
       >
@@ -370,7 +368,6 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
                     className={`${classes.all_projects__list_item} ${classes.shimmer}`}
                     onClick={() => projectClickHandler(index)}
                     onMouseEnter={() => projectMouseEnterHandler(index)}
-                    // onMouseLeave={() => projectMouseLeaveHandler(index)}
                     style={{
                       opacity: `${
                         index === hoveredProjectIndex || !isProjectSelected
