@@ -86,7 +86,7 @@ const SummarySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={`${classes.content__media} ${classes.shimmer}` }>
+        <div className={`${classes.content__media} ${classes.shimmer}`}>
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -367,7 +367,7 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
                 <>
                   <li
                     key={`project-${index}`}
-                    className={classes.all_projects__list_item}
+                    className={`${classes.all_projects__list_item} ${classes.shimmer}`}
                     onClick={() => projectClickHandler(index)}
                     onMouseEnter={() => projectMouseEnterHandler(index)}
                     // onMouseLeave={() => projectMouseLeaveHandler(index)}
