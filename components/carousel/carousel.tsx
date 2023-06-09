@@ -392,9 +392,8 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
         </ul>
         <p
           className={classes.all_projects__select_text}
-          style={{ opacity: `${!isProjectSelected ? 1 : 0}` }}
         >
-          Select a project
+          {hoveredProjectIndex !== null ? <span>{projects[hoveredProjectIndex].shortDescription}</span> : <span>Select a project</span>}
         </p>
         <p
           className={classes.all_projects__play_text}
