@@ -8,6 +8,7 @@ import {
 const rideease = {
   id: 'rideease',
   imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/rideease.png?alt=media&token=dd81204d-1da2-4087-a807-71bf6045945e&_gl=1*6gijai*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjI0NDIzNi42LjEuMTY4NjI0NDY1Mi4wLjAuMA..",
+  shortDescription: 'A car rental website',
   slides: [
     {
       id: 'rideease',

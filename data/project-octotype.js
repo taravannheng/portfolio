@@ -8,6 +8,7 @@ import {
 const octotype = {
   id: 'octotype',
   imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype.png?alt=media&token=3942eeb0-d304-4703-b477-5a72c264a4b0&_gl=1*p5h2s4*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIzOTAyMi41LjEuMTY4NjI0MDA4Mi4wLjAuMA..",
+  shortDescription: 'A typing website',
   slides: [
     {
       id: 'octotype',

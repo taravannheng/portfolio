@@ -10,6 +10,7 @@ import {
 const marketsquare = {
   id: 'marketsquare',
   imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-logo.gif?alt=media&token=4753ad40-d338-4f48-97c4-ee3c38e50989&_gl=1*c4g1yq*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjI5NzQwMC4xMS4xLjE2ODYzMDAxODcuMC4wLjA.",
+  shortDescription: 'A full stack and fully responsive e-commerce website',
   slides: [
     {
       id: 'marketsquare',
