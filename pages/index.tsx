@@ -12,14 +12,8 @@ const HomePage = () => {
       setLoading(false);
     }, 3000);
 
-    const handleBeforeUnload = () => {
-      sessionStorage.clear();
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      sessionStorage.clear();
     };
   }, []);
 
