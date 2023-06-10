@@ -24,6 +24,7 @@ interface CarouselInterface {
   setHoveredProjectIndex?: (index) => void;
   hoveredProjectIndex?: number | null;
   projects?: any[];
+  shakeControlButton?: boolean;
 }
 
 const CarouselControl: FC<CarouselInterface> = ({
@@ -36,12 +37,13 @@ const CarouselControl: FC<CarouselInterface> = ({
   setActiveProjectIndex,
   setIsProjectSelected,
   hoveredProjectIndex,
-  setHoveredProjectIndex
+  setHoveredProjectIndex,
+  shakeControlButton
 }) => {
   return (
     <>
       <div className={classes.carousel__control}>
-        <button onClick={backHandler} className={classes.control__button}>
+        <button onClick={backHandler} className={`${classes.control__button} ${shakeControlButton && activeIndex === 0 ? classes.shake : ''}`}>
           <ArrowLeft />
         </button>
         <ActiveIndicatorStackSC direction="row" spacing={1.5}>
@@ -64,7 +66,7 @@ const CarouselControl: FC<CarouselInterface> = ({
             }`}
           ></div>
         </ActiveIndicatorStackSC>
-        <button onClick={nextHandler} className={classes.control__button}>
+        <button onClick={nextHandler} className={`${classes.control__button} ${shakeControlButton && activeIndex > 0 ? classes.shake : ''}`}>
           {isProjectSelected ? <PlayCircleFilledOutlined /> : <ArrowRight />}
         </button>
       </div>
@@ -412,10 +414,19 @@ const Carousel: FC<CarouselInterface> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [isProjectSelected, setIsProjectSelected] = useState(false);
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
+  const [shakeControlButton, setShakeControlButton] = useState(false);
 
   const backHandler = () => {
     if (activeIndex > 0) {
       setActiveIndex((prevIndex) => prevIndex - 1);
+    }
+
+    if (activeIndex - 1 < 0) {
+      setShakeControlButton(true)
+
+      setTimeout(() => {
+        setShakeControlButton(false);
+      }, 1000);
     }
 
     //reset
@@ -426,6 +437,14 @@ const Carousel: FC<CarouselInterface> = ({
   const nextHandler = () => {
     if (activeIndex < data.length) {
       setActiveIndex((prevIndex) => prevIndex + 1);
+    }
+
+    if (activeIndex + 1 > data.length) {
+      setShakeControlButton(true)
+
+      setTimeout(() => {
+        setShakeControlButton(false);
+      }, 1000);
     }
 
     if (isProjectSelected && hoveredProjectIndex !== null) {
@@ -518,6 +537,7 @@ const Carousel: FC<CarouselInterface> = ({
           hoveredProjectIndex={hoveredProjectIndex}
           setHoveredProjectIndex={setHoveredProjectIndex}
           setActiveProjectIndex={setActiveProjectIndex}
+          shakeControlButton={shakeControlButton}
         />
       </div>
     </>

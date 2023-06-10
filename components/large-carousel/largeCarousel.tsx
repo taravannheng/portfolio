@@ -24,6 +24,7 @@ interface LargeCarouselInterface {
   setHoveredProjectIndex?: (index) => void;
   hoveredProjectIndex?: number | null;
   projects?: any[];
+  shakeControlButton?: boolean;
   //
 }
 
@@ -38,11 +39,12 @@ const CarouselControl: FC<LargeCarouselInterface> = ({
   setIsProjectSelected,
   hoveredProjectIndex,
   setHoveredProjectIndex,
+  shakeControlButton
 }) => {
   return (
     <>
       <div className={classes.control__container}>
-        <button onClick={backHandler} className={classes.control__button}>
+        <button onClick={backHandler} className={`${classes.control__button} ${shakeControlButton && activeIndex === 0 ? classes.shake : ''}`}>
           <ArrowLeft />
         </button>
         <ActiveIndicatorStackSC direction="row" spacing={1.5}>
@@ -65,7 +67,7 @@ const CarouselControl: FC<LargeCarouselInterface> = ({
             }`}
           ></div>
         </ActiveIndicatorStackSC>
-        <button onClick={nextHandler} className={classes.control__button}>
+        <button onClick={nextHandler} className={`${classes.control__button} ${shakeControlButton && activeIndex > 0 ? classes.shake : ''}`}>
           {isProjectSelected ? <PlayCircleFilledOutlined /> : <ArrowRight />}
         </button>
       </div>
@@ -370,11 +372,21 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [isProjectSelected, setIsProjectSelected] = useState(false);
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
+  const [shakeControlButton, setShakeControlButton] = useState(false);
 
   const backHandler = () => {
     if (activeIndex > 0) {
       setActiveIndex((prevIndex) => prevIndex - 1);
     }
+
+    if (activeIndex - 1 < 0) {
+      setShakeControlButton(true)
+
+      setTimeout(() => {
+        setShakeControlButton(false);
+      }, 1000);
+    }
+
 
     //reset
     setIsProjectSelected(false);
@@ -384,6 +396,14 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
   const nextHandler = () => {
     if (activeIndex < data.length) {
       setActiveIndex((prevIndex) => prevIndex + 1);
+    }
+
+    if (activeIndex + 1 > data.length) {
+      setShakeControlButton(true)
+
+      setTimeout(() => {
+        setShakeControlButton(false);
+      }, 1000);
     }
 
     if (isProjectSelected && hoveredProjectIndex !== null) {
@@ -521,6 +541,7 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
               hoveredProjectIndex={hoveredProjectIndex}
               setHoveredProjectIndex={setHoveredProjectIndex}
               setActiveProjectIndex={setActiveProjectIndex}
+              shakeControlButton={shakeControlButton}
             />
           </div>
         </div>
