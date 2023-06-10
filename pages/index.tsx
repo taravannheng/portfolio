@@ -12,9 +12,7 @@ const HomePage = () => {
       setLoading(false);
     }, 3000);
 
-    return () => {
-      sessionStorage.clear();
-    };
+    sessionStorage.clear();
   }, []);
 
   return (
