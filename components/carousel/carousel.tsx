@@ -38,12 +38,17 @@ const CarouselControl: FC<CarouselInterface> = ({
   setIsProjectSelected,
   hoveredProjectIndex,
   setHoveredProjectIndex,
-  shakeControlButton
+  shakeControlButton,
 }) => {
   return (
     <>
       <div className={classes.carousel__control}>
-        <button onClick={backHandler} className={`${classes.control__button} ${shakeControlButton && activeIndex === 0 ? classes.shake : ''}`}>
+        <button
+          onClick={backHandler}
+          className={`${classes.control__button} ${
+            shakeControlButton && activeIndex === 0 ? classes.shake : ""
+          }`}
+        >
           <ArrowLeft />
         </button>
         <ActiveIndicatorStackSC direction="row" spacing={1.5}>
@@ -66,8 +71,19 @@ const CarouselControl: FC<CarouselInterface> = ({
             }`}
           ></div>
         </ActiveIndicatorStackSC>
-        <button onClick={nextHandler} className={`${classes.control__button} ${shakeControlButton && activeIndex > 0 ? classes.shake : ''}`}>
-          {isProjectSelected ? <PlayCircleFilledOutlined /> : <ArrowRight />}
+        <button
+          onClick={nextHandler}
+          className={`${classes.control__button} ${
+            isProjectSelected ? classes.play : ""
+          } ${shakeControlButton && activeIndex > 0 ? classes.shake : ""}`}
+        >
+          {isProjectSelected ? (
+            <div className={classes.scalePlayButton}>
+              <PlayCircleFilledOutlined />
+            </div>
+          ) : (
+            <ArrowRight />
+          )}
         </button>
       </div>
     </>
@@ -142,7 +158,7 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={`${classes.content__media} ${classes.shimmer}` }>
+        <div className={`${classes.content__media} ${classes.shimmer}`}>
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -204,7 +220,7 @@ const TechnologySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={`${classes.content__media} ${classes.shimmer}` }>
+        <div className={`${classes.content__media} ${classes.shimmer}`}>
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -272,7 +288,7 @@ const SocialSlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={`${classes.content__media} ${classes.shimmer}` }>
+        <div className={`${classes.content__media} ${classes.shimmer}`}>
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -355,49 +371,45 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
         className={`${classes.body__content} ${classes.all_projects}`}
       >
         <h2 className={classes.all_projects__title}>More Projects</h2>
-        <ul className={classes.all_projects__list}>
-          {projects &&
-            projects.map((project, index) => {
-              return (
-                <>
-                  <li
-                    key={`project-${index}`}
-                    className={`${classes.all_projects__list_item} ${classes.shimmer}`}
-                    onClick={() => projectClickHandler(index)}
-                    style={{
-                      opacity: `${
-                        index === hoveredProjectIndex || !isProjectSelected
-                          ? 1
-                          : 0.5
-                      }`,
-                    }}
-                  >
-                    <Image
-                      loading="lazy"
-                      src={project.imgUrl}
-                      alt={project.id}
-                      width={195}
-                      height={195}
-                      layout="responsive"
-                      objectFit="cover"
-                    />
-                  </li>
-                </>
-              );
-            })}
-        </ul>
-        <p
-          className={classes.all_projects__select_text}
-        >
-          {hoveredProjectIndex !== null ? <span>{projects[hoveredProjectIndex].shortDescription}</span> : <span>Select a project</span>}
-        </p>
-        <p
-          className={classes.all_projects__play_text}
-          style={{ opacity: `${isProjectSelected ? 1 : 0}` }}
-        >
-          <span className={classes.all_projects__play_text_content}>
-            To view press 👇
-          </span>
+        <div className={classes.all_projects__list_container}>
+          <ul className={classes.all_projects__list}>
+            {projects &&
+              projects.map((project, index) => {
+                return (
+                  <>
+                    <li
+                      key={`project-${index}`}
+                      className={`${classes.all_projects__list_item} ${classes.shimmer}`}
+                      onClick={() => projectClickHandler(index)}
+                      style={{
+                        opacity: `${
+                          index === hoveredProjectIndex || !isProjectSelected
+                            ? 1
+                            : 0.5
+                        }`,
+                      }}
+                    >
+                      <Image
+                        loading="lazy"
+                        src={project.imgUrl}
+                        alt={project.id}
+                        width={195}
+                        height={195}
+                        layout="responsive"
+                        objectFit="cover"
+                      />
+                    </li>
+                  </>
+                );
+              })}
+          </ul>
+        </div>
+        <p className={classes.all_projects__select_text}>
+          {hoveredProjectIndex !== null ? (
+            <span>{projects[hoveredProjectIndex].shortDescription}</span>
+          ) : (
+            <span>Select a project</span>
+          )}
         </p>
       </div>
     </>
@@ -409,7 +421,7 @@ const Carousel: FC<CarouselInterface> = ({
   verticalOnly = false,
   projects,
   activeProjectIndex,
-  setActiveProjectIndex
+  setActiveProjectIndex,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isProjectSelected, setIsProjectSelected] = useState(false);
@@ -422,7 +434,7 @@ const Carousel: FC<CarouselInterface> = ({
     }
 
     if (activeIndex - 1 < 0) {
-      setShakeControlButton(true)
+      setShakeControlButton(true);
 
       setTimeout(() => {
         setShakeControlButton(false);
@@ -440,7 +452,7 @@ const Carousel: FC<CarouselInterface> = ({
     }
 
     if (activeIndex + 1 > data.length) {
-      setShakeControlButton(true)
+      setShakeControlButton(true);
 
       setTimeout(() => {
         setShakeControlButton(false);

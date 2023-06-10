@@ -67,8 +67,8 @@ const CarouselControl: FC<LargeCarouselInterface> = ({
             }`}
           ></div>
         </ActiveIndicatorStackSC>
-        <button onClick={nextHandler} className={`${classes.control__button} ${shakeControlButton && activeIndex > 0 ? classes.shake : ''}`}>
-          {isProjectSelected ? <PlayCircleFilledOutlined /> : <ArrowRight />}
+        <button onClick={nextHandler} className={`${classes.control__button} ${isProjectSelected ? classes.play : ''} ${shakeControlButton && activeIndex > 0 ? classes.shake : ''}`}>
+          {isProjectSelected ? <div className={classes.scalePlayButton}><PlayCircleFilledOutlined /></div> : <ArrowRight />}
         </button>
       </div>
     </>
@@ -288,14 +288,6 @@ const AllProjectsSlide: FC<LargeCarouselInterface> = ({
           ) : (
             <span>Select a project to see more...</span>
           )}
-        </p>
-        <p
-          className={classes.all_projects_slide__play_text}
-          style={{ opacity: `${isProjectSelected ? 1 : 0}` }}
-        >
-          <span className={classes.all_projects_slide__play_text_content}>
-            To view press 👇
-          </span>
         </p>
       </div>
     </>

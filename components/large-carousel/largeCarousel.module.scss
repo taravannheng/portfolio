@@ -148,6 +148,10 @@
   }
 }
 
+.play {
+  background-color: $color-accent;
+}
+
 .summary_item {
   &__title {
     text-align: center;
@@ -300,6 +304,7 @@
 }
 
 .all_projects_slide {
+  position: relative;
   // border: 1px solid red;
 
   &__title {
@@ -315,6 +320,7 @@
     justify-content: center;
     align-items: center;
     height: clamp(210px, 210px, 210px);
+    margin-top: 12px;
     // border: 1px solid green;
   }
 
@@ -330,6 +336,9 @@
   }
 
   &__select_text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -403,4 +412,20 @@
 
 .shake {
   animation: shake 0.3s ease-in-out;
+}
+
+@keyframes scalePlayButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scalePlayButton {
+  animation: scalePlayButton 1s ease-in-out infinite;
 }
