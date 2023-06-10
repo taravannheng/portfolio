@@ -376,7 +376,6 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [isProjectSelected, setIsProjectSelected] = useState(false);
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
-  const [isMediaLoaded, setIsMediaLoaded] = useState(false);
 
   const backHandler = () => {
     if (activeIndex > 0) {
@@ -405,19 +404,10 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
     }
   };
 
-  const mediaLoadedHandler = () => {
-    setIsMediaLoaded(true);
-  };
-
   return (
     <>
       <div className={classes.carousel}>
-        <div className={classes.carousel__media}>
-          {!isMediaLoaded && (
-            <div
-              className={`${classes.shimmer} ${classes.media__shimmer}`}
-            ></div>
-          )}
+        <div className={`${classes.carousel__media}` }>
           {data[0].isFeatured && activeIndex < data.length && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -429,7 +419,7 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
             return (
               <div
                 key={`large-media-${index}`}
-                className={classes.media__item}
+                className={`${classes.media__item} ${classes.shimmer}`}
                 style={{ transform: `translateY(-${activeIndex * 100}%)` }}
               >
                 {" "}
@@ -442,7 +432,6 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
                   height={100}
                   layout="fill"
                   objectFit="cover"
-                  onLoad={mediaLoadedHandler}
                 />
               </div>
             );
