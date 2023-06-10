@@ -1,19 +1,30 @@
 import { FC, useState } from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "@mui/icons-material";
+import {
+  ArrowLeft,
+  ArrowRight,
+  PlayCircleFilledOutlined,
+} from "@mui/icons-material";
 
 import classes from "./largeCarousel.module.scss";
 import { ActiveIndicatorStackSC } from "./largeCarousel.style";
 
 interface LargeCarouselInterface {
+  //
   data: any[];
   activeIndex?: number;
   verticalOnly?: boolean;
   backHandler?: () => void;
   nextHandler?: () => void;
   itemIndex?: number;
-  selectProjectHandler?: (index) => void;
+  isProjectSelected?: boolean;
+  setIsProjectSelected?: (index) => void;
+  activeProjectIndex?: number | null;
+  setActiveProjectIndex?: (index) => void;
+  setHoveredProjectIndex?: (index) => void;
+  hoveredProjectIndex?: number | null;
   projects?: any[];
+  //
 }
 
 const CarouselControl: FC<LargeCarouselInterface> = ({
@@ -21,6 +32,12 @@ const CarouselControl: FC<LargeCarouselInterface> = ({
   activeIndex,
   backHandler,
   nextHandler,
+  activeProjectIndex,
+  isProjectSelected,
+  setActiveProjectIndex,
+  setIsProjectSelected,
+  hoveredProjectIndex,
+  setHoveredProjectIndex,
 }) => {
   return (
     <>
@@ -39,9 +56,17 @@ const CarouselControl: FC<LargeCarouselInterface> = ({
               ></div>
             );
           })}
+          <div
+            key={`indicator-${data.length}`}
+            className={`${classes.control__indicator} ${
+              activeIndex === data.length
+                ? classes.control__active_indicator
+                : ""
+            }`}
+          ></div>
         </ActiveIndicatorStackSC>
         <button onClick={nextHandler} className={classes.control__button}>
-          <ArrowRight />
+          {isProjectSelected ? <PlayCircleFilledOutlined /> : <ArrowRight />}
         </button>
       </div>
     </>
@@ -209,29 +234,191 @@ const SocialSlide: FC<LargeCarouselInterface> = ({
   );
 };
 
+const AllProjectsSlide: FC<LargeCarouselInterface> = ({
+  data,
+  verticalOnly,
+  activeIndex,
+  itemIndex,
+  projects,
+  setIsProjectSelected,
+  setHoveredProjectIndex,
+  hoveredProjectIndex,
+  isProjectSelected,
+}) => {
+  return (
+    <>
+      <div
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        className={`${classes.body__item} ${classes.all_projects_slide}`}
+      >
+        <h2 className={classes.all_projects_slide__title}>More Projects</h2>
+        <div className={classes.all_projects_slide__preview}>
+          {isProjectSelected && (
+            <div className={classes.all_projects_slide__preview_display}>
+              <Image
+                loading="lazy"
+                src={projects[hoveredProjectIndex].previewImgUrl}
+                alt={"Project Preview"}
+                width={360}
+                height={210}
+                layout="fixed"
+                objectFit="cover"
+              />
+            </div>
+          )}
+          {!isProjectSelected && (
+            <Image
+              loading="lazy"
+              src={
+                "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/hand.gif?alt=media&token=85746db7-17d9-492e-8ac7-c355f476ac37&_gl=1*19vin9u*_ga*ODg2ODY0MDE0LjE2ODYzODc1NDk.*_ga_CW55HF8NVT*MTY4NjM4NzU0OC4xLjEuMTY4NjM4NzU3OS4wLjAuMA.."
+              }
+              alt={"hand gesture"}
+              width={300}
+              height={200}
+              layout="fixed"
+              objectFit="cover"
+            />
+          )}
+        </div>
+        <p className={classes.all_projects_slide__select_text}>
+          {hoveredProjectIndex !== null ? (
+            <span>{projects[hoveredProjectIndex].shortDescription}</span>
+          ) : (
+            <span>Select a project to see more...</span>
+          )}
+        </p>
+        <p
+          className={classes.all_projects_slide__play_text}
+          style={{ opacity: `${isProjectSelected ? 1 : 0}` }}
+        >
+          <span className={classes.all_projects_slide__play_text_content}>
+            To view press 👇
+          </span>
+        </p>
+      </div>
+    </>
+  );
+};
+
+const AllProjectsMedia: FC<LargeCarouselInterface> = ({
+  data,
+  verticalOnly,
+  activeIndex,
+  itemIndex,
+  projects,
+  setIsProjectSelected,
+  setHoveredProjectIndex,
+  hoveredProjectIndex,
+  isProjectSelected,
+}) => {
+  const projectClickHandler = (index) => {
+    if (index !== null) {
+      setIsProjectSelected(true);
+      setHoveredProjectIndex(index);
+    }
+  };
+
+  const projectMouseEnterHandler = (index) => {
+    setIsProjectSelected(true);
+    setHoveredProjectIndex(index);
+  };
+
+  return (
+    <>
+      <div
+        onClick={() => projectClickHandler(null)}
+        style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+        className={`${classes.media__item} ${classes.all_projects}`}
+      >
+        <ul className={classes.all_projects__list}>
+          {projects &&
+            projects.map((project, index) => {
+              return (
+                <>
+                  <li
+                    key={`project-${index}`}
+                    className={`${classes.all_projects__list_item} ${classes.shimmer}`}
+                    onClick={() => projectClickHandler(index)}
+                    onMouseEnter={() => projectMouseEnterHandler(index)}
+                    style={{
+                      opacity: `${
+                        index === hoveredProjectIndex || !isProjectSelected
+                          ? 1
+                          : 0.5
+                      }`,
+                    }}
+                  >
+                    <Image
+                      loading="lazy"
+                      src={project.imgUrl}
+                      alt={project.id}
+                      width={195}
+                      height={195}
+                      layout="responsive"
+                      objectFit="cover"
+                    />
+                  </li>
+                </>
+              );
+            })}
+        </ul>
+      </div>
+    </>
+  );
+};
+
 const LargeCarousel: FC<LargeCarouselInterface> = ({
   data,
-  verticalOnly = false,
+  projects,
+  activeProjectIndex,
+  setActiveProjectIndex,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isProjectSelected, setIsProjectSelected] = useState(false);
+  const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
+  const [isMediaLoaded, setIsMediaLoaded] = useState(false);
 
   const backHandler = () => {
     if (activeIndex > 0) {
       setActiveIndex((prevIndex) => prevIndex - 1);
     }
+
+    //reset
+    setIsProjectSelected(false);
+    setHoveredProjectIndex(null);
   };
 
   const nextHandler = () => {
-    if (activeIndex < data.length - 1) {
+    if (activeIndex < data.length) {
       setActiveIndex((prevIndex) => prevIndex + 1);
     }
+
+    if (isProjectSelected && hoveredProjectIndex !== null) {
+      setActiveIndex(0);
+      setActiveProjectIndex(hoveredProjectIndex);
+
+      console.log(hoveredProjectIndex);
+
+      //reset
+      setIsProjectSelected(false);
+      setHoveredProjectIndex(null);
+    }
+  };
+
+  const mediaLoadedHandler = () => {
+    setIsMediaLoaded(true);
   };
 
   return (
     <>
       <div className={classes.carousel}>
         <div className={classes.carousel__media}>
-          {data[0].isFeatured && (
+          {!isMediaLoaded && (
+            <div
+              className={`${classes.shimmer} ${classes.media__shimmer}`}
+            ></div>
+          )}
+          {data[0].isFeatured && activeIndex < data.length && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
               <span className={classes.featured_chip__text}>Featured</span>
@@ -255,10 +442,21 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
                   height={100}
                   layout="fill"
                   objectFit="cover"
+                  onLoad={mediaLoadedHandler}
                 />
               </div>
             );
           })}
+          <AllProjectsMedia
+            projects={projects}
+            itemIndex={data.length}
+            activeIndex={activeIndex}
+            isProjectSelected={isProjectSelected}
+            setIsProjectSelected={setIsProjectSelected}
+            hoveredProjectIndex={hoveredProjectIndex}
+            setHoveredProjectIndex={setHoveredProjectIndex}
+            data={data}
+          />
         </div>
         <div className={classes.carousel__content}>
           <div className={classes.content__body}>
@@ -317,13 +515,29 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
                 );
               }
             })}
+            <AllProjectsSlide
+              projects={projects}
+              itemIndex={data.length}
+              activeIndex={activeIndex}
+              isProjectSelected={isProjectSelected}
+              setIsProjectSelected={setIsProjectSelected}
+              hoveredProjectIndex={hoveredProjectIndex}
+              setHoveredProjectIndex={setHoveredProjectIndex}
+              data={data}
+            />
           </div>
           <div className={classes.content__control}>
             <CarouselControl
               data={data}
-              nextHandler={nextHandler}
               activeIndex={activeIndex}
+              activeProjectIndex={activeProjectIndex}
               backHandler={backHandler}
+              nextHandler={nextHandler}
+              isProjectSelected={isProjectSelected}
+              setIsProjectSelected={setIsProjectSelected}
+              hoveredProjectIndex={hoveredProjectIndex}
+              setHoveredProjectIndex={setHoveredProjectIndex}
+              setActiveProjectIndex={setActiveProjectIndex}
             />
           </div>
         </div>
