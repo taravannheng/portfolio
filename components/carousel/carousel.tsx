@@ -345,11 +345,6 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
     }
   };
 
-  const projectMouseEnterHandler = (index) => {
-    setIsProjectSelected(true);
-    setHoveredProjectIndex(index);
-  };
-
   return (
     <>
       <div
@@ -367,7 +362,6 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
                     key={`project-${index}`}
                     className={`${classes.all_projects__list_item} ${classes.shimmer}`}
                     onClick={() => projectClickHandler(index)}
-                    onMouseEnter={() => projectMouseEnterHandler(index)}
                     style={{
                       opacity: `${
                         index === hoveredProjectIndex || !isProjectSelected
