@@ -185,6 +185,8 @@
     padding: 8px;
     margin: 0;
     text-align: center;
+    white-space: nowrap;
+    overflow-x: scroll;
     color: $color-lightest;
     @include text(body2);
     transition: opacity 0.3s ease-in-out;
