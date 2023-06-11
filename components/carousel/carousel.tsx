@@ -5,6 +5,7 @@ import {
   ArrowRight,
   PlayCircleFilledOutlined,
 } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 import classes from "./carousel.module.scss";
 import { ActiveIndicatorStackSC } from "./carousel.style";
@@ -43,14 +44,20 @@ const CarouselControl: FC<CarouselInterface> = ({
   return (
     <>
       <div className={classes.carousel__control}>
-        <button
+        <motion.button
           onClick={backHandler}
-          className={`${classes.control__button} ${
-            shakeControlButton && activeIndex === 0 ? classes.shake : ""
-          }`}
+          className={`${classes.control__button}`}
+          initial={{ opacity: 1 }}
+          animate={shakeControlButton && activeIndex === 0
+            ? {
+                translateX: [0, -10, 10, -10, 10, 0],
+                transition: { duration: 0.3 },
+              }
+            : {}}
+          whileTap={{ translateX: 0 }}
         >
           <ArrowLeft />
-        </button>
+        </motion.button>
         <ActiveIndicatorStackSC direction="row" spacing={1.5}>
           {data.map((item, index) => {
             return (
@@ -71,20 +78,36 @@ const CarouselControl: FC<CarouselInterface> = ({
             }`}
           ></div>
         </ActiveIndicatorStackSC>
-        <button
+        <motion.button
           onClick={nextHandler}
+          initial={{ opacity: 1 }}
+          animate={shakeControlButton && activeIndex > 0
+            ? {
+                translateX: [0, -10, 10, -10, 10, 0],
+                transition: { duration: 0.3 },
+              }
+            : {}}
+          whileTap={{ translateX: 0 }}
           className={`${classes.control__button} ${
             isProjectSelected ? classes.play : ""
-          } ${shakeControlButton && activeIndex > 0 ? classes.shake : ""}`}
+          }`}
         >
           {isProjectSelected ? (
-            <div className={classes.scalePlayButton}>
+            <motion.div 
+              initial={{ scale: 1 }}
+              animate={isProjectSelected
+              ? {
+                  scale: [1, 1.2, 1],
+                  transition: { duration: 1, repeat: Infinity},
+                }
+              : {}}
+            >
               <PlayCircleFilledOutlined />
-            </div>
+            </motion.div>
           ) : (
             <ArrowRight />
           )}
-        </button>
+        </motion.button>
       </div>
     </>
   );
@@ -98,8 +121,10 @@ const SummarySlide: FC<CarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateY: 0 }}
+        animate={{ translateY: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__content} ${
           verticalOnly ? classes.vertical_only : ""
         }`}
@@ -139,7 +164,7 @@ const SummarySlide: FC<CarouselInterface> = ({
             })}
           </p>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -152,8 +177,10 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateY: 0 }}
+        animate={{ translateY: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__content} ${
           verticalOnly ? classes.vertical_only : ""
         }`}
@@ -201,7 +228,7 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
             })}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -214,8 +241,10 @@ const TechnologySlide: FC<CarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateY: 0 }}
+        animate={{ translateY: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__content} ${
           verticalOnly ? classes.vertical_only : ""
         }`}
@@ -269,7 +298,7 @@ const TechnologySlide: FC<CarouselInterface> = ({
             })}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -282,8 +311,10 @@ const SocialSlide: FC<CarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateY: 0 }}
+        animate={{ translateY: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__content} ${
           verticalOnly ? classes.vertical_only : ""
         }`}
@@ -340,7 +371,7 @@ const SocialSlide: FC<CarouselInterface> = ({
             })}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -365,9 +396,11 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
 
   return (
     <>
-      <div
+      <motion.div
         onClick={() => projectClickHandler(null)}
-        style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+        initial={{ translateY: 0 }}
+        animate={{ translateY: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__content} ${classes.all_projects}`}
       >
         <h2 className={classes.all_projects__title}>More Projects</h2>
@@ -411,7 +444,7 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
             <span>Select a project</span>
           )}
         </p>
-      </div>
+      </motion.div>
     </>
   );
 };
