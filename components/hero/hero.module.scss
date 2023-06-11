@@ -28,7 +28,6 @@
     padding: 40px 40px 160px 40px;
     border-radius: 16px;
     background-color: $color-darker;
-    // animation-delay: 1s;
 
     @include viewport(mobile) {
       max-width: 366px;
@@ -39,10 +38,6 @@
     @include viewport(tablet) {
       padding: 40px 24px 80px 24px;
     }
-  }
-
-  &__avatar {
-    animation-delay: 1.5s;
   }
 
   &__illustration {
@@ -65,7 +60,6 @@
     margin: 8px 0 4px 0;
     @include text(h1);
     text-transform: uppercase;
-    animation-delay: 2s;
 
     @include viewport(mobile) {
       @include text(h2);
@@ -76,7 +70,6 @@
     color: $color-light;
     @include text(body2);
     margin: 0 0 8px 0;
-    animation-delay: 2.5s;
 
     @include viewport(mobile) {
       .subtitle__optional {
@@ -89,7 +82,6 @@
     width: 60ch;
     margin-bottom: 56px;
     @include text(body2);
-    animation-delay: 3s;
 
     text-align: center;
     color: $color-light;
@@ -112,7 +104,6 @@
 
   &__download_cv_button {
     @include button;
-    animation-delay: 5.5s;
   }
 }
 
@@ -120,62 +111,5 @@
   &__text {
     color: $color-light;
     margin-bottom: 24px;
-    animation-delay: 3.5s;
-  }
-
-  &__icon:nth-child(1) {
-    animation-delay: 4s;
-  }
-
-  &__icon:nth-child(2) {
-    animation-delay: 4.2s;
-  }
-
-  &__icon:nth-child(3) {
-    animation-delay: 4.4s;
-  }
-
-  &__icon:nth-child(4) {
-    animation-delay: 4.6s;
-  }
-
-  &__icon:nth-child(5) {
-    animation-delay: 4.8s;
-  }
-
-  &__icon:nth-child(6) {
-    animation-delay: 5s;
-  }
-}
-
-.scale_in {
-  scale: 0;
-  animation-name: scale-in;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-
-.fade_in {
-  opacity: 0;
-  animation-name: fade-in;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes scale-in {
-  0% {
-    scale: 0;
-  }
-  100% {
-    scale: 1;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

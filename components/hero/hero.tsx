@@ -33,62 +33,70 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
     }
   }, []);
 
-  console.log(animationLoaded);
-
   return (
     <section className={classes.hero}>
       <motion.div
         initial={animationLoaded ? "visible" : "hidden"}
         animate="visible"
         variants={fadeInVariants}
-        transition={{ duration: 0.5, delay: 1 }}
+        transition={{ duration: 0.3, delay: 1 }}
         className={`${classes.hero__body}`}
       >
         <motion.div
           initial={animationLoaded ? "visible" : "hidden"}
           animate="visible"
           variants={scaleInVariants}
-          transition={{ duration: 0.5, delay: 1.5 }}
+          transition={{ duration: 0.3, delay: 1.3 }}
           className={`${classes.hero__avatar}`}
         >
           <Avatar src="/images/profile/profile.jpg" />
         </motion.div>
-        <h1
-          className={`${classes.hero__title} ${
-            !animationLoaded ? classes.fade_in : ""
-          }`}
+        <motion.h1
+          className={`${classes.hero__title}`}
+          initial={animationLoaded ? "visible" : "hidden"}
+          animate="visible"
+          variants={fadeInVariants}
+          transition={{ duration: 0.3, delay: 1.6 }}
         >
           Taravann Heng
-        </h1>
-        <h2
-          className={`${classes.hero__subtitle} ${
-            !animationLoaded ? classes.fade_in : ""
-          }`}
+        </motion.h1>
+        <motion.h2
+          className={`${classes.hero__subtitle}`}
+          initial={animationLoaded ? "visible" : "hidden"}
+          animate="visible"
+          variants={fadeInVariants}
+          transition={{ duration: 0.3, delay: 1.9 }}
         >
           Frontend Developer
-        </h2>
-        <p
-          className={`${classes.hero__bio} ${
-            !animationLoaded ? classes.fade_in : ""
-          }`}
+        </motion.h2>
+        <motion.p
+          className={`${classes.hero__bio}`}
+          initial={animationLoaded ? "visible" : "hidden"}
+          animate="visible"
+          variants={fadeInVariants}
+          transition={{ duration: 0.3, delay: 2.2 }}
         >
           Hello, there! I&apos;m Taravann Heng, a developer. I have some
           experiences doing frontend development works for mobile apps and
           websites. Currently, I&apos;m focusing on frontend web development.
-        </p>
+        </motion.p>
         <div className={classes.hero__technology}>
-          <p
-            className={`${classes.technology__text}  ${
-              !animationLoaded ? classes.fade_in : ""
-            }`}
+          <motion.p
+            className={`${classes.technology__text}`}
+            initial={animationLoaded ? "visible" : "hidden"}
+            animate="visible"
+            variants={fadeInVariants}
+            transition={{ duration: 0.3, delay: 2.5 }}
           >
             Some technologies I&apos;m familiar with:
-          </p>
+          </motion.p>
           <StackSC direction="row">
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 2.8 }}
             >
               <Image
                 loading="lazy"
@@ -97,11 +105,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="aws"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 2.9 }}
             >
               <Image
                 loading="lazy"
@@ -110,11 +120,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="javascript"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3 }}
             >
               <Image
                 loading="lazy"
@@ -123,11 +135,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="typescript"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.1 }}
             >
               <Image
                 loading="lazy"
@@ -136,11 +150,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="python"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.2 }}
             >
               <Image
                 loading="lazy"
@@ -149,11 +165,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="react"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.3 }}
             >
               <Image
                 loading="lazy"
@@ -162,13 +180,15 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="nextjs"
               />
-            </div>
+            </motion.div>
           </StackSC>
           <StackSC direction="row">
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.4 }}
             >
               <Image
                 loading="lazy"
@@ -177,11 +197,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="redux"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.5 }}
             >
               <Image
                 loading="lazy"
@@ -190,11 +212,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="sass"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.6 }}
             >
               <Image
                 loading="lazy"
@@ -203,11 +227,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="tailwind"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.7 }}
             >
               <Image
                 loading="lazy"
@@ -216,11 +242,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="firebase"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.8 }}
             >
               <Image
                 loading="lazy"
@@ -229,11 +257,13 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="framer"
               />
-            </div>
-            <div
-              className={`${classes.technology__icon} ${
-                !animationLoaded ? classes.scale_in : ""
-              }`}
+            </motion.div>
+            <motion.div
+              className={`${classes.technology__icon}`}
+              initial={animationLoaded ? "visible" : "hidden"}
+              animate="visible"
+              variants={scaleInVariants}
+              transition={{ duration: 0.1, delay: 3.9 }}
             >
               <Image
                 loading="lazy"
@@ -242,18 +272,20 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
                 height={24}
                 alt="materialui"
               />
-            </div>
+            </motion.div>
           </StackSC>
         </div>
-        <a
+        <motion.a
           href="/cv/taravannheng-cv.pdf"
           download="taravann-heng-cv"
-          className={`${classes.hero__download_cv_button} ${
-            !animationLoaded ? classes.fade_in : ""
-          }`}
+          className={`${classes.hero__download_cv_button}`}
+          initial={animationLoaded ? "visible" : "hidden"}
+          animate="visible"
+          variants={fadeInVariants}
+          transition={{ duration: 0.3, delay: 4 }}
         >
           Download CV
-        </a>
+        </motion.a>
       </motion.div>
       <div className={classes.hero__illustration}>
         <Image
