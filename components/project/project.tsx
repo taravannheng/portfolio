@@ -9,7 +9,7 @@ import LargeCarousel from '../large-carousel/largeCarousel';
 
 const ProjectSection = () => {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  const isSmallScreen = useMediaQuery('(max-width:959px)');
+  const isSmallScreen = useMediaQuery('(max-width: 840px)');
 
   return (
     <section className={classes.project}>

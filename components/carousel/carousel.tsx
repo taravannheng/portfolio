@@ -116,7 +116,7 @@ const SummarySlide: FC<CarouselInterface> = ({
             src={data[itemIndex].imgUrl}
             alt={data[itemIndex].title}
             width={100}
-            height={72}
+            height={60}
             layout="responsive"
             objectFit="cover"
           />
