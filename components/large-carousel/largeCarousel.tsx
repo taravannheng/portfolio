@@ -5,6 +5,7 @@ import {
   ArrowRight,
   PlayCircleFilledOutlined,
 } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 import classes from "./largeCarousel.module.scss";
 import { ActiveIndicatorStackSC } from "./largeCarousel.style";
@@ -39,14 +40,27 @@ const CarouselControl: FC<LargeCarouselInterface> = ({
   setIsProjectSelected,
   hoveredProjectIndex,
   setHoveredProjectIndex,
-  shakeControlButton
+  shakeControlButton,
 }) => {
   return (
     <>
       <div className={classes.control__container}>
-        <button onClick={backHandler} className={`${classes.control__button} ${shakeControlButton && activeIndex === 0 ? classes.shake : ''}`}>
+        <motion.button
+          onClick={backHandler}
+          className={`${classes.control__button}`}
+          initial={{ opacity: 1 }}
+          animate={
+            shakeControlButton && activeIndex === 0
+              ? {
+                  translateX: [0, -10, 10, -10, 10, 0],
+                  transition: { duration: 0.3 },
+                }
+              : {}
+          }
+          whileTap={{ translateX: 0 }}
+        >
           <ArrowLeft />
-        </button>
+        </motion.button>
         <ActiveIndicatorStackSC direction="row" spacing={1.5}>
           {data.map((item, index) => {
             return (
@@ -67,9 +81,38 @@ const CarouselControl: FC<LargeCarouselInterface> = ({
             }`}
           ></div>
         </ActiveIndicatorStackSC>
-        <button onClick={nextHandler} className={`${classes.control__button} ${isProjectSelected ? classes.play : ''} ${shakeControlButton && activeIndex > 0 ? classes.shake : ''}`}>
-          {isProjectSelected ? <div className={classes.scalePlayButton}><PlayCircleFilledOutlined /></div> : <ArrowRight />}
-        </button>
+        <motion.button
+          initial={{ opacity: 1 }}
+          animate={
+            shakeControlButton && activeIndex > 0
+              ? {
+                  translateX: [0, -10, 10, -10, 10, 0],
+                  transition: { duration: 0.3 },
+                }
+              : {}
+          }
+          whileTap={{ translateX: 0 }}
+          onClick={nextHandler}
+          className={`${classes.control__button} ${
+            isProjectSelected ? classes.play : ""
+          }`}
+        >
+          {isProjectSelected ? (
+            <motion.div 
+            initial={{ scale: 1 }}
+            animate={isProjectSelected
+            ? {
+                scale: [1, 1.2, 1],
+                transition: { duration: 1, repeat: Infinity},
+              }
+            : {}}
+          >
+            <PlayCircleFilledOutlined />
+          </motion.div>
+          ) : (
+            <ArrowRight />
+          )}
+        </motion.button>
       </div>
     </>
   );
@@ -83,8 +126,10 @@ const SummarySlide: FC<LargeCarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateX: 0 }}
+        animate={{ translateX: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__item} ${classes.summary_item}`}
       >
         {" "}
@@ -101,7 +146,7 @@ const SummarySlide: FC<LargeCarouselInterface> = ({
             );
           })}
         </p>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -114,8 +159,10 @@ const TechnologySlide: FC<LargeCarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateX: 0 }}
+        animate={{ translateX: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__item} ${classes.technology_item}`}
       >
         {" "}
@@ -146,7 +193,7 @@ const TechnologySlide: FC<LargeCarouselInterface> = ({
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -159,8 +206,10 @@ const FunctionalitySlide: FC<LargeCarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateX: 0 }}
+        animate={{ translateX: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__item} ${classes.functionality_item}`}
       >
         {" "}
@@ -185,7 +234,7 @@ const FunctionalitySlide: FC<LargeCarouselInterface> = ({
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -198,8 +247,10 @@ const SocialSlide: FC<LargeCarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateX: 0 }}
+        animate={{ translateX: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__item} ${classes.social_item}`}
       >
         {" "}
@@ -231,7 +282,7 @@ const SocialSlide: FC<LargeCarouselInterface> = ({
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -249,8 +300,10 @@ const AllProjectsSlide: FC<LargeCarouselInterface> = ({
 }) => {
   return (
     <>
-      <div
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      <motion.div
+        initial={{ translateX: 0 }}
+        animate={{ translateX: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.body__item} ${classes.all_projects_slide}`}
       >
         <h2 className={classes.all_projects_slide__title}>More Projects</h2>
@@ -289,7 +342,7 @@ const AllProjectsSlide: FC<LargeCarouselInterface> = ({
             <span>Select a project to see more...</span>
           )}
         </p>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -314,9 +367,11 @@ const AllProjectsMedia: FC<LargeCarouselInterface> = ({
 
   return (
     <>
-      <div
+      <motion.div
         onClick={() => projectClickHandler(null)}
-        style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+        initial={{ translateY: 0 }}
+        animate={{ translateY: `-${activeIndex * 100}%` }}
+        transition={{ duration: 0.1, type: "spring" }}
         className={`${classes.media__item} ${classes.all_projects}`}
       >
         <ul className={classes.all_projects__list}>
@@ -350,7 +405,7 @@ const AllProjectsMedia: FC<LargeCarouselInterface> = ({
               );
             })}
         </ul>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -372,13 +427,12 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
     }
 
     if (activeIndex - 1 < 0) {
-      setShakeControlButton(true)
+      setShakeControlButton(true);
 
       setTimeout(() => {
         setShakeControlButton(false);
       }, 1000);
     }
-
 
     //reset
     setIsProjectSelected(false);
@@ -391,7 +445,7 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
     }
 
     if (activeIndex + 1 > data.length) {
-      setShakeControlButton(true)
+      setShakeControlButton(true);
 
       setTimeout(() => {
         setShakeControlButton(false);
@@ -413,7 +467,7 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
   return (
     <>
       <div className={classes.carousel}>
-        <div className={`${classes.carousel__media}` }>
+        <div className={`${classes.carousel__media}`}>
           {data[0].isFeatured && activeIndex < data.length && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
@@ -423,10 +477,12 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
           {/* load all images here */}
           {data.map((item, index) => {
             return (
-              <div
+              <motion.div
                 key={`large-media-${index}`}
                 className={`${classes.media__item} ${classes.shimmer}`}
-                style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+                initial={{ translateY: 0 }}
+                animate={{ translateY: `-${activeIndex * 100}%` }}
+                transition={{ duration: 0.1, type: "spring" }}
               >
                 {" "}
                 {/* animate here */}
@@ -439,7 +495,7 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
                   layout="fill"
                   objectFit="cover"
                 />
-              </div>
+              </motion.div>
             );
           })}
           <AllProjectsMedia
