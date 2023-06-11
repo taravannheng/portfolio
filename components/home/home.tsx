@@ -48,6 +48,7 @@ function a11yProps(index: number) {
 
 const Home = () => {
   const [value, setValue] = useState(0);
+  const [animationLoaded, setAnimationLoaded] = useState(false);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -79,7 +80,7 @@ const Home = () => {
             </TabsSC>
           </Box>
           <TabPanel value={value} index={0}>
-            <HeroSection />
+            <HeroSection animationLoaded={animationLoaded} setAnimationLoaded={setAnimationLoaded} />
           </TabPanel>
           <TabPanel value={value} index={1}>
             <ProjectSection />

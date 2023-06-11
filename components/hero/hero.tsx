@@ -1,13 +1,22 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import classes from "./hero.module.scss";
 import Avatar from "../avatar/avatar";
 import { StackSC } from "./hero.style";
 
-const HeroSection = () => {
-  const [animationLoaded, setAnimationLoaded] = useState(false);
+const fadeInVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+}
 
+const scaleInVariants = {
+  hidden: { scale: 0 },
+  visible: { scale: 1 }
+}
+
+const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
   useEffect(() => {
     const animationLoadedSS = sessionStorage.getItem("hero-animation-loaded");
     const isAnimationLoaded = JSON.parse(animationLoadedSS);
@@ -24,20 +33,26 @@ const HeroSection = () => {
     }
   }, []);
 
+  console.log(animationLoaded);
+
   return (
     <section className={classes.hero}>
-      <div
-        className={`${classes.hero__body} ${
-          !animationLoaded ? classes.fade_in : ""
-        }`}
+      <motion.div
+        initial={animationLoaded ? "visible" : "hidden"}
+        animate="visible"
+        variants={fadeInVariants}
+        transition={{ duration: 0.5, delay: 1 }}
+        className={`${classes.hero__body}`}
       >
-        <div
-          className={`${classes.hero__avatar} ${
-            !animationLoaded ? classes.scale_in : ""
-          }`}
+        <motion.div
+          initial={animationLoaded ? "visible" : "hidden"}
+          animate="visible"
+          variants={scaleInVariants}
+          transition={{ duration: 0.5, delay: 1.5 }}
+          className={`${classes.hero__avatar}`}
         >
           <Avatar src="/images/profile/profile.jpg" />
-        </div>
+        </motion.div>
         <h1
           className={`${classes.hero__title} ${
             !animationLoaded ? classes.fade_in : ""
@@ -239,7 +254,7 @@ const HeroSection = () => {
         >
           Download CV
         </a>
-      </div>
+      </motion.div>
       <div className={classes.hero__illustration}>
         <Image
           loading="eager"
