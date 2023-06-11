@@ -456,11 +456,10 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
       setActiveIndex(0);
       setActiveProjectIndex(hoveredProjectIndex);
 
-      console.log(hoveredProjectIndex);
-
       //reset
       setIsProjectSelected(false);
       setHoveredProjectIndex(null);
+      setShakeControlButton(false);
     }
   };
 

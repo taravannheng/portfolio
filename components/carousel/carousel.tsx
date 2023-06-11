@@ -499,6 +499,7 @@ const Carousel: FC<CarouselInterface> = ({
       //reset
       setIsProjectSelected(false);
       setHoveredProjectIndex(null);
+      setShakeControlButton(false);
     }
   };
 
