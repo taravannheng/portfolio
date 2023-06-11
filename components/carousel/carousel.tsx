@@ -412,7 +412,7 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
                   <>
                     <li
                       key={`project-${index}`}
-                      className={`${classes.all_projects__list_item} ${classes.shimmer}`}
+                      className={`${classes.all_projects__list_item} ${isProjectSelected  ? '' : classes.shimmer}`}
                       onClick={() => projectClickHandler(index)}
                       style={{
                         opacity: `${
@@ -424,7 +424,7 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
                     >
                       <Image
                         loading="lazy"
-                        src={project.imgUrl}
+                        src={isProjectSelected && hoveredProjectIndex === index ? projects[hoveredProjectIndex].previewImgUrl : project.imgUrl}
                         alt={project.id}
                         width={195}
                         height={195}

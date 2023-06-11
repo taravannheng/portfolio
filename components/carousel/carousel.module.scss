@@ -177,6 +177,7 @@
     // border: 1px solid green;
 
     &_item {
+      background-color: $color-dark;
       overflow: hidden;
       // border: 1px solid red;
       transition: opacity 0.3s ease-in-out;
