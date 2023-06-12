@@ -10,7 +10,7 @@ import {
 const marketsquare = {
   id: 'marketsquare',
   imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-logo.json?alt=media&token=7d0e0901-5408-4289-b6c7-fd53254304bf&_gl=1*79p3s0*_ga*NTk4OTU5MDExLjE2ODY1NjE3NjQ.*_ga_CW55HF8NVT*MTY4NjU2MTc2NC4xLjEuMTY4NjU2MTk3Ny4wLjAuMA..",
-  previewImgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-preview.gif?alt=media&token=b442f043-dcd2-4fcd-b24e-603d8026be8a&_gl=1*1nhjl2q*_ga*ODg2ODY0MDE0LjE2ODYzODc1NDk.*_ga_CW55HF8NVT*MTY4NjQwMTgyOS4yLjEuMTY4NjQwMTg1Mi4wLjAuMA..",
+  previewImgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-preview.json?alt=media&token=fb889d4d-fb67-4abc-b0da-3f4fee03668f&_gl=1*110ousn*_ga*NTk4OTU5MDExLjE2ODY1NjE3NjQ.*_ga_CW55HF8NVT*MTY4NjU2NTEzNy4yLjEuMTY4NjU2NTIwOS4wLjAuMA..",
   shortDescription: 'A full stack and fully responsive e-commerce website',
   slides: [
     {
