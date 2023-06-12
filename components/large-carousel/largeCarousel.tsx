@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import {
   ArrowLeft,
@@ -6,6 +6,7 @@ import {
   PlayCircleFilledOutlined,
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import Lottie from "react-lottie";
 
 import classes from "./largeCarousel.module.scss";
 import { ActiveIndicatorStackSC } from "./largeCarousel.style";
@@ -98,17 +99,19 @@ const CarouselControl: FC<LargeCarouselInterface> = ({
           }`}
         >
           {isProjectSelected ? (
-            <motion.div 
-            initial={{ scale: 1 }}
-            animate={isProjectSelected
-            ? {
-                scale: [1, 1.2, 1],
-                transition: { duration: 1, repeat: Infinity},
+            <motion.div
+              initial={{ scale: 1 }}
+              animate={
+                isProjectSelected
+                  ? {
+                      scale: [1, 1.2, 1],
+                      transition: { duration: 1, repeat: Infinity },
+                    }
+                  : {}
               }
-            : {}}
-          >
-            <PlayCircleFilledOutlined />
-          </motion.div>
+            >
+              <PlayCircleFilledOutlined />
+            </motion.div>
           ) : (
             <ArrowRight />
           )}
@@ -358,6 +361,26 @@ const AllProjectsMedia: FC<LargeCarouselInterface> = ({
   hoveredProjectIndex,
   isProjectSelected,
 }) => {
+  const [animationData, setAnimationData] = useState(null);
+
+  const fetchAnimation = async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const dataPromises = projects.map((project, index) =>
+        fetchAnimation(project.imgUrl)
+      );
+      const fetchedData = await Promise.all(dataPromises);
+      setAnimationData(fetchedData);
+    };
+
+    fetchData();
+  }, []);
+
   const projectClickHandler = (index) => {
     if (index !== null) {
       setIsProjectSelected(true);
@@ -391,15 +414,18 @@ const AllProjectsMedia: FC<LargeCarouselInterface> = ({
                       }`,
                     }}
                   >
-                    <Image
-                      loading="lazy"
-                      src={project.imgUrl}
-                      alt={project.id}
-                      width={195}
-                      height={195}
-                      layout="responsive"
-                      objectFit="cover"
-                    />
+                    {animationData && (
+                      <Lottie
+                        options={{
+                          loop: true,
+                          autoplay: true,
+                          animationData: animationData[index],
+                          rendererSettings: {
+                            preserveAspectRatio: "xMidYMid slice",
+                          },
+                        }}
+                      />
+                    )}
                   </li>
                 </>
               );
