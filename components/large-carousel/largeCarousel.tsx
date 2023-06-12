@@ -10,6 +10,7 @@ import Lottie from "react-lottie";
 
 import classes from "./largeCarousel.module.scss";
 import { ActiveIndicatorStackSC } from "./largeCarousel.style";
+import handAnimation from "../../data/hand.json";
 
 interface LargeCarouselInterface {
   //
@@ -363,16 +364,15 @@ const AllProjectsSlide: FC<LargeCarouselInterface> = ({
             </div>
           )}
           {!isProjectSelected && (
-            <Image
-              loading="lazy"
-              src={
-                "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/hand.gif?alt=media&token=85746db7-17d9-492e-8ac7-c355f476ac37&_gl=1*19vin9u*_ga*ODg2ODY0MDE0LjE2ODYzODc1NDk.*_ga_CW55HF8NVT*MTY4NjM4NzU0OC4xLjEuMTY4NjM4NzU3OS4wLjAuMA.."
-              }
-              alt={"hand gesture"}
-              width={300}
-              height={200}
-              layout="fixed"
-              objectFit="cover"
+            <Lottie
+              options={{
+                loop: true,
+                autoplay: true,
+                animationData: handAnimation,
+                rendererSettings: {
+                  preserveAspectRatio: "xMidYMid meet",
+                },
+              }}
             />
           )}
         </div>
