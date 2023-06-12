@@ -6,7 +6,7 @@ import {
 
 const github = {
   id: 'github',
-  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github.png?alt=media&token=266c57e7-15c0-40f2-bb3b-b305e637d417&_gl=1*144307e*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIzOTAyMi41LjEuMTY4NjIzOTA5Ni4wLjAuMA..",
+  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-logo.json?alt=media&token=fedbec75-7f8b-41d6-a68b-50381bb275ea&_gl=1*zv0wtb*_ga*NTk4OTU5MDExLjE2ODY1NjE3NjQ.*_ga_CW55HF8NVT*MTY4NjU2MTc2NC4xLjEuMTY4NjU2MTg5Mi4wLjAuMA..",
   previewImgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-profiles-preview.gif?alt=media&token=45a4f1a1-877f-4506-8e87-c1faab640999&_gl=1*1q6jl0d*_ga*ODg2ODY0MDE0LjE2ODYzODc1NDk.*_ga_CW55HF8NVT*MTY4NjQwMTgyOS4yLjEuMTY4NjQwMjY1MS4wLjAuMA..",
   shortDescription: 'A website for searching GitHub users',
   slides: [

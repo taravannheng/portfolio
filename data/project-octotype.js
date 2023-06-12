@@ -7,7 +7,7 @@ import {
 
 const octotype = {
   id: 'octotype',
-  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype.png?alt=media&token=3942eeb0-d304-4703-b477-5a72c264a4b0&_gl=1*p5h2s4*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIzOTAyMi41LjEuMTY4NjI0MDA4Mi4wLjAuMA..",
+  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-logo.json?alt=media&token=d600530d-02c7-476f-aeb9-1d1a6462452f&_gl=1*xj2hzi*_ga*NTk4OTU5MDExLjE2ODY1NjE3NjQ.*_ga_CW55HF8NVT*MTY4NjU2MTc2NC4xLjEuMTY4NjU2MTk1Ni4wLjAuMA..",
   previewImgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-preview.gif?alt=media&token=0653419d-fecd-400d-b23d-e1b4e53f5d13&_gl=1*wo1nr*_ga*ODg2ODY0MDE0LjE2ODYzODc1NDk.*_ga_CW55HF8NVT*MTY4NjQwMTgyOS4yLjEuMTY4NjQwMzgyOS4wLjAuMA..",
   shortDescription: 'A typing website',
   slides: [

@@ -7,7 +7,7 @@ import {
 
 const rideease = {
   id: 'rideease',
-  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/rideease.png?alt=media&token=dd81204d-1da2-4087-a807-71bf6045945e&_gl=1*6gijai*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjI0NDIzNi42LjEuMTY4NjI0NDY1Mi4wLjAuMA..",
+  imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/rideease-logo.json?alt=media&token=511b72bb-3ad9-486d-9540-84db2dc38bee&_gl=1*176s3qu*_ga*NTk4OTU5MDExLjE2ODY1NjE3NjQ.*_ga_CW55HF8NVT*MTY4NjU2MTc2NC4xLjEuMTY4NjU2MTkxMy4wLjAuMA..",
   previewImgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/rideease-preview-min.gif?alt=media&token=d2e99792-4157-42a0-81d2-7fd38207d335&_gl=1*jac2ta*_ga*ODg2ODY0MDE0LjE2ODYzODc1NDk.*_ga_CW55HF8NVT*MTY4NjQwNjU2OS4zLjEuMTY4NjQwNjU5Ni4wLjAuMA..",
   shortDescription: 'A car rental website',
   slides: [
