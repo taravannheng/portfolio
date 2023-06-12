@@ -27,6 +27,7 @@ interface LargeCarouselInterface {
   hoveredProjectIndex?: number | null;
   projects?: any[];
   shakeControlButton?: boolean;
+  localData?: any;
   //
 }
 
@@ -300,7 +301,41 @@ const AllProjectsSlide: FC<LargeCarouselInterface> = ({
   setHoveredProjectIndex,
   hoveredProjectIndex,
   isProjectSelected,
+  localData,
 }) => {
+  const [previewData, setPreviewData] = useState(null);
+
+  const fetchAnimation = async (url) => {
+    if (!url) {
+      console.error("Empty URL provided.");
+      return null;
+    }
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching animation data:", error);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const fetchPreviews = async () => {
+      const dataPromises = projects.map((project, index) =>
+        fetchAnimation(project.previewImgUrl)
+      );
+      const fetchedData = await Promise.all(dataPromises);
+      const data = fetchedData.map((item, index) => {
+        return item ? item : localData.imagePlaceholder;
+      });
+      setPreviewData(data);
+    };
+
+    fetchPreviews();
+  }, []);
+
   return (
     <>
       <motion.div
@@ -313,15 +348,18 @@ const AllProjectsSlide: FC<LargeCarouselInterface> = ({
         <div className={classes.all_projects_slide__preview}>
           {isProjectSelected && (
             <div className={classes.all_projects_slide__preview_display}>
-              <Image
-                loading="lazy"
-                src={projects[hoveredProjectIndex].previewImgUrl}
-                alt={"Project Preview"}
-                width={360}
-                height={210}
-                layout="fixed"
-                objectFit="cover"
-              />
+              {previewData && (
+                <Lottie
+                  options={{
+                    loop: false,
+                    autoplay: true,
+                    animationData: previewData[hoveredProjectIndex],
+                    rendererSettings: {
+                      preserveAspectRatio: "xMidYMid meet",
+                    },
+                  }}
+                />
+              )}
             </div>
           )}
           {!isProjectSelected && (
@@ -360,25 +398,40 @@ const AllProjectsMedia: FC<LargeCarouselInterface> = ({
   setHoveredProjectIndex,
   hoveredProjectIndex,
   isProjectSelected,
+  localData,
 }) => {
   const [animationData, setAnimationData] = useState(null);
 
   const fetchAnimation = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
+    if (!url) {
+      console.error("Empty URL provided.");
+      return null;
+    }
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching animation data:", error);
+      return null;
+    }
   };
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchLogos = async () => {
       const dataPromises = projects.map((project, index) =>
         fetchAnimation(project.imgUrl)
       );
       const fetchedData = await Promise.all(dataPromises);
-      setAnimationData(fetchedData);
+      const data = fetchedData.map((item, index) => {
+        return item ? item : localData.imagePlaceholder;
+      });
+
+      setAnimationData(data);
     };
 
-    fetchData();
+    fetchLogos();
   }, []);
 
   const projectClickHandler = (index) => {
@@ -441,6 +494,7 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
   projects,
   activeProjectIndex,
   setActiveProjectIndex,
+  localData,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isProjectSelected, setIsProjectSelected] = useState(false);
@@ -532,6 +586,7 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
             hoveredProjectIndex={hoveredProjectIndex}
             setHoveredProjectIndex={setHoveredProjectIndex}
             data={data}
+            localData={localData}
           />
         </div>
         <div className={classes.carousel__content}>
@@ -600,6 +655,7 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
               hoveredProjectIndex={hoveredProjectIndex}
               setHoveredProjectIndex={setHoveredProjectIndex}
               data={data}
+              localData={localData}
             />
           </div>
           <div className={classes.content__control}>

@@ -2,9 +2,18 @@ import { useState, useEffect } from "react";
 
 import Loader from "../components/loader/loader";
 import Home from "../components/home/home";
+import { getLocalData } from '../lib/localdata'
+
+export async function getStaticProps() {
+  const localData = await getLocalData()
+
+  return {
+    props: { localData }
+  }
+}
 
 
-const HomePage = () => {
+const HomePage = ({ localData }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +28,7 @@ const HomePage = () => {
     <>
       {loading && <Loader />}
       {!loading && (
-        <Home />
+        <Home localData={localData} />
       )}
     </>
   );

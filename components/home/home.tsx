@@ -46,7 +46,7 @@ function a11yProps(index: number) {
   };
 }
 
-const Home = () => {
+const Home = ({ localData }) => {
   const [value, setValue] = useState(0);
   const [animationLoaded, setAnimationLoaded] = useState(false);
 
@@ -83,7 +83,7 @@ const Home = () => {
             <HeroSection animationLoaded={animationLoaded} setAnimationLoaded={setAnimationLoaded} />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <ProjectSection />
+            <ProjectSection localData={localData} />
           </TabPanel>
           <TabPanel value={value} index={2}>
             <ContactSection />

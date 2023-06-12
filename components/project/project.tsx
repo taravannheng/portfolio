@@ -7,15 +7,15 @@ import Carousel from "../carousel/carousel";
 import projectData from "../../data/project";
 import LargeCarousel from '../large-carousel/largeCarousel';
 
-const ProjectSection = () => {
+const ProjectSection = ({ localData }) => {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const isSmallScreen = useMediaQuery('(max-width: 840px)');
 
   return (
     <section className={classes.project}>
       <div className={classes.project__body}>
-        {isSmallScreen && <Carousel data={projectData[activeProjectIndex].slides} projects={projectData} activeProjectIndex={activeProjectIndex} setActiveProjectIndex={setActiveProjectIndex}  />}
-        {!isSmallScreen && <LargeCarousel data={projectData[activeProjectIndex].slides} projects={projectData} activeProjectIndex={activeProjectIndex} setActiveProjectIndex={setActiveProjectIndex} />}
+        {isSmallScreen && <Carousel localData={localData} data={projectData[activeProjectIndex].slides} projects={projectData} activeProjectIndex={activeProjectIndex} setActiveProjectIndex={setActiveProjectIndex}  />}
+        {!isSmallScreen && <LargeCarousel localData={localData} data={projectData[activeProjectIndex].slides} projects={projectData} activeProjectIndex={activeProjectIndex} setActiveProjectIndex={setActiveProjectIndex} />}
       </div>
       <div className={classes.project__illustration}>
         <Image

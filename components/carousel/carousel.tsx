@@ -6,6 +6,7 @@ import {
   PlayCircleFilledOutlined,
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import Lottie from "react-lottie";
 
 import classes from "./carousel.module.scss";
 import { ActiveIndicatorStackSC } from "./carousel.style";
@@ -26,6 +27,7 @@ interface CarouselInterface {
   hoveredProjectIndex?: number | null;
   projects?: any[];
   shakeControlButton?: boolean;
+  localData?: any;
 }
 
 const CarouselControl: FC<CarouselInterface> = ({
@@ -48,12 +50,14 @@ const CarouselControl: FC<CarouselInterface> = ({
           onClick={backHandler}
           className={`${classes.control__button}`}
           initial={{ opacity: 1 }}
-          animate={shakeControlButton && activeIndex === 0
-            ? {
-                translateX: [0, -10, 10, -10, 10, 0],
-                transition: { duration: 0.3 },
-              }
-            : {}}
+          animate={
+            shakeControlButton && activeIndex === 0
+              ? {
+                  translateX: [0, -10, 10, -10, 10, 0],
+                  transition: { duration: 0.3 },
+                }
+              : {}
+          }
           whileTap={{ translateX: 0 }}
         >
           <ArrowLeft />
@@ -81,26 +85,30 @@ const CarouselControl: FC<CarouselInterface> = ({
         <motion.button
           onClick={nextHandler}
           initial={{ opacity: 1 }}
-          animate={shakeControlButton && activeIndex > 0
-            ? {
-                translateX: [0, -10, 10, -10, 10, 0],
-                transition: { duration: 0.3 },
-              }
-            : {}}
+          animate={
+            shakeControlButton && activeIndex > 0
+              ? {
+                  translateX: [0, -10, 10, -10, 10, 0],
+                  transition: { duration: 0.3 },
+                }
+              : {}
+          }
           whileTap={{ translateX: 0 }}
           className={`${classes.control__button} ${
             isProjectSelected ? classes.play : ""
           }`}
         >
           {isProjectSelected ? (
-            <motion.div 
+            <motion.div
               initial={{ scale: 1 }}
-              animate={isProjectSelected
-              ? {
-                  scale: [1, 1.2, 1],
-                  transition: { duration: 1, repeat: Infinity},
-                }
-              : {}}
+              animate={
+                isProjectSelected
+                  ? {
+                      scale: [1, 1.2, 1],
+                      transition: { duration: 1, repeat: Infinity },
+                    }
+                  : {}
+              }
             >
               <PlayCircleFilledOutlined />
             </motion.div>
@@ -386,7 +394,55 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
   setHoveredProjectIndex,
   hoveredProjectIndex,
   isProjectSelected,
+  localData,
 }) => {
+  const [logoData, setLogoData] = useState(null);
+  const [previewData, setPreviewData] = useState(null);
+
+  const fetchAnimation = async (url) => {
+    if (!url) {
+      console.error("Empty URL provided.");
+      return null;
+    }
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching animation data:", error);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const fetchLogos = async () => {
+      const dataPromises = projects.map((project, index) =>
+        fetchAnimation(project.imgUrl)
+      );
+      const fetchedData = await Promise.all(dataPromises);
+      const data = fetchedData.map((item, index) => {
+        return item ? item : localData.imagePlaceholder;
+      });
+
+      setLogoData(data);
+    };
+
+    const fetchPreviews = async () => {
+      const dataPromises = projects.map((project, index) =>
+        fetchAnimation(project.previewImgUrl)
+      );
+      const fetchedData = await Promise.all(dataPromises);
+      const data = fetchedData.map((item, index) => {
+        return item ? item : localData.imagePlaceholder;
+      });
+      setPreviewData(data);
+    };
+
+    fetchLogos();
+    fetchPreviews();
+  }, []);
+
   const projectClickHandler = (index) => {
     if (index !== null) {
       setIsProjectSelected(true);
@@ -410,28 +466,46 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
               projects.map((project, index) => {
                 return (
                   <>
-                    <li
-                      key={`project-${index}`}
-                      className={`${classes.all_projects__list_item} ${isProjectSelected  ? '' : classes.shimmer}`}
-                      onClick={() => projectClickHandler(index)}
-                      style={{
-                        opacity: `${
-                          index === hoveredProjectIndex || !isProjectSelected
-                            ? 1
-                            : 0.5
-                        }`,
-                      }}
-                    >
-                      <Image
-                        loading="lazy"
-                        src={isProjectSelected && hoveredProjectIndex === index ? projects[hoveredProjectIndex].previewImgUrl : project.imgUrl}
-                        alt={project.id}
-                        width={195}
-                        height={195}
-                        layout="responsive"
-                        objectFit="cover"
-                      />
-                    </li>
+                    {previewData && logoData && (
+                      <li
+                        key={`project-${index}`}
+                        className={`${classes.all_projects__list_item} ${
+                          isProjectSelected ? "" : classes.shimmer
+                        }`}
+                        onClick={() => projectClickHandler(index)}
+                        style={{
+                          opacity: `${
+                            index === hoveredProjectIndex || !isProjectSelected
+                              ? 1
+                              : 0.5
+                          }`,
+                        }}
+                      >
+                        {isProjectSelected && hoveredProjectIndex === index ? (
+                          <Lottie
+                            options={{
+                              loop: false,
+                              autoplay: true,
+                              animationData: previewData[index],
+                              rendererSettings: {
+                                preserveAspectRatio: "xMidYMid slice",
+                              },
+                            }}
+                          />
+                        ) : (
+                          <Lottie
+                            options={{
+                              loop: true,
+                              autoplay: true,
+                              animationData: logoData[index],
+                              rendererSettings: {
+                                preserveAspectRatio: "xMidYMid slice",
+                              },
+                            }}
+                          />
+                        )}
+                      </li>
+                    )}
                   </>
                 );
               })}
@@ -455,11 +529,14 @@ const Carousel: FC<CarouselInterface> = ({
   projects,
   activeProjectIndex,
   setActiveProjectIndex,
+  localData,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isProjectSelected, setIsProjectSelected] = useState(false);
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
   const [shakeControlButton, setShakeControlButton] = useState(false);
+
+  console.log("local", localData);
 
   const backHandler = () => {
     if (activeIndex > 0) {
@@ -569,6 +646,7 @@ const Carousel: FC<CarouselInterface> = ({
               hoveredProjectIndex={hoveredProjectIndex}
               setHoveredProjectIndex={setHoveredProjectIndex}
               data={data}
+              localData={localData}
             />
           }
         </div>
