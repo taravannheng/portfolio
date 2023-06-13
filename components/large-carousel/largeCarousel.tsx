@@ -458,7 +458,9 @@ const AllProjectsMedia: FC<LargeCarouselInterface> = ({
                 <>
                   <li
                     key={`project-${index}`}
-                    className={`${classes.all_projects__list_item} ${classes.shimmer}`}
+                    className={`${classes.all_projects__list_item} ${
+                      isProjectSelected ? "" : classes.shimmer
+                    }`}
                     onClick={() => projectClickHandler(index)}
                     style={{
                       opacity: `${
@@ -520,7 +522,9 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
   };
 
   useEffect(() => {
-    const imageAnimationSS = sessionStorage.getItem(`animation-${projects[activeProjectIndex].id}`);
+    const imageAnimationSS = sessionStorage.getItem(
+      `animation-${projects[activeProjectIndex].id}`
+    );
 
     if (imageAnimationSS) {
       setImageAnimation(JSON.parse(imageAnimationSS));
@@ -533,10 +537,16 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
       const animationData = fetchedData ? fetchedData : imagePlaceholder;
       if (imageAnimation.length === 0) {
         setImageAnimation([animationData]);
-        sessionStorage.setItem(`animation-${projects[activeProjectIndex].id}`, JSON.stringify(animationData));
+        sessionStorage.setItem(
+          `animation-${projects[activeProjectIndex].id}`,
+          JSON.stringify(animationData)
+        );
       } else {
-        setImageAnimation(prevData => [...prevData, animationData]);
-        sessionStorage.setItem(`animation-${projects[activeProjectIndex].id}`, JSON.stringify([...imageAnimation, animationData]));
+        setImageAnimation((prevData) => [...prevData, animationData]);
+        sessionStorage.setItem(
+          `animation-${projects[activeProjectIndex].id}`,
+          JSON.stringify([...imageAnimation, animationData])
+        );
       }
     };
 
@@ -584,6 +594,12 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
       setIsProjectSelected(false);
       setHoveredProjectIndex(null);
       setShakeControlButton(false);
+      setImageAnimation([]);
+
+      //reset project session storage
+      projects.map((project, index) => {
+        sessionStorage.removeItem(`animation-${project.id}`);
+      });
     }
   };
 
@@ -610,7 +626,11 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
                 transition={{ duration: 0.1, type: "spring" }}
                 style={
                   activeIndex < data.length && {
-                    backgroundColor: data[activeIndex].mediaBackgroundColor,
+                    backgroundColor: `${
+                      imageAnimation[activeIndex] !== imagePlaceholder
+                        ? data[activeIndex].mediaBackgroundColor
+                        : "#E0E0E0"
+                    }`,
                   }
                 }
               >
