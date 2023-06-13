@@ -14,7 +14,8 @@ const octotype = {
     {
       id: 'octotype',
       type: "summary",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-1.png?alt=media&token=2ae30a8d-06e5-4ce5-96ef-a93808074711&_gl=1*6ksypc*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIzOTAyMi41LjEuMTY4NjIzOTU3My4wLjAuMA..",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-1.json?alt=media&token=17e3ab8e-78bd-4a8e-b400-b12c60662a22&_gl=1*d1gpbw*_ga*MTgxMDE4NjgxMi4xNjg2NjU2NzU5*_ga_CW55HF8NVT*MTY4NjY3NjU1NC4zLjEuMTY4NjY3NjcwNS4wLjAuMA..",
+      mediaBackgroundColor: '#0071FF',
       title: "Octotype",
       description:
         `Octotype is a versatile typing app designed to improve your typing skills. With a user-friendly interface, it offers a range of features to enhance your typing experience. Keep track of your progress with comprehensive statistics, including words per minute and typing accuracy, helping you identify areas for improvement. Octotype also offers a customizable theme, allowing you to switch effortlessly between light and dark modes to suit your preference.`,
@@ -22,7 +23,8 @@ const octotype = {
     },
     {
       type: "functionality",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-2.png?alt=media&token=2ffadd8e-c25e-4cce-bcca-f804736a27a7&_gl=1*rhtkf4*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIzOTAyMi41LjEuMTY4NjIzOTcwNC4wLjAuMA..",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-2.json?alt=media&token=4e2eb078-45da-4479-a5d6-836260bcb4c5&_gl=1*3qait3*_ga*MTgxMDE4NjgxMi4xNjg2NjU2NzU5*_ga_CW55HF8NVT*MTY4NjY3NjU1NC4zLjEuMTY4NjY3NjcyMC4wLjAuMA..",
+      mediaBackgroundColor: '#0071FF',
       title: "Functionalities",
       items: [
         {
@@ -45,7 +47,8 @@ const octotype = {
     },
     {
       type: "technology",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-3.png?alt=media&token=8b317bab-95f4-4ada-a2ca-7b489dd7fd08&_gl=1*1m86cz*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIzOTAyMi41LjEuMTY4NjIzOTc4Ny4wLjAuMA..",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-3.json?alt=media&token=c7e40ae9-0e1a-45ac-a7b8-f774a25d95e8&_gl=1*3ulyxd*_ga*MTgxMDE4NjgxMi4xNjg2NjU2NzU5*_ga_CW55HF8NVT*MTY4NjY3NjU1NC4zLjEuMTY4NjY3NjczNy4wLjAuMA..",
+      mediaBackgroundColor: '#0071FF',
       title: "Frontend Technologies",
       items: [
         {
@@ -68,7 +71,8 @@ const octotype = {
     },
     {
       type: "socials",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-4.png?alt=media&token=107ed1a2-b736-40fe-aad2-39c16041c96f&_gl=1*1o43jn3*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIzOTAyMi41LjEuMTY4NjIzOTg2Ny4wLjAuMA..",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/octotype-4.json?alt=media&token=5efa2f64-3873-413a-80ee-73c38449b3ce&_gl=1*obt09c*_ga*MTgxMDE4NjgxMi4xNjg2NjU2NzU5*_ga_CW55HF8NVT*MTY4NjY3NjU1NC4zLjEuMTY4NjY3Njc1NS4wLjAuMA..",
+      mediaBackgroundColor: '#0071FF',
       title: "Check It Out 👇",
       items: [
         {
