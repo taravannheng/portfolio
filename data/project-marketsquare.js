@@ -16,7 +16,8 @@ const marketsquare = {
     {
       id: 'marketsquare',
       type: "summary",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-1-min.gif?alt=media&token=002bca65-2c13-417a-ac26-ec43028f2781&_gl=1*if4ws1*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjI5NzQwMC4xMS4xLjE2ODYzMDAyMDIuMC4wLjA.",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-1.json?alt=media&token=858e1b36-383c-494e-af1f-dd3f1733b468&_gl=1*190hqh1*_ga*MTQyODA5ODEyNS4xNjg2NTc3NjQ4*_ga_CW55HF8NVT*MTY4NjU4MDMyMy4yLjEuMTY4NjU4MDk2Ny4wLjAuMA..",
+      mediaBackgroundColor: '#FFC94D',
       title: "Marketsquare",
       description:
         `Marketsquare is an innovative ecommerce platform designed to provide users with a seamless shopping experience. With a wide range of product catalogs, shoppers can easily browse through an extensive collection of items, ranging from fashion and electronics to home decor and more. Each product listing provides comprehensive details, enabling customers to make informed decisions. From product descriptions and specifications to customer reviews, Marketsquare ensures that users have all the information they need to confidently choose the perfect product. \nWhen it's time to make a purchase, the checkout process is smooth and secure. Marketsquare integrates with Stripe, a leading online payment gateway, allowing customers to securely complete transactions using their preferred payment methods. With advanced encryption and fraud prevention measures, users can trust that their payment information is safe and protected. \nTo enhance the shopping experience, Marketsquare incorporates a user-friendly cart system. Customers can easily add items to their cart, review their selections, and make adjustments as needed. The cart provides a convenient overview of the chosen products, quantities, and prices. \nBefore finalizing a purchase, users can view an order summary that includes a breakdown of the total cost, including taxes and shipping fees. This ensures transparency and eliminates any surprises during the checkout process. \nMarketsquare strives to create a user-centric platform that prioritizes simplicity, security, and convenience. Whether you're a frequent online shopper or looking to explore new products, Marketsquare offers a comprehensive solution for all your ecommerce needs.`,
@@ -24,7 +25,8 @@ const marketsquare = {
     },
     {
       type: "functionality",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-2-min.gif?alt=media&token=38ee5174-6b6d-4183-ac7b-a6df6cbf241e&_gl=1*sieuta*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjI5NzQwMC4xMS4xLjE2ODYzMDA2MTEuMC4wLjA.",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-2.json?alt=media&token=d42df066-a2a8-486c-b5f9-2c8fe78ffd2e&_gl=1*1bpqf27*_ga*MTQyODA5ODEyNS4xNjg2NTc3NjQ4*_ga_CW55HF8NVT*MTY4NjU4MDMyMy4yLjEuMTY4NjU4MjQ3MC4wLjAuMA..",
+      mediaBackgroundColor: '#FFC94D',
       title: "Functionalities",
       items: [
         {
@@ -55,7 +57,8 @@ const marketsquare = {
     },
     {
       type: "technology",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-3-min.gif?alt=media&token=7e06a113-74d2-4bcc-b900-a45cd0c968a2&_gl=1*15rooio*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjI5NzQwMC4xMS4xLjE2ODYzMDAyMjIuMC4wLjA.",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-3.json?alt=media&token=1c619653-62f1-47bb-b499-9848068dda86&_gl=1*1m9j6yq*_ga*MTQyODA5ODEyNS4xNjg2NTc3NjQ4*_ga_CW55HF8NVT*MTY4NjU4MDMyMy4yLjEuMTY4NjU4MjQ4NC4wLjAuMA..",
+      mediaBackgroundColor: '#FFC94D',
       title: "Frontend Technologies",
       items: [
         {
@@ -78,7 +81,8 @@ const marketsquare = {
     },
     {
       type: "technology",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-4-min.gif?alt=media&token=1c67eada-d1a0-4813-aa7c-e95ad87b8d58&_gl=1*1n7ij1*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjI5NzQwMC4xMS4xLjE2ODYzMDAyMzUuMC4wLjA.",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-4.json?alt=media&token=e1e762b7-8d90-4338-bf15-536876e7c518&_gl=1*4uq98n*_ga*MTQyODA5ODEyNS4xNjg2NTc3NjQ4*_ga_CW55HF8NVT*MTY4NjU4MDMyMy4yLjEuMTY4NjU4MjUwMS4wLjAuMA..",
+      mediaBackgroundColor: '#FFC94D',
       title: "Backend Technologies",
       items: [
         {
@@ -109,7 +113,8 @@ const marketsquare = {
     },
     {
       type: "socials",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-5-min.gif?alt=media&token=6eb68317-b668-4d64-ad41-0c29a58372ea&_gl=1*10jzzmt*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjI5NzQwMC4xMS4xLjE2ODYzMDAyNDguMC4wLjA.",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/marketsquare-5.json?alt=media&token=ac141ed7-74be-4a12-8651-6e1f1deef75e&_gl=1*j9joe4*_ga*MTQyODA5ODEyNS4xNjg2NTc3NjQ4*_ga_CW55HF8NVT*MTY4NjU4MDMyMy4yLjEuMTY4NjU4MjUyMC4wLjAuMA..",
+      mediaBackgroundColor: '#FFC94D',
       title: "Check It Out 👇",
       items: [
         {
