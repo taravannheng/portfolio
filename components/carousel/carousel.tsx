@@ -11,6 +11,7 @@ import Lottie from "react-lottie";
 import classes from "./carousel.module.scss";
 import { ActiveIndicatorStackSC } from "./carousel.style";
 import Loader from "../loader/loader";
+import imagePlaceholder from "../../data/image-placeholder.json";
 
 interface CarouselInterface {
   data: any[];
@@ -126,7 +127,37 @@ const SummarySlide: FC<CarouselInterface> = ({
   verticalOnly,
   activeIndex,
   itemIndex,
+  projects,
+  activeProjectIndex,
 }) => {
+  const [imageAnimation, setImageAnimation] = useState(null);
+
+  const fetchAnimation = async (url) => {
+    if (!url) {
+      console.error("Empty URL provided.");
+      return null;
+    }
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching animation data:", error);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const fetchImageAnimation = async () => {
+      const fetchedData = await fetchAnimation(data[itemIndex].imgUrl);
+      const animationData = fetchedData ? fetchedData : imagePlaceholder;
+      setImageAnimation(animationData);
+    };
+
+    fetchImageAnimation();
+  }, [data, itemIndex]);
+
   return (
     <>
       <motion.div
@@ -137,22 +168,30 @@ const SummarySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={`${classes.content__media} ${classes.shimmer}`}>
+        <div
+          style={{ backgroundColor: data[itemIndex].mediaBackgroundColor }}
+          className={`${classes.content__media} ${
+            imageAnimation ? "" : classes.shimmer
+          }`}
+        >
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
               <span className={classes.featured_chip__text}>Featured</span>
             </div>
           )}
-          <Image
-            loading="lazy"
-            src={data[itemIndex].imgUrl}
-            alt={data[itemIndex].title}
-            width={100}
-            height={60}
-            layout="responsive"
-            objectFit="cover"
-          />
+          <div className={classes.content__media_lottie_container}>
+            <Lottie
+              options={{
+                loop: false,
+                autoplay: true,
+                animationData: imageAnimation,
+                rendererSettings: {
+                  preserveAspectRatio: "xMidYMid meet",
+                },
+              }}
+            />
+          </div>
         </div>
         <div className={classes.content__body}>
           <h1
@@ -182,7 +221,37 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
   verticalOnly,
   activeIndex,
   itemIndex,
+  projects,
+  activeProjectIndex,
 }) => {
+  const [imageAnimation, setImageAnimation] = useState(null);
+
+  const fetchAnimation = async (url) => {
+    if (!url) {
+      console.error("Empty URL provided.");
+      return null;
+    }
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching animation data:", error);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const fetchImageAnimation = async () => {
+      const fetchedData = await fetchAnimation(data[itemIndex].imgUrl);
+      const animationData = fetchedData ? fetchedData : imagePlaceholder;
+      setImageAnimation(animationData);
+    };
+
+    fetchImageAnimation();
+  }, [data, itemIndex]);
+
   return (
     <>
       <motion.div
@@ -193,22 +262,30 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={`${classes.content__media} ${classes.shimmer}`}>
+        <div
+          style={{ backgroundColor: data[itemIndex].mediaBackgroundColor }}
+          className={`${classes.content__media} ${
+            imageAnimation ? "" : classes.shimmer
+          }`}
+        >
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
               <span className={classes.featured_chip__text}>Featured</span>
             </div>
           )}
-          <Image
-            loading="lazy"
-            src={data[itemIndex].imgUrl}
-            alt={data[itemIndex].title}
-            width={100}
-            height={72}
-            layout="responsive"
-            objectFit="fill"
-          />
+          <div className={classes.content__media_lottie_container}>
+            <Lottie
+              options={{
+                loop: false,
+                autoplay: true,
+                animationData: imageAnimation,
+                rendererSettings: {
+                  preserveAspectRatio: "xMidYMid meet",
+                },
+              }}
+            />
+          </div>
         </div>
         <div className={classes.content__body}>
           <h1
@@ -246,7 +323,37 @@ const TechnologySlide: FC<CarouselInterface> = ({
   verticalOnly,
   activeIndex,
   itemIndex,
+  projects,
+  activeProjectIndex,
 }) => {
+  const [imageAnimation, setImageAnimation] = useState(null);
+
+  const fetchAnimation = async (url) => {
+    if (!url) {
+      console.error("Empty URL provided.");
+      return null;
+    }
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching animation data:", error);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const fetchImageAnimation = async () => {
+      const fetchedData = await fetchAnimation(data[itemIndex].imgUrl);
+      const animationData = fetchedData ? fetchedData : imagePlaceholder;
+      setImageAnimation(animationData);
+    };
+
+    fetchImageAnimation();
+  }, [data, itemIndex]);
+
   return (
     <>
       <motion.div
@@ -257,22 +364,30 @@ const TechnologySlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={`${classes.content__media} ${classes.shimmer}`}>
+        <div
+          style={{ backgroundColor: data[itemIndex].mediaBackgroundColor }}
+          className={`${classes.content__media} ${
+            imageAnimation ? "" : classes.shimmer
+          }`}
+        >
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
               <span className={classes.featured_chip__text}>Featured</span>
             </div>
           )}
-          <Image
-            loading="lazy"
-            src={data[itemIndex].imgUrl}
-            alt={data[itemIndex].title}
-            width={100}
-            height={72}
-            layout="responsive"
-            objectFit="fill"
-          />
+          <div className={classes.content__media_lottie_container}>
+            <Lottie
+              options={{
+                loop: false,
+                autoplay: true,
+                animationData: imageAnimation,
+                rendererSettings: {
+                  preserveAspectRatio: "xMidYMid meet",
+                },
+              }}
+            />
+          </div>
         </div>
         <div className={classes.content__body}>
           <h1
@@ -316,7 +431,37 @@ const SocialSlide: FC<CarouselInterface> = ({
   verticalOnly,
   activeIndex,
   itemIndex,
+  projects,
+  activeProjectIndex,
 }) => {
+  const [imageAnimation, setImageAnimation] = useState(null);
+
+  const fetchAnimation = async (url) => {
+    if (!url) {
+      console.error("Empty URL provided.");
+      return null;
+    }
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching animation data:", error);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const fetchImageAnimation = async () => {
+      const fetchedData = await fetchAnimation(data[itemIndex].imgUrl);
+      const animationData = fetchedData ? fetchedData : imagePlaceholder;
+      setImageAnimation(animationData);
+    };
+
+    fetchImageAnimation();
+  }, [data, itemIndex]);
+
   return (
     <>
       <motion.div
@@ -327,22 +472,30 @@ const SocialSlide: FC<CarouselInterface> = ({
           verticalOnly ? classes.vertical_only : ""
         }`}
       >
-        <div className={`${classes.content__media} ${classes.shimmer}`}>
+        <div
+          style={{ backgroundColor: data[itemIndex].mediaBackgroundColor }}
+          className={`${classes.content__media} ${
+            imageAnimation ? "" : classes.shimmer
+          }`}
+        >
           {data[0].isFeatured && (
             <div className={classes.featured_chip}>
               <div className={classes.featured_chip__dot}></div>
               <span className={classes.featured_chip__text}>Featured</span>
             </div>
           )}
-          <Image
-            loading="lazy"
-            src={data[itemIndex].imgUrl}
-            alt={data[itemIndex].title}
-            width={100}
-            height={72}
-            layout="responsive"
-            objectFit="fill"
-          />
+          <div className={classes.content__media_lottie_container}>
+            <Lottie
+              options={{
+                loop: false,
+                autoplay: true,
+                animationData: imageAnimation,
+                rendererSettings: {
+                  preserveAspectRatio: "xMidYMid meet",
+                },
+              }}
+            />
+          </div>
         </div>
         <div className={classes.content__body}>
           <h1
@@ -536,8 +689,6 @@ const Carousel: FC<CarouselInterface> = ({
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
   const [shakeControlButton, setShakeControlButton] = useState(false);
 
-  console.log("local", localData);
-
   const backHandler = () => {
     if (activeIndex > 0) {
       setActiveIndex((prevIndex) => prevIndex - 1);
@@ -593,6 +744,8 @@ const Carousel: FC<CarouselInterface> = ({
                   activeIndex={activeIndex}
                   data={data}
                   verticalOnly
+                  projects={projects}
+                  activeProjectIndex={activeProjectIndex}
                 />
               );
             }
@@ -605,6 +758,8 @@ const Carousel: FC<CarouselInterface> = ({
                   activeIndex={activeIndex}
                   data={data}
                   verticalOnly
+                  projects={projects}
+                  activeProjectIndex={activeProjectIndex}
                 />
               );
             }
@@ -617,6 +772,8 @@ const Carousel: FC<CarouselInterface> = ({
                   activeIndex={activeIndex}
                   data={data}
                   verticalOnly
+                  projects={projects}
+                  activeProjectIndex={activeProjectIndex}
                 />
               );
             }
@@ -629,6 +786,8 @@ const Carousel: FC<CarouselInterface> = ({
                   activeIndex={activeIndex}
                   data={data}
                   verticalOnly
+                  projects={projects}
+                  activeProjectIndex={activeProjectIndex}
                 />
               );
             }

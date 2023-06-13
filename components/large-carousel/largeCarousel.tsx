@@ -11,6 +11,7 @@ import Lottie from "react-lottie";
 import classes from "./largeCarousel.module.scss";
 import { ActiveIndicatorStackSC } from "./largeCarousel.style";
 import handAnimation from "../../data/hand.json";
+import imagePlaceholder from "../../data/image-placeholder.json";
 
 interface LargeCarouselInterface {
   //
@@ -500,6 +501,49 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
   const [isProjectSelected, setIsProjectSelected] = useState(false);
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
   const [shakeControlButton, setShakeControlButton] = useState(false);
+  const [imageAnimation, setImageAnimation] = useState([]);
+
+  const fetchAnimation = async (url) => {
+    if (!url) {
+      console.error("Empty URL provided.");
+      return null;
+    }
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching animation data:", error);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const imageAnimationSS = sessionStorage.getItem(`animation-${projects[activeProjectIndex].id}`);
+
+    if (imageAnimationSS) {
+      setImageAnimation(JSON.parse(imageAnimationSS));
+    }
+  }, []);
+
+  useEffect(() => {
+    const fetchImageAnimation = async () => {
+      const fetchedData = await fetchAnimation(data[activeIndex].imgUrl);
+      const animationData = fetchedData ? fetchedData : imagePlaceholder;
+      if (imageAnimation.length === 0) {
+        setImageAnimation([animationData]);
+        sessionStorage.setItem(`animation-${projects[activeProjectIndex].id}`, JSON.stringify(animationData));
+      } else {
+        setImageAnimation(prevData => [...prevData, animationData]);
+        sessionStorage.setItem(`animation-${projects[activeProjectIndex].id}`, JSON.stringify([...imageAnimation, animationData]));
+      }
+    };
+
+    if (activeIndex < data.length && imageAnimation.length === activeIndex) {
+      fetchImageAnimation();
+    }
+  }, [activeIndex, data, activeProjectIndex, projects, imageAnimation]);
 
   const backHandler = () => {
     if (activeIndex > 0) {
@@ -558,22 +602,32 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
             return (
               <motion.div
                 key={`large-media-${index}`}
-                className={`${classes.media__item} ${classes.shimmer}`}
+                className={`${classes.media__item} ${
+                  imageAnimation.length <= activeIndex ? classes.shimmer : ""
+                }`}
                 initial={{ translateY: 0 }}
                 animate={{ translateY: `-${activeIndex * 100}%` }}
                 transition={{ duration: 0.1, type: "spring" }}
+                style={
+                  activeIndex < data.length && {
+                    backgroundColor: data[activeIndex].mediaBackgroundColor,
+                  }
+                }
               >
                 {" "}
                 {/* animate here */}
-                <Image
-                  loading="lazy"
-                  src={data[index].imgUrl}
-                  alt={data[index].title}
-                  width={100}
-                  height={100}
-                  layout="fill"
-                  objectFit="cover"
-                />
+                {imageAnimation && (
+                  <Lottie
+                    options={{
+                      loop: false,
+                      autoplay: true,
+                      animationData: imageAnimation[activeIndex],
+                      rendererSettings: {
+                        preserveAspectRatio: "xMidYMid meet",
+                      },
+                    }}
+                  />
+                )}
               </motion.div>
             );
           })}
