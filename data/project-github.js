@@ -12,15 +12,17 @@ const github = {
   slides: [
     {
       type: "summary",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-1.png?alt=media&token=edc3b551-3861-4f06-9ea4-322baa5a2dad&_gl=1*w78rqm*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMzAwNC4wLjAuMA..",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-1.json?alt=media&token=c8416694-f74e-460a-923a-d18d6372f4f5&_gl=1*s0yds7*_ga*MTgxMDE4NjgxMi4xNjg2NjU2NzU5*_ga_CW55HF8NVT*MTY4NjY2MTY5My4yLjEuMTY4NjY2Mjg1OC4wLjAuMA..",
       title: "GitHub Profiles",
+      mediaBackgroundColor: '#E6D9C3',
       description:
         `GitHub Profiles is a personal project that allows users to search for GitHub profiles, explore available users, and view profile summaries. It provides a seamless interface to search and discover GitHub users, enabling users to gather essential information and get a quick overview of a user's profile details.`,
       isFeatured: false
     },
     {
       type: "functionality",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-2.png?alt=media&token=f34f6d11-651a-4265-a999-18e80a019b6c&_gl=1*1t5y07h*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMzAyNi4wLjAuMA..",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-2.json?alt=media&token=41e05d13-e15a-49fc-84f2-38b7d92d154e&_gl=1*ndhou3*_ga*MTgxMDE4NjgxMi4xNjg2NjU2NzU5*_ga_CW55HF8NVT*MTY4NjY2MTY5My4yLjEuMTY4NjY2Mjg3Ny4wLjAuMA..",
+      mediaBackgroundColor: '#E6D9C3',
       title: "Functionalities",
       items: [
         {
@@ -39,7 +41,8 @@ const github = {
     },
     {
       type: "technology",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-3.png?alt=media&token=8299c985-8832-4251-bcb7-fcead56a8a22&_gl=1*1r431cu*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMjQ3Ny4wLjAuMA..",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-2.json?alt=media&token=41e05d13-e15a-49fc-84f2-38b7d92d154e&_gl=1*ndhou3*_ga*MTgxMDE4NjgxMi4xNjg2NjU2NzU5*_ga_CW55HF8NVT*MTY4NjY2MTY5My4yLjEuMTY4NjY2Mjg3Ny4wLjAuMA..",
+      mediaBackgroundColor: '#E6D9C3',
       title: "Frontend Technologies",
       items: [
         {
@@ -58,7 +61,8 @@ const github = {
     },
     {
       type: "socials",
-      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-4.png?alt=media&token=f4a7c3f0-d120-4181-9a56-f2314852cc99&_gl=1*zywwft*_ga*MTA3MDYzMzc5Ni4xNjg1OTYxNzE3*_ga_CW55HF8NVT*MTY4NjIxMjQwMi40LjEuMTY4NjIxMzA0OS4wLjAuMA..",
+      imgUrl: "https://firebasestorage.googleapis.com/v0/b/personal-portfolio-d2496.appspot.com/o/github-2.json?alt=media&token=41e05d13-e15a-49fc-84f2-38b7d92d154e&_gl=1*ndhou3*_ga*MTgxMDE4NjgxMi4xNjg2NjU2NzU5*_ga_CW55HF8NVT*MTY4NjY2MTY5My4yLjEuMTY4NjY2Mjg3Ny4wLjAuMA..",
+      mediaBackgroundColor: '#E6D9C3',
       title: "Check It Out 👇",
       items: [
         {
