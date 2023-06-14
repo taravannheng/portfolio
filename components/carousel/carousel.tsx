@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import {
   ArrowLeft,
@@ -127,8 +127,6 @@ const SummarySlide: FC<CarouselInterface> = ({
   verticalOnly,
   activeIndex,
   itemIndex,
-  projects,
-  activeProjectIndex,
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
 
@@ -204,11 +202,11 @@ const SummarySlide: FC<CarouselInterface> = ({
           <p className={classes.body__description_summary}>
             {data[itemIndex].description.split("\n").map((item, index) => {
               return (
-                <>
+                <div key={`${data[itemIndex].id}-description-${index}`}>
                   <span>{item}</span>
                   <br />
                   <br />
-                </>
+                </div>
               );
             })}
           </p>
@@ -629,7 +627,7 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
                   <>
                     {previewData && logoData && (
                       <li
-                        key={`project-${index}`}
+                        key={`project-${project.id}-${index}`}
                         className={`${classes.all_projects__list_item} ${
                           isProjectSelected ? "" : classes.shimmer
                         }`}
@@ -747,7 +745,7 @@ const Carousel: FC<CarouselInterface> = ({
             if (item.type === "summary") {
               return (
                 <SummarySlide
-                  key={`slide-${index}`}
+                  key={`slide-${projects[activeProjectIndex]}-${index}`}
                   itemIndex={index}
                   activeIndex={activeIndex}
                   data={data}
@@ -761,7 +759,7 @@ const Carousel: FC<CarouselInterface> = ({
             if (item.type === "functionality") {
               return (
                 <FunctionalitySlide
-                  key={`slide-${index}`}
+                  key={`slide-${projects[activeProjectIndex]}-${index}`}
                   itemIndex={index}
                   activeIndex={activeIndex}
                   data={data}
@@ -775,7 +773,7 @@ const Carousel: FC<CarouselInterface> = ({
             if (item.type === "technology") {
               return (
                 <TechnologySlide
-                  key={`slide-${index}`}
+                  key={`slide-${projects[activeProjectIndex]}-${index}`}
                   itemIndex={index}
                   activeIndex={activeIndex}
                   data={data}
@@ -789,7 +787,7 @@ const Carousel: FC<CarouselInterface> = ({
             if (item.type === "socials") {
               return (
                 <SocialSlide
-                  key={`slide-${index}`}
+                  key={`slide-${projects[activeProjectIndex]}-${index}`}
                   itemIndex={index}
                   activeIndex={activeIndex}
                   data={data}
