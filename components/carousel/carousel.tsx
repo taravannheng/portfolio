@@ -155,8 +155,10 @@ const SummarySlide: FC<CarouselInterface> = ({
       setImageAnimation(animationData);
     };
 
-    fetchImageAnimation();
-  }, [data, itemIndex]);
+    if (activeIndex === itemIndex) {
+      fetchImageAnimation();
+    }
+  }, [data, itemIndex, activeIndex]);
 
   return (
     <>
@@ -249,8 +251,10 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
       setImageAnimation(animationData);
     };
 
-    fetchImageAnimation();
-  }, [data, itemIndex]);
+    if (activeIndex === itemIndex) {
+      fetchImageAnimation();
+    }
+  }, [data, itemIndex, activeIndex]);
 
   return (
     <>
@@ -351,8 +355,10 @@ const TechnologySlide: FC<CarouselInterface> = ({
       setImageAnimation(animationData);
     };
 
-    fetchImageAnimation();
-  }, [data, itemIndex]);
+    if (activeIndex === itemIndex) {
+      fetchImageAnimation();
+    }
+  }, [data, itemIndex, activeIndex]);
 
   return (
     <>
@@ -459,8 +465,10 @@ const SocialSlide: FC<CarouselInterface> = ({
       setImageAnimation(animationData);
     };
 
-    fetchImageAnimation();
-  }, [data, itemIndex]);
+    if (activeIndex === itemIndex) {
+      fetchImageAnimation();
+    }
+  }, [data, itemIndex, activeIndex]);
 
   return (
     <>
