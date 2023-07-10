@@ -16,6 +16,16 @@ const scaleInVariants = {
   visible: { scale: 1 }
 }
 
+const twistInVariants = {
+  hidden: { scale: 0},
+  visible: { scale: 1, rotate: 360 }
+}
+
+const scrollUpVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: { y: 0, opacity: 1 }
+}
+
 const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
   useEffect(() => {
     const animationLoadedSS = sessionStorage.getItem("hero-animation-loaded");
@@ -45,8 +55,14 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
         <motion.div
           initial={animationLoaded ? "visible" : "hidden"}
           animate="visible"
-          variants={scaleInVariants}
-          transition={{ duration: 0.3, delay: 1.3 }}
+          variants={twistInVariants}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            duration: 0.5, 
+            delay: 1.5
+          }}
           className={`${classes.hero__avatar}`}
         >
           <Avatar src="/images/profile/profile.jpg" />
@@ -55,8 +71,8 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
           className={`${classes.hero__title}`}
           initial={animationLoaded ? "visible" : "hidden"}
           animate="visible"
-          variants={fadeInVariants}
-          transition={{ duration: 0.3, delay: 1.6 }}
+          variants={scrollUpVariants}
+          transition={{ duration: 0.5, delay: 2.0 }}
         >
           Taravann Heng
         </motion.h1>
@@ -64,8 +80,8 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
           className={`${classes.hero__subtitle}`}
           initial={animationLoaded ? "visible" : "hidden"}
           animate="visible"
-          variants={fadeInVariants}
-          transition={{ duration: 0.3, delay: 1.9 }}
+          variants={scrollUpVariants}
+          transition={{ duration: 0.5, delay: 2.5 }}
         >
           Frontend Developer
         </motion.h2>
@@ -73,8 +89,8 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
           className={`${classes.hero__bio}`}
           initial={animationLoaded ? "visible" : "hidden"}
           animate="visible"
-          variants={fadeInVariants}
-          transition={{ duration: 0.3, delay: 2.2 }}
+          variants={scrollUpVariants}
+          transition={{ duration: 0.5, delay: 3.0 }}
         >
           Hello, there! I&apos;m Taravann Heng, a developer. I have some
           experiences doing frontend development works for mobile apps and
@@ -85,8 +101,8 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
             className={`${classes.technology__text}`}
             initial={animationLoaded ? "visible" : "hidden"}
             animate="visible"
-            variants={fadeInVariants}
-            transition={{ duration: 0.3, delay: 2.5 }}
+            variants={scrollUpVariants}
+            transition={{ duration: 0.5, delay: 3.5 }}
           >
             Some technologies I&apos;m familiar with:
           </motion.p>
@@ -96,7 +112,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 2.8 }}
+              transition={{ duration: 0.2, delay: 3.7 }}
             >
               <Image
                 loading="lazy"
@@ -111,7 +127,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 2.9 }}
+              transition={{ duration: 0.2, delay: 3.9 }}
             >
               <Image
                 loading="lazy"
@@ -126,7 +142,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3 }}
+              transition={{ duration: 0.2, delay: 4.1 }}
             >
               <Image
                 loading="lazy"
@@ -141,7 +157,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.1 }}
+              transition={{ duration: 0.2, delay: 4.3 }}
             >
               <Image
                 loading="lazy"
@@ -156,7 +172,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.2 }}
+              transition={{ duration: 0.2, delay: 4.5 }}
             >
               <Image
                 loading="lazy"
@@ -171,7 +187,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.3 }}
+              transition={{ duration: 0.2, delay: 4.7 }}
             >
               <Image
                 loading="lazy"
@@ -188,7 +204,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.4 }}
+              transition={{ duration: 0.2, delay: 4.9 }}
             >
               <Image
                 loading="lazy"
@@ -203,7 +219,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.5 }}
+              transition={{ duration: 0.2, delay: 5.1 }}
             >
               <Image
                 loading="lazy"
@@ -218,7 +234,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.6 }}
+              transition={{ duration: 0.2, delay: 5.3 }}
             >
               <Image
                 loading="lazy"
@@ -233,7 +249,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.7 }}
+              transition={{ duration: 0.2, delay: 5.5 }}
             >
               <Image
                 loading="lazy"
@@ -248,7 +264,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.8 }}
+              transition={{ duration: 0.2, delay: 5.7 }}
             >
               <Image
                 loading="lazy"
@@ -263,7 +279,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
               initial={animationLoaded ? "visible" : "hidden"}
               animate="visible"
               variants={scaleInVariants}
-              transition={{ duration: 0.1, delay: 3.9 }}
+              transition={{ duration: 0.2, delay: 5.9 }}
             >
               <Image
                 loading="lazy"
@@ -282,7 +298,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
           initial={animationLoaded ? "visible" : "hidden"}
           animate="visible"
           variants={fadeInVariants}
-          transition={{ duration: 0.3, delay: 4 }}
+          transition={{ duration: 0.3, delay: 6.1 }}
         >
           Download CV
         </motion.a>
