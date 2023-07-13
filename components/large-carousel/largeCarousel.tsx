@@ -366,6 +366,7 @@ const AllProjectsSlide: FC<LargeCarouselInterface> = ({
           )}
           {!isProjectSelected && (
             <Lottie
+              isClickToPauseDisabled
               options={{
                 loop: true,
                 autoplay: true,
