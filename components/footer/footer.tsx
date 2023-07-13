@@ -17,6 +17,7 @@ const FooterSection = () => {
         <p className={classes.text__copyright}>
           All Rights Reserved · {getYear()}
         </p>
+        <p className={classes.text__credit}><a target="_blank" rel="noreferrer" href="https://lordicon.com/">Icons by Lordicon.com</a></p>
       </div>
     </footer>
   );

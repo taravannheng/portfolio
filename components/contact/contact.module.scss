@@ -166,8 +166,13 @@
     display: flex;
     justify-content: flex-end;
 
+    & > button > span {
+      margin-right: 8px;
+    }
+
     & button {
       @include button;
+      background-color: $color-accent;
     }
   }
 }
