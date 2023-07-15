@@ -168,6 +168,7 @@
 
     & button {
       @include button;
+      background-color: $color-accent;
     }
   }
 }
