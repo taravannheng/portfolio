@@ -1,13 +1,8 @@
-import { useState, useRef } from "react";
 import Image from "next/image";
-import Lottie from "react-lottie";
 
 import classes from "./contact.module.scss";
-import arrowAnimation from "../../data/arrow.json";
 
 const ContactSection = () => {
-  const [stopped, setStopped] = useState(true);
-
   return (
     <section className={classes.contact} id="contact">
       <div className={classes.contact__body}>
@@ -31,30 +26,7 @@ const ContactSection = () => {
               value="Thanks for your email! Well Received!"
             ></input>
             <div className={classes.form__submit_button_container}>
-              <button
-                type="submit"
-                onMouseEnter={() => {
-                  setStopped(false);
-                }}
-                onMouseLeave={() => {
-                  setStopped(true);
-                }}
-              >
-                <span>SEND</span>
-                <Lottie
-                  isStopped={stopped}
-                  isClickToPauseDisabled={true}
-                  height={24}
-                  options={{
-                    loop: false,
-                    autoplay: false,
-                    animationData: arrowAnimation,
-                    rendererSettings: {
-                      preserveAspectRatio: "xMidYMid meet",
-                    },
-                  }}
-                />
-              </button>
+              <button type="submit">SEND</button>
             </div>
           </form>
         </div>
