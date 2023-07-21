@@ -127,6 +127,8 @@ const SummarySlide: FC<CarouselInterface> = ({
   verticalOnly,
   activeIndex,
   itemIndex,
+  activeProjectIndex,
+  hoveredProjectIndex,
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
 
@@ -155,6 +157,10 @@ const SummarySlide: FC<CarouselInterface> = ({
 
     if (activeIndex === itemIndex) {
       fetchImageAnimation();
+    }
+
+    if (activeProjectIndex !== hoveredProjectIndex) {
+      setImageAnimation(null);
     }
   }, [data, itemIndex, activeIndex]);
 
@@ -223,6 +229,7 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
   itemIndex,
   projects,
   activeProjectIndex,
+  hoveredProjectIndex,
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
 
@@ -251,6 +258,10 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
 
     if (activeIndex === itemIndex) {
       fetchImageAnimation();
+    }
+
+    if (activeProjectIndex !== hoveredProjectIndex) {
+      setImageAnimation(null);
     }
   }, [data, itemIndex, activeIndex]);
 
@@ -327,6 +338,7 @@ const TechnologySlide: FC<CarouselInterface> = ({
   itemIndex,
   projects,
   activeProjectIndex,
+  hoveredProjectIndex,
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
 
@@ -355,6 +367,10 @@ const TechnologySlide: FC<CarouselInterface> = ({
 
     if (activeIndex === itemIndex) {
       fetchImageAnimation();
+    }
+
+    if (activeProjectIndex !== hoveredProjectIndex) {
+      setImageAnimation(null);
     }
   }, [data, itemIndex, activeIndex]);
 
@@ -437,6 +453,7 @@ const SocialSlide: FC<CarouselInterface> = ({
   itemIndex,
   projects,
   activeProjectIndex,
+  hoveredProjectIndex,
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
 
@@ -465,6 +482,10 @@ const SocialSlide: FC<CarouselInterface> = ({
 
     if (activeIndex === itemIndex) {
       fetchImageAnimation();
+    }
+
+    if (activeProjectIndex !== hoveredProjectIndex) {
+      setImageAnimation(null);
     }
   }, [data, itemIndex, activeIndex]);
 
@@ -752,6 +773,7 @@ const Carousel: FC<CarouselInterface> = ({
                   verticalOnly
                   projects={projects}
                   activeProjectIndex={activeProjectIndex}
+                  hoveredProjectIndex={hoveredProjectIndex}
                 />
               );
             }
@@ -766,6 +788,7 @@ const Carousel: FC<CarouselInterface> = ({
                   verticalOnly
                   projects={projects}
                   activeProjectIndex={activeProjectIndex}
+                  hoveredProjectIndex={hoveredProjectIndex}
                 />
               );
             }
@@ -780,6 +803,7 @@ const Carousel: FC<CarouselInterface> = ({
                   verticalOnly
                   projects={projects}
                   activeProjectIndex={activeProjectIndex}
+                  hoveredProjectIndex={hoveredProjectIndex}
                 />
               );
             }
@@ -794,6 +818,7 @@ const Carousel: FC<CarouselInterface> = ({
                   verticalOnly
                   projects={projects}
                   activeProjectIndex={activeProjectIndex}
+                  hoveredProjectIndex={hoveredProjectIndex}
                 />
               );
             }
