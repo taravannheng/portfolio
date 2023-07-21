@@ -69,12 +69,10 @@
 
 @keyframes loading {
   0% {
-    border: 0;
     opacity: 1;
   }
 
   100% {
-    border: 1px solid $color-lightest;
     opacity: 0;
   }
 }
