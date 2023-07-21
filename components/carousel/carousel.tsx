@@ -12,6 +12,7 @@ import classes from "./carousel.module.scss";
 import { ActiveIndicatorStackSC } from "./carousel.style";
 import Loader from "../loader/loader";
 import imagePlaceholder from "../../data/image-placeholder.json";
+import { fetchAnimation } from "../../utils/helpers";
 
 interface CarouselInterface {
   data: any[];
@@ -132,22 +133,6 @@ const SummarySlide: FC<CarouselInterface> = ({
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
 
-  const fetchAnimation = async (url) => {
-    if (!url) {
-      console.error("Empty URL provided.");
-      return null;
-    }
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching animation data:", error);
-      return null;
-    }
-  };
-
   useEffect(() => {
     const fetchImageAnimation = async () => {
       const fetchedData = await fetchAnimation(data[itemIndex].imgUrl);
@@ -232,22 +217,6 @@ const FunctionalitySlide: FC<CarouselInterface> = ({
   hoveredProjectIndex,
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
-
-  const fetchAnimation = async (url) => {
-    if (!url) {
-      console.error("Empty URL provided.");
-      return null;
-    }
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching animation data:", error);
-      return null;
-    }
-  };
 
   useEffect(() => {
     const fetchImageAnimation = async () => {
@@ -341,22 +310,6 @@ const TechnologySlide: FC<CarouselInterface> = ({
   hoveredProjectIndex,
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
-
-  const fetchAnimation = async (url) => {
-    if (!url) {
-      console.error("Empty URL provided.");
-      return null;
-    }
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching animation data:", error);
-      return null;
-    }
-  };
 
   useEffect(() => {
     const fetchImageAnimation = async () => {
@@ -456,22 +409,6 @@ const SocialSlide: FC<CarouselInterface> = ({
   hoveredProjectIndex,
 }) => {
   const [imageAnimation, setImageAnimation] = useState(null);
-
-  const fetchAnimation = async (url) => {
-    if (!url) {
-      console.error("Empty URL provided.");
-      return null;
-    }
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching animation data:", error);
-      return null;
-    }
-  };
 
   useEffect(() => {
     const fetchImageAnimation = async () => {
@@ -578,22 +515,6 @@ const AllProjectsSlide: FC<CarouselInterface> = ({
 }) => {
   const [logoData, setLogoData] = useState(null);
   const [previewData, setPreviewData] = useState(null);
-
-  const fetchAnimation = async (url) => {
-    if (!url) {
-      console.error("Empty URL provided.");
-      return null;
-    }
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching animation data:", error);
-      return null;
-    }
-  };
 
   useEffect(() => {
     const fetchLogos = async () => {

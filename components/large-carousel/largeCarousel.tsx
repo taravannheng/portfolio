@@ -12,6 +12,7 @@ import classes from "./largeCarousel.module.scss";
 import { ActiveIndicatorStackSC } from "./largeCarousel.style";
 import handAnimation from "../../data/hand.json";
 import imagePlaceholder from "../../data/image-placeholder.json";
+import { fetchAnimation } from "../../utils/helpers";
 
 interface LargeCarouselInterface {
   //
@@ -307,22 +308,6 @@ const AllProjectsSlide: FC<LargeCarouselInterface> = ({
 }) => {
   const [previewData, setPreviewData] = useState(null);
 
-  const fetchAnimation = async (url) => {
-    if (!url) {
-      console.error("Empty URL provided.");
-      return null;
-    }
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching animation data:", error);
-      return null;
-    }
-  };
-
   useEffect(() => {
     const fetchPreviews = async () => {
       const dataPromises = projects.map((project, index) =>
@@ -403,22 +388,6 @@ const AllProjectsMedia: FC<LargeCarouselInterface> = ({
   localData,
 }) => {
   const [animationData, setAnimationData] = useState(null);
-
-  const fetchAnimation = async (url) => {
-    if (!url) {
-      console.error("Empty URL provided.");
-      return null;
-    }
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching animation data:", error);
-      return null;
-    }
-  };
 
   useEffect(() => {
     const fetchLogos = async () => {
@@ -505,22 +474,6 @@ const LargeCarousel: FC<LargeCarouselInterface> = ({
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
   const [shakeControlButton, setShakeControlButton] = useState(false);
   const [imageAnimation, setImageAnimation] = useState([]);
-
-  const fetchAnimation = async (url) => {
-    if (!url) {
-      console.error("Empty URL provided.");
-      return null;
-    }
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching animation data:", error);
-      return null;
-    }
-  };
 
   useEffect(() => {
     const imageAnimationSS = sessionStorage.getItem(
