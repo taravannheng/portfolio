@@ -110,7 +110,9 @@
 
 .technology {
   &__text {
-    color: $color-light;
     margin-bottom: 24px;
+    
+    @include text(body2);
+    color: $color-light;
   }
 }

@@ -57,9 +57,6 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
           animate="visible"
           variants={fadeInVariants}
           transition={{
-            // type: "spring",
-            // stiffness: 260,
-            // damping: 20,
             duration: 0.5, 
             delay: 1.5
           }}
