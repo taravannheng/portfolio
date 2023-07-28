@@ -80,7 +80,7 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
           variants={scrollUpVariants}
           transition={{ duration: 0.5, delay: 2.5 }}
         >
-          Frontend Developer
+          Software Developer
         </motion.h2>
         <motion.p
           className={`${classes.hero__bio}`}
@@ -89,9 +89,9 @@ const HeroSection = ({ animationLoaded, setAnimationLoaded }) => {
           variants={scrollUpVariants}
           transition={{ duration: 0.5, delay: 3.0 }}
         >
-          Hello, there! I&apos;m Taravann Heng, a developer. I have some
-          experiences doing frontend development works for mobile apps and
-          websites. Currently, I&apos;m focusing on frontend web development.
+          Hello, there! I&apos;m Taravann Heng. I have some
+          experiences doing software development works for mobile apps and
+          websites.
         </motion.p>
         <div className={classes.hero__technology}>
           <motion.p
