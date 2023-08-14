@@ -68,7 +68,7 @@
 
   &__subtitle {
     color: $color-light;
-    @include text(body2);
+    @include text(body1);
     margin: 0 0 8px 0;
 
     @include viewport(mobile) {
